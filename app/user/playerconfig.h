@@ -4,8 +4,8 @@
 /*
 Define the access point name and its password here.
 */
-#define AP_NAME "HOMEAP"
-#define AP_PASS "01234567890"
+#define AP_NAME "mns.ru-6446"
+#define AP_PASS "9219599354"
 
 /* Define stream URL here. For example, the URL to the MP3 stream of a certain Dutch radio station
 is http://icecast.omroep.nl/3fm-sb-mp3 . This translates of a server name of "icecast.omroep.nl"

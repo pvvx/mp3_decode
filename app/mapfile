@@ -1,33 +1,35 @@
 Archive member included because of file (symbol)
 
-../lib\libmain.a(xtensa_vectors.o)
+../lib\lib48main.a(xtensa_vectors.o)
                               (call_user_start)
-../lib\libmain.a(app_main.o)  ../lib\libmain.a(xtensa_vectors.o) (user_fatal_exception_handler)
-../lib\libmain.a(ets_timer.o)
-                              ../lib\libmain.a(app_main.o) (ets_timer_init)
-../lib\libmain.a(misc.o)      ../lib\libmain.a(app_main.o) (os_install_putc1)
-../lib\libmain.a(printf-stdarg.o)
-                              ../lib\libmain.a(app_main.o) (printf)
-../lib\libmain.a(spi_flash.o)
-                              ../lib\libmain.a(app_main.o) (flashchip)
-../lib\libmain.a(uart.o)      ../lib\libmain.a(app_main.o) (uart_div_modify)
-../lib\libmain.a(user_interface.o)
-                              ../lib\libmain.a(app_main.o) (rst_if)
-../lib\libmain.a(os_cpu_a.o)  ../lib\libmain.a(xtensa_vectors.o) (_xt_int_enter)
-../lib\libmain.a(xtensa_context.o)
-                              ../lib\libmain.a(os_cpu_a.o) (_xt_context_save)
-../lib\libmain.a(timers.o)    ../lib\libmain.a(user_interface.o) (os_timer_setfn)
+../lib\lib48main.a(app_main.o)
+                              ../lib\lib48main.a(xtensa_vectors.o) (user_fatal_exception_handler)
+../lib\lib48main.a(ets_timer.o)
+                              ../lib\lib48main.a(app_main.o) (ets_timer_init)
+../lib\lib48main.a(misc.o)    ../lib\lib48main.a(app_main.o) (os_install_putc1)
+../lib\lib48main.a(printf-stdarg.o)
+                              ../lib\lib48main.a(app_main.o) (printf)
+../lib\lib48main.a(spi_flash.o)
+                              ../lib\lib48main.a(app_main.o) (flashchip)
+../lib\lib48main.a(uart.o)    ../lib\lib48main.a(app_main.o) (uart_div_modify)
+../lib\lib48main.a(user_interface.o)
+                              ../lib\lib48main.a(app_main.o) (rst_if)
+../lib\lib48main.a(os_cpu_a.o)
+                              ../lib\lib48main.a(xtensa_vectors.o) (_xt_int_enter)
+../lib\lib48main.a(xtensa_context.o)
+                              ../lib\lib48main.a(os_cpu_a.o) (_xt_context_save)
+../lib\lib48main.a(timers.o)  ../lib\lib48main.a(user_interface.o) (os_timer_setfn)
 ../lib\libfreertos.a(heap_4.o)
-                              ../lib\libmain.a(timers.o) (pvPortMalloc)
-../lib\libfreertos.a(port.o)  ../lib\libmain.a(app_main.o) (vPortEnterCritical)
+                              ../lib\lib48main.a(timers.o) (pvPortMalloc)
+../lib\libfreertos.a(port.o)  ../lib\lib48main.a(app_main.o) (vPortEnterCritical)
 ../lib\libfreertos.a(queue.o)
-                              ../lib\libmain.a(ets_timer.o) (xQueueGenericCreate)
+                              ../lib\lib48main.a(ets_timer.o) (xQueueGenericCreate)
 ../lib\libfreertos.a(tasks.o)
-                              ../lib\libmain.a(os_cpu_a.o) (pxCurrentTCB)
+                              ../lib\lib48main.a(os_cpu_a.o) (pxCurrentTCB)
 ../lib\libfreertos.a(timers.o)
                               ../lib\libfreertos.a(tasks.o) (xTimerCreateTimerTask)
 ../lib\libfreertos.a(list.o)  ../lib\libfreertos.a(queue.o) (vListInitialise)
-../lib\liblwip.a(dhcp.o)      ../lib\libmain.a(user_interface.o) (dhcp_start)
+../lib\liblwip.a(dhcp.o)      ../lib\lib48main.a(user_interface.o) (dhcp_start)
 ../lib\liblwip.a(dns.o)       ../lib\liblwip.a(dhcp.o) (dns_setserver)
 ../lib\liblwip.a(etharp.o)    ../lib\liblwip.a(dhcp.o) (etharp_query)
 ../lib\liblwip.a(ip4_addr.o)  ../lib\liblwip.a(dhcp.o) (ip_addr_any)
@@ -54,7 +56,7 @@ Archive member included because of file (symbol)
 ../lib\liblwip.a(api_msg.o)   ../lib\liblwip.a(api_lib.o) (netconn_alloc)
 ../lib\liblwip.a(netbuf.o)    ../lib\liblwip.a(sockets.o) (netbuf_delete)
 user/.output/eagle/lib/libuser.a(user_main.o)
-                              ../lib\libmain.a(app_main.o) (user_init)
+                              ../lib\lib48main.a(app_main.o) (user_init)
 user/.output/eagle/lib/libuser.a(spiram_fifo.o)
                               user/.output/eagle/lib/libuser.a(user_main.o) (spiRamFifoInit)
 user/.output/eagle/lib/libuser.a(iram_buf.o)
@@ -80,9 +82,9 @@ driver/.output/eagle/lib/libdriver.a(uart.o)
 driver/.output/eagle/lib/libdriver.a(i2s_freertos.o)
                               user/.output/eagle/lib/libuser.a(user_main.o) (i2sInit)
 ../lib\libmc.a(lib_a-bzero.o)
-                              ../lib\libmain.a(app_main.o) (bzero)
+                              ../lib\lib48main.a(app_main.o) (bzero)
 ../lib\libmc.a(lib_a-memcmp.o)
-                              ../lib\libmain.a(user_interface.o) (memcmp)
+                              ../lib\lib48main.a(user_interface.o) (memcmp)
 ../lib\libmc.a(lib_a-memmove.o)
                               user/.output/eagle/lib/libuser.a(user_main.o) (memmove)
 ../lib\libmc.a(lib_a-strcmp.o)
@@ -90,18 +92,18 @@ driver/.output/eagle/lib/libdriver.a(i2s_freertos.o)
 ../lib\libmc.a(lib_a-strcpy.o)
                               user/.output/eagle/lib/libuser.a(user_main.o) (strcpy)
 ../lib\libmc.a(lib_a-strncmp.o)
-                              ../lib\libmain.a(user_interface.o) (strncmp)
+                              ../lib\lib48main.a(user_interface.o) (strncmp)
 c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../xtensa-lx106-elf/lib\libhal.a(clock.o)
-                              ../lib\libmain.a(misc.o) (xthal_get_ccount)
+                              ../lib\lib48main.a(misc.o) (xthal_get_ccount)
 c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../xtensa-lx106-elf/lib\libhal.a(int_asm--set_intset.o)
                               ../lib\libfreertos.a(port.o) (xthal_set_intset)
 ../lib\libmphy.a(phy_chip_v5_ana_romfunc.o)
                               driver/.output/eagle/lib/libdriver.a(i2s_freertos.o) (rom_i2c_writeReg_Mask)
 ../lib\libmphy.a(phy_chip_v5_romfunc.o)
                               ../lib\libmphy.a(phy_chip_v5_ana_romfunc.o) (g_phyFuns)
-../lib\libmphy.a(phy.o)       ../lib\libmain.a(app_main.o) (phy_enable_agc)
+../lib\libmphy.a(phy.o)       ../lib\lib48main.a(app_main.o) (phy_enable_agc)
 ../lib\libmphy.a(phy_chip_v6.o)
-                              ../lib\libmain.a(app_main.o) (register_chipv6_phy)
+                              ../lib\lib48main.a(app_main.o) (register_chipv6_phy)
 ../lib\libmphy.a(phy_chip_v6_ana.o)
                               ../lib\libmphy.a(phy_chip_v6.o) (ram_pbus_set_rxgain)
 ../lib\libmphy.a(phy_chip_v6_cal.o)
@@ -110,8 +112,8 @@ c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../
                               ../lib\libmphy.a(phy_chip_v6.o) (pm_set_sleep_cycles)
 ../lib\libmphy.a(phy_chip_v5_cal_romfunc.o)
                               ../lib\libmphy.a(phy_chip_v5_romfunc.o) (rom_cal_tos_v50)
-../lib\libpp.a(lmac.o)        ../lib\libmain.a(app_main.o) (lmacInit)
-../lib\libpp.a(pm.o)          ../lib\libmain.a(os_cpu_a.o) (CCOMPARE_AddVal)
+../lib\libpp.a(lmac.o)        ../lib\lib48main.a(app_main.o) (lmacInit)
+../lib\libpp.a(pm.o)          ../lib\lib48main.a(os_cpu_a.o) (CCOMPARE_AddVal)
 ../lib\libpp.a(pp.o)          ../lib\libpp.a(pm.o) (pend_flag_noise_check)
 ../lib\libpp.a(rate_control.o)
                               ../lib\libpp.a(lmac.o) (RC_SetBasicRate)
@@ -120,7 +122,7 @@ c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../
 ../lib\libpp.a(esf_buf.o)     ../lib\libpp.a(wdev.o) (esf_rx_buf_alloc)
 ../lib\libpp.a(if_hwctrl.o)   ../lib\libpp.a(pm.o) (ic_get_addr)
 ../lib\libnet80211.a(ieee80211.o)
-                              ../lib\libmain.a(app_main.o) (g_ic)
+                              ../lib\lib48main.a(app_main.o) (g_ic)
 ../lib\libnet80211.a(ieee80211_crypto.o)
                               ../lib\libnet80211.a(ieee80211.o) (ieee80211_crypto_attach)
 ../lib\libnet80211.a(ieee80211_ets.o)
@@ -128,7 +130,7 @@ c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../
 ../lib\libnet80211.a(ieee80211_hostap.o)
                               ../lib\libpp.a(pp.o) (TmpSTAAPCloseAP)
 ../lib\libnet80211.a(ieee80211_ht.o)
-                              ../lib\libmain.a(user_interface.o) (ieee80211_ht_attach)
+                              ../lib\lib48main.a(user_interface.o) (ieee80211_ht_attach)
 ../lib\libnet80211.a(ieee80211_input.o)
                               ../lib\libnet80211.a(ieee80211_hostap.o) (ieee80211_decap)
 ../lib\libnet80211.a(ieee80211_output.o)
@@ -140,20 +142,20 @@ c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../
 ../lib\libnet80211.a(ieee80211_proto.o)
                               ../lib\libpp.a(wdev.o) (ieee80211_addr_bcast)
 ../lib\libnet80211.a(ieee80211_scan.o)
-                              ../lib\libmain.a(user_interface.o) (scannum)
+                              ../lib\lib48main.a(user_interface.o) (scannum)
 ../lib\libnet80211.a(ieee80211_sta.o)
-                              ../lib\libmain.a(user_interface.o) (ieee80211_sta_new_state)
+                              ../lib\lib48main.a(user_interface.o) (ieee80211_sta_new_state)
 ../lib\libnet80211.a(wl_chm.o)
                               ../lib\libnet80211.a(ieee80211.o) (chm_init)
 ../lib\libnet80211.a(wl_cnx.o)
-                              ../lib\libmain.a(user_interface.o) (sta_con_timer)
+                              ../lib\lib48main.a(user_interface.o) (sta_con_timer)
 ../lib\libnet80211.a(ieee80211_action.o)
                               ../lib\libnet80211.a(ieee80211_ht.o) (ieee80211_send_action_register)
 ../lib\libwpa.a(ap_config.o)  ../lib\libnet80211.a(ieee80211_hostap.o) (hostapd_setup_wpa_psk)
-../lib\libwpa.a(common.o)     ../lib\libmain.a(user_interface.o) (hexstr2bin)
+../lib\libwpa.a(common.o)     ../lib\lib48main.a(user_interface.o) (hexstr2bin)
 ../lib\libwpa.a(os_xtensa.o)  ../lib\libwpa.a(common.o) (os_get_time)
 ../lib\libwpa.a(sha1-pbkdf2.o)
-                              ../lib\libmain.a(user_interface.o) (pbkdf2_sha1)
+                              ../lib\lib48main.a(user_interface.o) (pbkdf2_sha1)
 ../lib\libwpa.a(wpa_auth.o)   ../lib\libnet80211.a(ieee80211_hostap.o) (wpa_init)
 ../lib\libwpa.a(wpa_auth_ie.o)
                               ../lib\libwpa.a(wpa_auth.o) (wpa_auth_gen_wpa_ie)
@@ -180,7 +182,7 @@ c:/espressif/xtensa-lx106-elf/bin/../lib/gcc/xtensa-lx106-elf/4.8.2/../../../../
                               ../lib\libwpa.a(aes-wrap.o) (aes_encrypt_init)
 ../lib\libwpa.a(aes-internal.o)
                               ../lib\libwpa.a(aes-internal-dec.o) (Te0)
-../lib\libmain.a(libc.o)      ../lib\libwpa.a(common.o) (strrchr)
+../lib\lib48main.a(libc.o)    ../lib\libwpa.a(common.o) (strrchr)
 ../lib\liblwip.a(ethernetif.o)
                               ../lib\libnet80211.a(ieee80211_hostap.o) (ethernetif_input)
 ../lib\liblwip.a(netdb.o)     user/.output/eagle/lib/libuser.a(user_main.o) (lwip_gethostbyname)
@@ -216,7 +218,7 @@ Memory Configuration
 Name             Origin             Length             Attributes
 dport0_0_seg     0x3ff00000         0x00000010
 dram0_0_seg      0x3ffe8000         0x00014000
-iram1_0_seg      0x40100000         0x00008000
+iram1_0_seg      0x40100000         0x0000c000
 irom0_0_seg      0x40209000         0x00073000
 *default*        0x00000000         0xffffffff
 
@@ -230,7 +232,7 @@ LOAD ../lib\libmphy.a
 LOAD ../lib\libpp.a
 LOAD ../lib\libnet80211.a
 LOAD ../lib\libwpa.a
-LOAD ../lib\libmain.a
+LOAD ../lib\lib48main.a
 LOAD ../lib\libfreertos.a
 LOAD ../lib\liblwip.a
 LOAD ../lib\libudhcp.a
@@ -279,20 +281,20 @@ END GROUP
 .data           0x3ffe8000      0x6a8
                 0x3ffe8000                _data_start = ABSOLUTE (.)
  *(.data)
- .data          0x3ffe8000        0x4 ../lib\libmain.a(xtensa_vectors.o)
+ .data          0x3ffe8000        0x4 ../lib\lib48main.a(xtensa_vectors.o)
                 0x3ffe8000                _Pri_3_HandlerAddress
- .data          0x3ffe8004        0x0 ../lib\libmain.a(app_main.o)
- .data          0x3ffe8004        0x0 ../lib\libmain.a(ets_timer.o)
- .data          0x3ffe8004        0x4 ../lib\libmain.a(misc.o)
- .data          0x3ffe8008        0x0 ../lib\libmain.a(printf-stdarg.o)
- .data          0x3ffe8008       0x18 ../lib\libmain.a(spi_flash.o)
+ .data          0x3ffe8004        0x0 ../lib\lib48main.a(app_main.o)
+ .data          0x3ffe8004        0x0 ../lib\lib48main.a(ets_timer.o)
+ .data          0x3ffe8004        0x4 ../lib\lib48main.a(misc.o)
+ .data          0x3ffe8008        0x0 ../lib\lib48main.a(printf-stdarg.o)
+ .data          0x3ffe8008       0x18 ../lib\lib48main.a(spi_flash.o)
                 0x3ffe8008                flashchip
- .data          0x3ffe8020        0x0 ../lib\libmain.a(uart.o)
- .data          0x3ffe8020        0x1 ../lib\libmain.a(user_interface.o)
+ .data          0x3ffe8020        0x0 ../lib\lib48main.a(uart.o)
+ .data          0x3ffe8020        0x1 ../lib\lib48main.a(user_interface.o)
                 0x3ffe8020                dhcpc_flag
- .data          0x3ffe8021        0x0 ../lib\libmain.a(os_cpu_a.o)
- .data          0x3ffe8021        0x0 ../lib\libmain.a(xtensa_context.o)
- .data          0x3ffe8021        0x0 ../lib\libmain.a(timers.o)
+ .data          0x3ffe8021        0x0 ../lib\lib48main.a(os_cpu_a.o)
+ .data          0x3ffe8021        0x0 ../lib\lib48main.a(xtensa_context.o)
+ .data          0x3ffe8021        0x0 ../lib\lib48main.a(timers.o)
  .data          0x3ffe8021        0x0 ../lib\libfreertos.a(heap_4.o)
  .data          0x3ffe8021        0x0 ../lib\libfreertos.a(port.o)
  .data          0x3ffe8021        0x0 ../lib\libfreertos.a(queue.o)
@@ -421,7 +423,7 @@ END GROUP
  .data          0x3ffe865c        0x0 ../lib\libwpa.a(aes-internal-dec.o)
  .data          0x3ffe865c        0x0 ../lib\libwpa.a(aes-internal-enc.o)
  .data          0x3ffe865c        0x0 ../lib\libwpa.a(aes-internal.o)
- .data          0x3ffe865c        0x4 ../lib\libmain.a(libc.o)
+ .data          0x3ffe865c        0x4 ../lib\lib48main.a(libc.o)
  .data          0x3ffe8660        0x0 ../lib\liblwip.a(ethernetif.o)
  .data          0x3ffe8660        0x0 ../lib\liblwip.a(netdb.o)
  .data          0x3ffe8660        0x0 main/.output/eagle/lib/libaddmmain.a(phy_chip_v6_unused.o)
@@ -450,10 +452,10 @@ END GROUP
  *(.jcr)
                 0x3ffe86a8                _data_end = ABSOLUTE (.)
 
-.rodata         0x3ffe86b0     0x19b8
+.rodata         0x3ffe86b0     0x19bc
                 0x3ffe86b0                _rodata_start = ABSOLUTE (.)
  *(.rodata)
- .rodata        0x3ffe86b0       0x3b ../lib\libmain.a(xtensa_vectors.o)
+ .rodata        0x3ffe86b0       0x3b ../lib\lib48main.a(xtensa_vectors.o)
  *fill*         0x3ffe86eb        0x1 
  .rodata        0x3ffe86ec        0x2 ../lib\libfreertos.a(heap_4.o)
  *fill*         0x3ffe86ee        0x2 
@@ -509,29 +511,29 @@ END GROUP
  .rodata        0x3ffe8bf0        0xa ../lib\libwpa.a(aes-internal.o)
                 0x3ffe8bf0                rcons
  *fill*         0x3ffe8bfa        0x6 
- .rodata        0x3ffe8c00      0x101 ../lib\libmain.a(libc.o)
+ .rodata        0x3ffe8c00      0x101 ../lib\lib48main.a(libc.o)
                 0x3ffe8c00                _ctype_
  *fill*         0x3ffe8d01        0x3 
  .rodata        0x3ffe8d04      0x100 ../lib\libmgcc.a(_popcount_tab.o)
                 0x3ffe8d04                __popcount_tab
  *(.rodata.*)
  .rodata.str1.4
-                0x3ffe8e04      0x159 ../lib\libmain.a(app_main.o)
+                0x3ffe8e04      0x159 ../lib\lib48main.a(app_main.o)
                                 0x15d (size before relaxing)
  *fill*         0x3ffe8f5d        0x3 
  .rodata.str1.4
-                0x3ffe8f60       0x77 ../lib\libmain.a(ets_timer.o)
+                0x3ffe8f60       0x77 ../lib\lib48main.a(ets_timer.o)
  *fill*         0x3ffe8fd7        0x1 
  .rodata.str1.4
-                0x3ffe8fd8        0x7 ../lib\libmain.a(printf-stdarg.o)
+                0x3ffe8fd8        0x7 ../lib\lib48main.a(printf-stdarg.o)
                                   0xc (size before relaxing)
  *fill*         0x3ffe8fdf        0x1 
  .rodata.str1.4
-                0x3ffe8fe0      0x197 ../lib\libmain.a(user_interface.o)
+                0x3ffe8fe0      0x197 ../lib\lib48main.a(user_interface.o)
                                 0x1a2 (size before relaxing)
  *fill*         0x3ffe9177        0x1 
  .rodata.str1.4
-                0x3ffe9178       0x3f ../lib\libmain.a(timers.o)
+                0x3ffe9178       0x3f ../lib\lib48main.a(timers.o)
  *fill*         0x3ffe91b7        0x1 
  .rodata.str1.4
                 0x3ffe91b8       0x20 ../lib\libfreertos.a(port.o)
@@ -553,83 +555,83 @@ END GROUP
  .rodata.str1.4
                 0x3ffe92b4       0x76 ../lib\liblwip.a(tcp.o)
  .rodata.str1.1
-                0x3ffe932a      0x1e1 user/.output/eagle/lib/libuser.a(user_main.o)
+                0x3ffe932a      0x1e5 user/.output/eagle/lib/libuser.a(user_main.o)
  .rodata.str1.1
-                0x3ffe950b      0x116 user/.output/eagle/lib/libuser.a(iram_buf.o)
+                0x3ffe950f      0x116 user/.output/eagle/lib/libuser.a(iram_buf.o)
  .rodata.str1.1
-                0x3ffe9621      0x215 mad/.output/eagle/lib/libmad.a(stream.o)
+                0x3ffe9625      0x215 mad/.output/eagle/lib/libmad.a(stream.o)
  .rodata.str1.1
-                0x3ffe9836       0x14 driver/.output/eagle/lib/libdriver.a(uart.o)
- *fill*         0x3ffe984a        0x2 
+                0x3ffe983a       0x14 driver/.output/eagle/lib/libdriver.a(uart.o)
+ *fill*         0x3ffe984e        0x2 
  .rodata.str1.4
-                0x3ffe984c       0x22 ../lib\libmphy.a(phy_chip_v5_romfunc.o)
- *fill*         0x3ffe986e        0x2 
+                0x3ffe9850       0x22 ../lib\libmphy.a(phy_chip_v5_romfunc.o)
+ *fill*         0x3ffe9872        0x2 
  .rodata.str1.4
-                0x3ffe9870       0xf4 ../lib\libmphy.a(phy_chip_v6.o)
+                0x3ffe9874       0xf4 ../lib\libmphy.a(phy_chip_v6.o)
                                  0xf8 (size before relaxing)
  .rodata.str1.4
-                0x3ffe9964       0x1f ../lib\libmphy.a(phy_chip_v6_ana.o)
+                0x3ffe9968       0x1f ../lib\libmphy.a(phy_chip_v6_ana.o)
                                  0x25 (size before relaxing)
- *fill*         0x3ffe9983        0x1 
+ *fill*         0x3ffe9987        0x1 
  .rodata.str1.4
-                0x3ffe9984      0x168 ../lib\libmphy.a(phy_chip_v6_cal.o)
+                0x3ffe9988      0x168 ../lib\libmphy.a(phy_chip_v6_cal.o)
  .rodata.str1.4
-                0x3ffe9aec       0xbd ../lib\libmphy.a(phy_chip_v5_cal_romfunc.o)
+                0x3ffe9af0       0xbd ../lib\libmphy.a(phy_chip_v5_cal_romfunc.o)
                                  0xe5 (size before relaxing)
- *fill*         0x3ffe9ba9        0x3 
+ *fill*         0x3ffe9bad        0x3 
  .rodata.str1.4
-                0x3ffe9bac       0x2b ../lib\libpp.a(lmac.o)
+                0x3ffe9bb0       0x2b ../lib\libpp.a(lmac.o)
                                  0x33 (size before relaxing)
- *fill*         0x3ffe9bd7        0x1 
+ *fill*         0x3ffe9bdb        0x1 
  .rodata.str1.4
-                0x3ffe9bd8      0x1c3 ../lib\libpp.a(pm.o)
+                0x3ffe9bdc      0x1c3 ../lib\libpp.a(pm.o)
                                 0x1df (size before relaxing)
- *fill*         0x3ffe9d9b        0x1 
+ *fill*         0x3ffe9d9f        0x1 
  .rodata.str1.4
-                0x3ffe9d9c       0x74 ../lib\libpp.a(pp.o)
+                0x3ffe9da0       0x74 ../lib\libpp.a(pp.o)
                                  0x7c (size before relaxing)
  .rodata.str1.4
-                0x3ffe9e10       0x39 ../lib\libpp.a(trc.o)
- *fill*         0x3ffe9e49        0x3 
+                0x3ffe9e14       0x39 ../lib\libpp.a(trc.o)
+ *fill*         0x3ffe9e4d        0x3 
  .rodata.str1.4
-                0x3ffe9e4c        0x7 ../lib\libpp.a(wdev.o)
+                0x3ffe9e50        0x7 ../lib\libpp.a(wdev.o)
                                   0xf (size before relaxing)
- *fill*         0x3ffe9e53        0x1 
+ *fill*         0x3ffe9e57        0x1 
  .rodata.str1.4
-                0x3ffe9e54       0x44 ../lib\libpp.a(if_hwctrl.o)
+                0x3ffe9e58       0x44 ../lib\libpp.a(if_hwctrl.o)
  .rodata.str1.4
-                0x3ffe9e98       0x3f ../lib\libnet80211.a(ieee80211.o)
+                0x3ffe9e9c       0x3f ../lib\libnet80211.a(ieee80211.o)
                                  0x4a (size before relaxing)
- *fill*         0x3ffe9ed7        0x1 
+ *fill*         0x3ffe9edb        0x1 
  .rodata.str1.4
-                0x3ffe9ed8       0x19 ../lib\libnet80211.a(ieee80211_ht.o)
- *fill*         0x3ffe9ef1        0x3 
+                0x3ffe9edc       0x19 ../lib\libnet80211.a(ieee80211_ht.o)
+ *fill*         0x3ffe9ef5        0x3 
  .rodata.str1.4
-                0x3ffe9ef4       0x27 ../lib\libnet80211.a(ieee80211_output.o)
+                0x3ffe9ef8       0x27 ../lib\libnet80211.a(ieee80211_output.o)
                                  0x2f (size before relaxing)
- *fill*         0x3ffe9f1b        0x1 
+ *fill*         0x3ffe9f1f        0x1 
  .rodata.str1.4
-                0x3ffe9f1c       0x24 ../lib\libnet80211.a(ieee80211_scan.o)
+                0x3ffe9f20       0x24 ../lib\libnet80211.a(ieee80211_scan.o)
  .rodata.str1.4
-                0x3ffe9f40       0x99 ../lib\libnet80211.a(wl_cnx.o)
- *fill*         0x3ffe9fd9        0x3 
+                0x3ffe9f44       0x99 ../lib\libnet80211.a(wl_cnx.o)
+ *fill*         0x3ffe9fdd        0x3 
  .rodata.str1.4
-                0x3ffe9fdc       0x3c ../lib\libwpa.a(wpa_auth.o)
+                0x3ffe9fe0       0x3c ../lib\libwpa.a(wpa_auth.o)
                                  0x43 (size before relaxing)
  .rodata.str1.4
                 0x00000000       0x17 ../lib\libwpa.a(wpa.o)
  .rodata.str1.4
-                0x3ffea018        0x9 ../lib\libwpa.a(wpa_common.o)
- *fill*         0x3ffea021        0x3 
+                0x3ffea01c        0x9 ../lib\libwpa.a(wpa_common.o)
+ *fill*         0x3ffea025        0x3 
  .rodata.str1.4
-                0x3ffea024       0x36 ../lib\libwpa.a(wpa_main.o)
- *fill*         0x3ffea05a        0x2 
+                0x3ffea028       0x36 ../lib\libwpa.a(wpa_main.o)
+ *fill*         0x3ffea05e        0x2 
  .rodata.str1.4
-                0x3ffea05c        0x4 ../lib\libwpa.a(sha1-internal.o)
+                0x3ffea060        0x4 ../lib\libwpa.a(sha1-internal.o)
                                   0x2 (size before relaxing)
  *(.gnu.linkonce.r.*)
  *(.rodata1)
-                0x3ffea060                __XT_EXCEPTION_TABLE__ = ABSOLUTE (.)
+                0x3ffea064                __XT_EXCEPTION_TABLE__ = ABSOLUTE (.)
  *(.xt_except_table)
  *(.gcc_except_table)
  *(.gnu.linkonce.e.*)
@@ -643,31 +645,31 @@ END GROUP
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x3ffea060                __XT_EXCEPTION_DESCS__ = ABSOLUTE (.)
+                0x3ffea064                __XT_EXCEPTION_DESCS__ = ABSOLUTE (.)
  *(.xt_except_desc)
  *(.gnu.linkonce.h.*)
-                0x3ffea060                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
+                0x3ffea064                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
  *(.xt_except_desc_end)
  *(.dynamic)
  *(.gnu.version_d)
-                0x3ffea060                . = ALIGN (0x4)
-                0x3ffea060                _bss_table_start = ABSOLUTE (.)
-                0x3ffea060        0x4 LONG 0x3ffea068 _bss_start
-                0x3ffea064        0x4 LONG 0x3fff5f08 _bss_end
-                0x3ffea068                _bss_table_end = ABSOLUTE (.)
-                0x3ffea068                _rodata_end = ABSOLUTE (.)
+                0x3ffea064                . = ALIGN (0x4)
+                0x3ffea064                _bss_table_start = ABSOLUTE (.)
+                0x3ffea064        0x4 LONG 0x3ffea070 _bss_start
+                0x3ffea068        0x4 LONG 0x3fff5f08 _bss_end
+                0x3ffea06c                _bss_table_end = ABSOLUTE (.)
+                0x3ffea06c                _rodata_end = ABSOLUTE (.)
 
 .UserExceptionVector.literal
-                0x3ffea068        0x0
-                0x3ffea068                _UserExceptionVector_literal_start = ABSOLUTE (.)
+                0x3ffea06c        0x0
+                0x3ffea06c                _UserExceptionVector_literal_start = ABSOLUTE (.)
  *(.UserExceptionVector.literal)
  .UserExceptionVector.literal
-                0x3ffea068        0x0 ../lib\libmain.a(xtensa_vectors.o)
-                0x3ffea068                _UserExceptionVector_literal_end = ABSOLUTE (.)
+                0x3ffea06c        0x0 ../lib\lib48main.a(xtensa_vectors.o)
+                0x3ffea06c                _UserExceptionVector_literal_end = ABSOLUTE (.)
 
-.bss            0x3ffea068     0xbea0
-                0x3ffea068                . = ALIGN (0x8)
-                0x3ffea068                _bss_start = ABSOLUTE (.)
+.bss            0x3ffea070     0xbe98
+                0x3ffea070                . = ALIGN (0x8)
+                0x3ffea070                _bss_start = ABSOLUTE (.)
  *(.dynsbss)
  *(.sbss)
  *(.sbss.*)
@@ -678,32 +680,31 @@ END GROUP
  *(.gnu.linkonce.sb2.*)
  *(.dynbss)
  *(.bss)
- *fill*         0x3ffea068        0x8 
- .bss           0x3ffea070      0x340 ../lib\libmain.a(xtensa_vectors.o)
- .bss           0x3ffea3b0       0x30 ../lib\libmain.a(app_main.o)
+ .bss           0x3ffea070      0x340 ../lib\lib48main.a(xtensa_vectors.o)
+ .bss           0x3ffea3b0       0x30 ../lib\lib48main.a(app_main.o)
                 0x3ffea3b0                user_init_flag
                 0x3ffea3b4                info
                 0x3ffea3d8                xUserTaskHandle
                 0x3ffea3dc                xWatchDogTaskHandle
- .bss           0x3ffea3e0       0x40 ../lib\libmain.a(ets_timer.o)
+ .bss           0x3ffea3e0       0x40 ../lib\lib48main.a(ets_timer.o)
                 0x3ffea3e4                timer_list
                 0x3ffea3e8                debug_timer
                 0x3ffea3ec                debug_timerfn
- .bss           0x3ffea420        0x4 ../lib\libmain.a(misc.o)
+ .bss           0x3ffea420        0x4 ../lib\lib48main.a(misc.o)
                 0x3ffea420                _putc1
- .bss           0x3ffea424        0x0 ../lib\libmain.a(printf-stdarg.o)
- .bss           0x3ffea424        0x1 ../lib\libmain.a(spi_flash.o)
+ .bss           0x3ffea424        0x0 ../lib\lib48main.a(printf-stdarg.o)
+ .bss           0x3ffea424        0x1 ../lib\lib48main.a(spi_flash.o)
                 0x3ffea424                FlashIsOnGoing
- .bss           0x3ffea425        0x0 ../lib\libmain.a(uart.o)
+ .bss           0x3ffea425        0x0 ../lib\lib48main.a(uart.o)
  *fill*         0x3ffea425        0xb 
- .bss           0x3ffea430      0x131 ../lib\libmain.a(user_interface.o)
+ .bss           0x3ffea430      0x131 ../lib\lib48main.a(user_interface.o)
                 0x3ffea529                cpu_overclock
                 0x3ffea52c                rst_if
                 0x3ffea54c                promiscuous_cb
- .bss           0x3ffea561        0x0 ../lib\libmain.a(os_cpu_a.o)
- .bss           0x3ffea561        0x0 ../lib\libmain.a(xtensa_context.o)
+ .bss           0x3ffea561        0x0 ../lib\lib48main.a(os_cpu_a.o)
+ .bss           0x3ffea561        0x0 ../lib\lib48main.a(xtensa_context.o)
  *fill*         0x3ffea561        0x3 
- .bss           0x3ffea564        0x5 ../lib\libmain.a(timers.o)
+ .bss           0x3ffea564        0x5 ../lib\lib48main.a(timers.o)
  *fill*         0x3ffea569        0x3 
  .bss           0x3ffea56c       0x1c ../lib\libfreertos.a(heap_4.o)
  *fill*         0x3ffea588        0x8 
@@ -907,7 +908,7 @@ END GROUP
  .bss           0x3fff5400       0xb0 ../lib\libwpa.a(aes-internal-dec.o)
  .bss           0x3fff54b0        0x0 ../lib\libwpa.a(aes-internal-enc.o)
  .bss           0x3fff54b0        0x0 ../lib\libwpa.a(aes-internal.o)
- .bss           0x3fff54b0        0x4 ../lib\libmain.a(libc.o)
+ .bss           0x3fff54b0        0x4 ../lib\lib48main.a(libc.o)
  .bss           0x3fff54b4        0x0 ../lib\liblwip.a(ethernetif.o)
  *fill*         0x3fff54b4        0x4 
  .bss           0x3fff54b8       0x2c ../lib\liblwip.a(netdb.o)
@@ -944,28 +945,28 @@ END GROUP
                 0x40100000                _text_start = ABSOLUTE (.)
  *(.UserEnter.text)
  .UserEnter.text
-                0x40100000        0xd ../lib\libmain.a(xtensa_vectors.o)
+                0x40100000        0xd ../lib\lib48main.a(xtensa_vectors.o)
                                  0x14 (size before relaxing)
                 0x40100004                call_user_start
                 0x40100010                . = ALIGN (0x10)
  *fill*         0x4010000d        0x3 
  *(.DebugExceptionVector.text)
  .DebugExceptionVector.text
-                0x40100010        0x9 ../lib\libmain.a(xtensa_vectors.o)
+                0x40100010        0x9 ../lib\lib48main.a(xtensa_vectors.o)
                                  0x10 (size before relaxing)
                 0x40100010                _DebugExceptionVector
                 0x40100020                . = ALIGN (0x10)
  *fill*         0x40100019        0x7 
  *(.NMIExceptionVector.text)
  .NMIExceptionVector.text
-                0x40100020        0x6 ../lib\libmain.a(xtensa_vectors.o)
+                0x40100020        0x6 ../lib\lib48main.a(xtensa_vectors.o)
                                   0xd (size before relaxing)
                 0x40100020                _NMIExceptionVector
                 0x40100030                . = ALIGN (0x10)
  *fill*         0x40100026        0xa 
  *(.KernelExceptionVector.text)
  .KernelExceptionVector.text
-                0x40100030        0x6 ../lib\libmain.a(xtensa_vectors.o)
+                0x40100030        0x6 ../lib\lib48main.a(xtensa_vectors.o)
                                   0xd (size before relaxing)
                 0x40100030                _KernelExceptionVector
                 0x40100036        0x4 LONG 0x0
@@ -976,7 +977,7 @@ END GROUP
  *fill*         0x40100046        0xa 
  *(.UserExceptionVector.text)
  .UserExceptionVector.text
-                0x40100050        0x6 ../lib\libmain.a(xtensa_vectors.o)
+                0x40100050        0x6 ../lib\lib48main.a(xtensa_vectors.o)
                                   0xd (size before relaxing)
                 0x40100050                _UserExceptionVector
                 0x40100056        0x4 LONG 0x0
@@ -987,7 +988,7 @@ END GROUP
  *fill*         0x40100066        0xa 
  *(.DoubleExceptionVector.text)
  .DoubleExceptionVector.text
-                0x40100070        0x9 ../lib\libmain.a(xtensa_vectors.o)
+                0x40100070        0x9 ../lib\lib48main.a(xtensa_vectors.o)
                                  0x10 (size before relaxing)
                 0x40100070                _DoubleExceptionVector
                 0x40100079        0x4 LONG 0x0
@@ -1000,22 +1001,22 @@ END GROUP
  *(.init.literal)
  *(.init)
  *(.literal .text .literal.* .text.* .stub .gnu.warning .gnu.linkonce.literal.* .gnu.linkonce.t.*.literal .gnu.linkonce.t.*)
- .text          0x40100090      0x19b ../lib\libmain.a(xtensa_vectors.o)
+ .text          0x40100090      0x19b ../lib\lib48main.a(xtensa_vectors.o)
                                 0x1c7 (size before relaxing)
                 0x40100090                _xt_panic
                 0x40100138                _xt_user_exit
  *fill*         0x4010022b        0x1 
- .text          0x4010022c      0x3b6 ../lib\libmain.a(app_main.o)
+ .text          0x4010022c      0x3b6 ../lib\lib48main.a(app_main.o)
                                 0x3f6 (size before relaxing)
                 0x40100360                user_fatal_exception_handler
                 0x40100450                user_start
                 0x40100598                vApplicationStackOverflowHook
                 0x401005c4                vApplicationTickHook
  *fill*         0x401005e2        0x2 
- .text          0x401005e4        0xb ../lib\libmain.a(misc.o)
+ .text          0x401005e4        0xb ../lib\lib48main.a(misc.o)
                 0x401005e8                os_get_cpu_frequency
  *fill*         0x401005ef        0x1 
- .text          0x401005f0      0x5a4 ../lib\libmain.a(printf-stdarg.o)
+ .text          0x401005f0      0x5a4 ../lib\lib48main.a(printf-stdarg.o)
                                 0x5d0 (size before relaxing)
                 0x401009f4                printf
                 0x401009f4                ets_printf
@@ -1024,7 +1025,7 @@ END GROUP
                 0x40100b58                puts
                 0x40100b70                putchar
                 0x40100b90                __write
- .text          0x40100b94      0x43c ../lib\libmain.a(spi_flash.o)
+ .text          0x40100b94      0x43c ../lib\lib48main.a(spi_flash.o)
                                 0x548 (size before relaxing)
                 0x40100bb4                SPIReadModeCnfig
                 0x40100c38                SPIWrite
@@ -1036,12 +1037,12 @@ END GROUP
                 0x40100eac                spi_flash_erase_sector
                 0x40100efc                spi_flash_write
                 0x40100f70                spi_flash_read
- .text          0x40100fd0      0x238 ../lib\libmain.a(user_interface.o)
+ .text          0x40100fd0      0x238 ../lib\lib48main.a(user_interface.o)
                                 0x284 (size before relaxing)
                 0x40100ff0                system_restart_in_nmi
                 0x40101160                system_rtc_mem_write
                 0x401011b4                system_rtc_mem_read
- .text          0x40101208      0x173 ../lib\libmain.a(os_cpu_a.o)
+ .text          0x40101208      0x173 ../lib\lib48main.a(os_cpu_a.o)
                                 0x1b3 (size before relaxing)
                 0x40101208                vPortYield
                 0x40101244                _xt_int_enter
@@ -1244,7 +1245,7 @@ END GROUP
  .text          0x40106520        0xb ../lib\libnet80211.a(wl_chm.o)
                 0x40106524                chm_get_current_channel
  *fill*         0x4010652b        0x1 
- .text          0x4010652c       0x76 ../lib\libmain.a(libc.o)
+ .text          0x4010652c       0x76 ../lib\lib48main.a(libc.o)
                                  0x7e (size before relaxing)
                 0x40106540                rand_r
                 0x40106590                rand
@@ -1260,23 +1261,23 @@ END GROUP
  .text          0x40106818       0x21 ../lib\libmgcc.a(_popcountsi2.o)
                 0x40106818                __popcountsi2
  *fill*         0x40106839        0x3 
- .literal       0x4010683c        0x0 ../lib\libmain.a(xtensa_vectors.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(xtensa_vectors.o)
  *fill*         0x4010683c        0x0 
- .literal       0x4010683c        0x0 ../lib\libmain.a(app_main.o)
- .text          0x4010683c        0x0 ../lib\libmain.a(ets_timer.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(app_main.o)
+ .text          0x4010683c        0x0 ../lib\lib48main.a(ets_timer.o)
  *fill*         0x4010683c        0x0 
- .literal       0x4010683c        0x0 ../lib\libmain.a(misc.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(misc.o)
  *fill*         0x4010683c        0x0 
- .literal       0x4010683c        0x0 ../lib\libmain.a(printf-stdarg.o)
- .literal       0x4010683c        0x0 ../lib\libmain.a(spi_flash.o)
- .text          0x4010683c        0x0 ../lib\libmain.a(uart.o)
- .literal       0x4010683c        0x0 ../lib\libmain.a(user_interface.o)
- .literal       0x4010683c        0x0 ../lib\libmain.a(os_cpu_a.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(printf-stdarg.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(spi_flash.o)
+ .text          0x4010683c        0x0 ../lib\lib48main.a(uart.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(user_interface.o)
+ .literal       0x4010683c        0x0 ../lib\lib48main.a(os_cpu_a.o)
  *fill*         0x4010683c        0x0 
- .text          0x4010683c       0x3d ../lib\libmain.a(xtensa_context.o)
+ .text          0x4010683c       0x3d ../lib\lib48main.a(xtensa_context.o)
                 0x4010683c                _xt_context_save
                 0x40106858                _xt_context_restore
- .text          0x40106879        0x0 ../lib\libmain.a(timers.o)
+ .text          0x40106879        0x0 ../lib\lib48main.a(timers.o)
  *fill*         0x40106879        0x3 
  .literal       0x4010687c        0x0 ../lib\libfreertos.a(heap_4.o)
  *fill*         0x4010687c        0x0 
@@ -1429,7 +1430,7 @@ END GROUP
  .text          0x40106a01        0x0 ../lib\libwpa.a(aes-internal-enc.o)
  .text          0x40106a01        0x0 ../lib\libwpa.a(aes-internal.o)
  *fill*         0x40106a01        0x3 
- .literal       0x40106a04        0x0 ../lib\libmain.a(libc.o)
+ .literal       0x40106a04        0x0 ../lib\lib48main.a(libc.o)
  .text          0x40106a04        0x0 ../lib\liblwip.a(ethernetif.o)
  .text          0x40106a04        0x0 ../lib\liblwip.a(netdb.o)
  .text          0x40106a04        0x0 main/.output/eagle/lib/libaddmmain.a(phy_chip_v6_unused.o)
@@ -1454,27 +1455,27 @@ END GROUP
 .UserEnter.literal
                 0x40106a68        0x0
  .UserEnter.literal
-                0x40106a68        0x0 ../lib\libmain.a(xtensa_vectors.o)
+                0x40106a68        0x0 ../lib\lib48main.a(xtensa_vectors.o)
 
 .DebugExceptionVector.literal
                 0x40106a68        0x0
  .DebugExceptionVector.literal
-                0x40106a68        0x0 ../lib\libmain.a(xtensa_vectors.o)
+                0x40106a68        0x0 ../lib\lib48main.a(xtensa_vectors.o)
 
 .DoubleExceptionVector.literal
                 0x40106a68        0x0
  .DoubleExceptionVector.literal
-                0x40106a68        0x0 ../lib\libmain.a(xtensa_vectors.o)
+                0x40106a68        0x0 ../lib\lib48main.a(xtensa_vectors.o)
 
 .KernelExceptionVector.literal
                 0x40106a68        0x0
  .KernelExceptionVector.literal
-                0x40106a68        0x0 ../lib\libmain.a(xtensa_vectors.o)
+                0x40106a68        0x0 ../lib\lib48main.a(xtensa_vectors.o)
 
 .NMIExceptionVector.literal
                 0x40106a68        0x0
  .NMIExceptionVector.literal
-                0x40106a68        0x0 ../lib\libmain.a(xtensa_vectors.o)
+                0x40106a68        0x0 ../lib\lib48main.a(xtensa_vectors.o)
 
 .lit4           0x40106a68        0x0
                 0x40106a68                _lit4_start = ABSOLUTE (.)
@@ -1486,13 +1487,13 @@ END GROUP
 .irom0.text     0x40209000    0x3f628
                 0x40209000                _irom0_text_start = ABSOLUTE (.)
  *(.irom0.literal .irom.literal .irom.text.literal .irom0.text .irom.text)
- .irom0.text    0x40209000      0x68a ../lib\libmain.a(app_main.o)
+ .irom0.text    0x40209000      0x68a ../lib\lib48main.a(app_main.o)
                                 0x7ca (size before relaxing)
                 0x402092d0                uart_rx_one_char
                 0x402092f8                wdt_init
                 0x402093a0                user_init_task
  *fill*         0x4020968a        0x2 
- .irom0.text    0x4020968c      0x42f ../lib\libmain.a(ets_timer.o)
+ .irom0.text    0x4020968c      0x42f ../lib\lib48main.a(ets_timer.o)
                                 0x4cf (size before relaxing)
                 0x4020976c                ets_timer_setfn
                 0x402097dc                ets_timer_disarm
@@ -1503,7 +1504,7 @@ END GROUP
                 0x40209910                ets_timer_handler_isr
                 0x40209a30                ets_timer_init
  *fill*         0x40209abb        0x1 
- .irom0.text    0x40209abc       0xd4 ../lib\libmain.a(misc.o)
+ .irom0.text    0x40209abc       0xd4 ../lib\lib48main.a(misc.o)
                                  0xe4 (size before relaxing)
                 0x40209ac4                os_delay_us
                 0x40209ac4                ets_delay_us
@@ -1513,13 +1514,13 @@ END GROUP
                 0x40209b0c                os_putc
                 0x40209b24                gpio_output_set
                 0x40209b48                rtc_get_reset_reason
- .irom0.text    0x40209b90       0x4a ../lib\libmain.a(uart.o)
+ .irom0.text    0x40209b90       0x4a ../lib\lib48main.a(uart.o)
                                  0x4e (size before relaxing)
                 0x40209b90                uart_buff_switch
                 0x40209ba0                uart_div_modify
                 0x40209bd8                Uart_Init
  *fill*         0x40209bda        0x2 
- .irom0.text    0x40209bdc     0x2051 ../lib\libmain.a(user_interface.o)
+ .irom0.text    0x40209bdc     0x2051 ../lib\lib48main.a(user_interface.o)
                                0x25fd (size before relaxing)
                 0x40209d7c                system_pp_recycle_rx_pkt
                 0x40209d90                system_adc_read
@@ -1601,7 +1602,7 @@ END GROUP
                 0x4020bbb4                system_uart_swap
                 0x4020bc28                system_get_sdk_version
  *fill*         0x4020bc2d        0x3 
- .irom0.text    0x4020bc30      0x181 ../lib\libmain.a(timers.o)
+ .irom0.text    0x4020bc30      0x181 ../lib\lib48main.a(timers.o)
                                 0x1c1 (size before relaxing)
                 0x4020bc38                os_timer_setfn
                 0x4020bce4                os_timer_arm
@@ -1957,8 +1958,8 @@ END GROUP
                 0x40217b90                netbuf_data
                 0x40217bb4                netbuf_next
                 0x40217bd0                netbuf_first
- .irom0.text    0x40217bd8      0x542 user/.output/eagle/lib/libuser.a(user_main.o)
-                                0x6c6 (size before relaxing)
+ .irom0.text    0x40217bd8      0x546 user/.output/eagle/lib/libuser.a(user_main.o)
+                                0x6ca (size before relaxing)
                 0x40217bf4                tskconnect
                 0x40217cb0                tskmad
                 0x40217ddc                recalcAddDelSamp
@@ -1966,20 +1967,20 @@ END GROUP
                 0x40217ea4                getIpForHost
                 0x40217f00                openConn
                 0x40217fe8                tskreader
-                0x402180c0                user_init
- *fill*         0x4021811a        0x2 
- .irom0.text    0x4021811c      0x326 user/.output/eagle/lib/libuser.a(spiram_fifo.o)
+                0x402180c4                user_init
+ *fill*         0x4021811e        0x2 
+ .irom0.text    0x40218120      0x326 user/.output/eagle/lib/libuser.a(spiram_fifo.o)
                                 0x412 (size before relaxing)
-                0x40218140                spiRamFifoInit
-                0x402181c4                spiRamFifoRead
-                0x402182a0                spiRamFifoWrite
-                0x40218378                spiRamFifoFill
-                0x402183b0                spiRamFifoFree
-                0x402183cc                spiRamFifoLen
-                0x402183d4                spiRamGetOverrunCt
-                0x4021840c                spiRamGetUnderrunCt
- *fill*         0x40218442        0x2 
- .irom0.text    0x40218444      0x2bd user/.output/eagle/lib/libuser.a(iram_buf.o)
+                0x40218144                spiRamFifoInit
+                0x402181c8                spiRamFifoRead
+                0x402182a4                spiRamFifoWrite
+                0x4021837c                spiRamFifoFill
+                0x402183b4                spiRamFifoFree
+                0x402183d0                spiRamFifoLen
+                0x402183d8                spiRamGetOverrunCt
+                0x40218410                spiRamGetUnderrunCt
+ *fill*         0x40218446        0x2 
+ .irom0.text    0x40218448      0x2b9 user/.output/eagle/lib/libuser.a(iram_buf.o)
                                 0x2f5 (size before relaxing)
                 0x40218474                get_eram_size
                 0x40218580                eram_init
@@ -2024,783 +2025,783 @@ END GROUP
                                0x290f (size before relaxing)
                 0x4021cd6c                mad_layer_III
  *fill*         0x4021d217        0x1 
- .irom0.text    0x4021d218      0x3e7 driver/.output/eagle/lib/libdriver.a(uart.o)
+ .irom0.text    0x4021d218      0x3eb driver/.output/eagle/lib/libdriver.a(uart.o)
                                 0x43f (size before relaxing)
                 0x4021d21c                UART_SetWordLength
                 0x4021d23c                UART_SetStopBits
                 0x4021d260                UART_SetLineInverse
                 0x4021d284                UART_SetParity
                 0x4021d2b0                UART_SetBaudrate
-                0x4021d2f4                UART_SetFlowCtrl
-                0x4021d39c                UART_WaitTxFifoEmpty
-                0x4021d3b4                UART_ResetFifo
-                0x4021d3dc                UART_ClearIntrStatus
-                0x4021d3f4                UART_SetIntrEna
-                0x4021d40c                UART_intr_handler_register
-                0x4021d42c                UART_SetPrintPort
-                0x4021d458                UART_ParamConfig
-                0x4021d510                UART_IntrConfig
-                0x4021d58c                uart_init_new
- *fill*         0x4021d5ff        0x1 
- .irom0.text    0x4021d600      0x2cb driver/.output/eagle/lib/libdriver.a(i2s_freertos.o)
+                0x4021d2f8                UART_SetFlowCtrl
+                0x4021d3a0                UART_WaitTxFifoEmpty
+                0x4021d3b8                UART_ResetFifo
+                0x4021d3e0                UART_ClearIntrStatus
+                0x4021d3f8                UART_SetIntrEna
+                0x4021d410                UART_intr_handler_register
+                0x4021d430                UART_SetPrintPort
+                0x4021d45c                UART_ParamConfig
+                0x4021d514                UART_IntrConfig
+                0x4021d590                uart_init_new
+ *fill*         0x4021d603        0x1 
+ .irom0.text    0x4021d604      0x2cb driver/.output/eagle/lib/libdriver.a(i2s_freertos.o)
                                 0x2ff (size before relaxing)
-                0x4021d684                i2sInit
-                0x4021d8c4                i2sGetUnderrunCnt
- *fill*         0x4021d8cb        0x1 
- .irom0.text    0x4021d8cc     0x101b ../lib\libmphy.a(phy_chip_v5_ana_romfunc.o)
+                0x4021d688                i2sInit
+                0x4021d8c8                i2sGetUnderrunCnt
+ *fill*         0x4021d8cf        0x1 
+ .irom0.text    0x4021d8d0     0x101b ../lib\libmphy.a(phy_chip_v5_ana_romfunc.o)
                                0x112b (size before relaxing)
-                0x4021d8d0                rom_ana_inf_gating_en
-                0x4021da74                rom_set_channel_freq
-                0x4021ddb8                rom_chip_50_set_channel
-                0x4021dfb8                rom_chip_v5_rx_init
-                0x4021e024                rom_chip_v5_tx_init
-                0x4021e0fc                rom_i2c_readReg
-                0x4021e130                rom_i2c_readReg_Mask
-                0x4021e16c                rom_i2c_writeReg
-                0x4021e1a0                rom_i2c_writeReg_Mask
-                0x4021e214                rom_pbus_debugmode
-                0x4021e2a4                rom_pbus_enter_debugmode
-                0x4021e2d8                rom_pbus_exit_debugmode
-                0x4021e30c                rom_pbus_force_test
-                0x4021e368                rom_pbus_rd
-                0x4021e3d4                rom_pbus_set_rxgain
-                0x4021e498                rom_pbus_set_txgain
-                0x4021e4d0                rom_pbus_workmode
-                0x4021e510                rom_pbus_xpd_rx_off
-                0x4021e558                rom_pbus_xpd_rx_on
-                0x4021e588                rom_pbus_xpd_tx_off
-                0x4021e5c8                rom_pbus_xpd_tx_on
-                0x4021e628                rom_pbus_xpd_tx_on__low_gain
-                0x4021e68c                rom_phy_reset_req
-                0x4021e6a4                rom_restart_cal
-                0x4021e6f0                rom_rfpll_reset
-                0x4021e760                rom_write_rfpll_sdm
-                0x4021e808                rom_rfpll_set_freq
- *fill*         0x4021e8e7        0x1 
- .irom0.text    0x4021e8e8      0x9e0 ../lib\libmphy.a(phy_chip_v5_romfunc.o)
+                0x4021d8d4                rom_ana_inf_gating_en
+                0x4021da78                rom_set_channel_freq
+                0x4021ddbc                rom_chip_50_set_channel
+                0x4021dfbc                rom_chip_v5_rx_init
+                0x4021e028                rom_chip_v5_tx_init
+                0x4021e100                rom_i2c_readReg
+                0x4021e134                rom_i2c_readReg_Mask
+                0x4021e170                rom_i2c_writeReg
+                0x4021e1a4                rom_i2c_writeReg_Mask
+                0x4021e218                rom_pbus_debugmode
+                0x4021e2a8                rom_pbus_enter_debugmode
+                0x4021e2dc                rom_pbus_exit_debugmode
+                0x4021e310                rom_pbus_force_test
+                0x4021e36c                rom_pbus_rd
+                0x4021e3d8                rom_pbus_set_rxgain
+                0x4021e49c                rom_pbus_set_txgain
+                0x4021e4d4                rom_pbus_workmode
+                0x4021e514                rom_pbus_xpd_rx_off
+                0x4021e55c                rom_pbus_xpd_rx_on
+                0x4021e58c                rom_pbus_xpd_tx_off
+                0x4021e5cc                rom_pbus_xpd_tx_on
+                0x4021e62c                rom_pbus_xpd_tx_on__low_gain
+                0x4021e690                rom_phy_reset_req
+                0x4021e6a8                rom_restart_cal
+                0x4021e6f4                rom_rfpll_reset
+                0x4021e764                rom_write_rfpll_sdm
+                0x4021e80c                rom_rfpll_set_freq
+ *fill*         0x4021e8eb        0x1 
+ .irom0.text    0x4021e8ec      0x9e0 ../lib\libmphy.a(phy_chip_v5_romfunc.o)
                                 0xab4 (size before relaxing)
-                0x4021e8e8                rom_abs_temp
-                0x4021e8f8                rom_chip_v5_disable_cca
-                0x4021e914                rom_chip_v5_enable_cca
-                0x4021e934                rom_chip_v5_sense_backoff
-                0x4021e980                rom_dc_iq_est
-                0x4021e9dc                rom_en_pwdet
-                0x4021ea4c                rom_get_bb_atten
-                0x4021ea74                rom_get_corr_power
-                0x4021eaf0                rom_get_fm_sar_dout
-                0x4021eb8c                rom_get_noisefloor
-                0x4021eba8                rom_get_power_db
-                0x4021ebf8                rom_iq_est_disable
-                0x4021ec28                rom_iq_est_enable
-                0x4021ec7c                rom_linear_to_db
-                0x4021ecf4                rom_set_txclk_en
-                0x4021ed38                rom_set_rxclk_en
-                0x4021ed88                rom_mhz2ieee
-                0x4021edf0                rom_rxiq_get_mis
-                0x4021ef1c                rom_sar_init
-                0x4021ef70                rom_set_ana_inf_tx_scale
-                0x4021efac                rom_set_loopback_gain
-                0x4021f014                rom_set_noise_floor
-                0x4021f054                rom_start_noisefloor
-                0x4021f094                rom_start_tx_tone
-                0x4021f160                rom_stop_tx_tone
-                0x4021f1ec                rom_txtone_linear_pwr
-                0x4021f258                rom_tx_mac_disable
-                0x4021f294                rom_tx_mac_enable
- .irom0.text    0x4021f2c8       0xfa ../lib\libmphy.a(phy.o)
+                0x4021e8ec                rom_abs_temp
+                0x4021e8fc                rom_chip_v5_disable_cca
+                0x4021e918                rom_chip_v5_enable_cca
+                0x4021e938                rom_chip_v5_sense_backoff
+                0x4021e984                rom_dc_iq_est
+                0x4021e9e0                rom_en_pwdet
+                0x4021ea50                rom_get_bb_atten
+                0x4021ea78                rom_get_corr_power
+                0x4021eaf4                rom_get_fm_sar_dout
+                0x4021eb90                rom_get_noisefloor
+                0x4021ebac                rom_get_power_db
+                0x4021ebfc                rom_iq_est_disable
+                0x4021ec2c                rom_iq_est_enable
+                0x4021ec80                rom_linear_to_db
+                0x4021ecf8                rom_set_txclk_en
+                0x4021ed3c                rom_set_rxclk_en
+                0x4021ed8c                rom_mhz2ieee
+                0x4021edf4                rom_rxiq_get_mis
+                0x4021ef20                rom_sar_init
+                0x4021ef74                rom_set_ana_inf_tx_scale
+                0x4021efb0                rom_set_loopback_gain
+                0x4021f018                rom_set_noise_floor
+                0x4021f058                rom_start_noisefloor
+                0x4021f098                rom_start_tx_tone
+                0x4021f164                rom_stop_tx_tone
+                0x4021f1f0                rom_txtone_linear_pwr
+                0x4021f25c                rom_tx_mac_disable
+                0x4021f298                rom_tx_mac_enable
+ .irom0.text    0x4021f2cc       0xfa ../lib\libmphy.a(phy.o)
                                 0x11e (size before relaxing)
-                0x4021f2cc                rf_init
-                0x4021f2e8                bb_init
-                0x4021f300                phy_init
-                0x4021f330                RFChannelSel
-                0x4021f34c                phy_delete_channel
-                0x4021f364                phy_enable_agc
-                0x4021f37c                phy_disable_agc
-                0x4021f394                phy_initialize_bb
-                0x4021f3ac                phy_set_sense
- *fill*         0x4021f3c2        0x2 
- .irom0.text    0x4021f3c4     0x3910 ../lib\libmphy.a(phy_chip_v6.o)
+                0x4021f2d0                rf_init
+                0x4021f2ec                bb_init
+                0x4021f304                phy_init
+                0x4021f334                RFChannelSel
+                0x4021f350                phy_delete_channel
+                0x4021f368                phy_enable_agc
+                0x4021f380                phy_disable_agc
+                0x4021f398                phy_initialize_bb
+                0x4021f3b0                phy_set_sense
+ *fill*         0x4021f3c6        0x2 
+ .irom0.text    0x4021f3c8     0x3910 ../lib\libmphy.a(phy_chip_v6.o)
                                0x3fb4 (size before relaxing)
-                0x4021f3c4                ram_tx_mac_enable
-                0x4021f3c8                rtc_mem_backup
-                0x4021f3f8                rtc_mem_recovery
-                0x4021f428                set_cal_rxdc
-                0x4021f4e0                set_rx_gain_cal_iq
-                0x4021f840                gen_rx_gain_table
-                0x4021f980                pbus_set_rxbbgain
-                0x4021f9fc                set_rx_gain_testchip_50
-                0x4021fd14                ram_get_corr_power
-                0x4021fe04                check_data_func
-                0x4021fe20                do_noisefloor_lsleep_v50
-                0x4021fe54                do_noisefloor
-                0x4021fec4                start_dig_rx
-                0x4021ff08                stop_dig_rx
-                0x4021ff34                chip_v6_set_chanfreq
-                0x4021ff78                tx_cap_init
-                0x40220128                target_power_add_backoff
-                0x40220174                tx_pwctrl_init_cal
-                0x402202dc                tx_atten_set_interp
-                0x40220554                tx_pwctrl_init
-                0x40220650                ram_get_noisefloor
-                0x4022066c                get_noisefloor_sat
-                0x4022069c                ram_set_noise_floor
-                0x402206f0                ram_start_noisefloor
-                0x40220738                read_hw_noisefloor
-                0x40220764                noise_check_loop
-                0x402208d0                noise_init
-                0x40220ad0                target_power_backoff
-                0x40220b24                sdt_on_noise_start
-                0x40220ba8                chip_v6_set_chan_rx_cmp
-                0x40220d30                chip_v6_set_chan_misc
-                0x40220da0                phy_dig_spur_set
-                0x40221100                phy_dig_spur_prot
-                0x40221338                chip_v6_rxmax_ext_dig
-                0x40221384                chip_v6_rxmax_ext
-                0x40221430                phy_bb_rx_cfg
-                0x40221838                uart_wait_idle
-                0x4022186c                phy_pbus_soc_cfg
-                0x4022192c                phy_gpio_cfg
-                0x40221c64                tx_cont_en
-                0x40221d08                tx_cont_dis
-                0x40221d5c                tx_cont_cfg
-                0x40221d80                chip_v6_initialize_bb
-                0x40221ef0                periodic_cal
-                0x40222004                bbpll_cal
-                0x40222090                periodic_cal_top
-                0x402220f4                register_chipv6_phy_init_param
-                0x40222394                change_bbpll160_sleep
-                0x40222484                change_bbpll160
-                0x402224b4                set_crystal_uart
-                0x40222524                ant_switch_init
-                0x402225d0                reduce_current_init
-                0x40222638                rtc_mem_check
-                0x40222670                phy_afterwake_set_rfoption
-                0x4022269c                deep_sleep_set_option
-                0x40222714                register_chipv6_phy
-                0x402229d0                set_dpd_bypass
-                0x40222a28                set_rf_gain_stage10
-                0x40222a58                get_vdd33_offset
-                0x40222acc                get_phy_target_power
-                0x40222b7c                set_most_pwr_reg
-                0x40222c50                phy_set_most_tpw
-                0x40222c74                phy_vdd33_set_tpw
-                0x40222c8c                get_adc_rand
-                0x40222cc0                phy_get_rand
- .irom0.text    0x40222cd4     0x1820 ../lib\libmphy.a(phy_chip_v6_ana.o)
+                0x4021f3c8                ram_tx_mac_enable
+                0x4021f3cc                rtc_mem_backup
+                0x4021f3fc                rtc_mem_recovery
+                0x4021f42c                set_cal_rxdc
+                0x4021f4e4                set_rx_gain_cal_iq
+                0x4021f844                gen_rx_gain_table
+                0x4021f984                pbus_set_rxbbgain
+                0x4021fa00                set_rx_gain_testchip_50
+                0x4021fd18                ram_get_corr_power
+                0x4021fe08                check_data_func
+                0x4021fe24                do_noisefloor_lsleep_v50
+                0x4021fe58                do_noisefloor
+                0x4021fec8                start_dig_rx
+                0x4021ff0c                stop_dig_rx
+                0x4021ff38                chip_v6_set_chanfreq
+                0x4021ff7c                tx_cap_init
+                0x4022012c                target_power_add_backoff
+                0x40220178                tx_pwctrl_init_cal
+                0x402202e0                tx_atten_set_interp
+                0x40220558                tx_pwctrl_init
+                0x40220654                ram_get_noisefloor
+                0x40220670                get_noisefloor_sat
+                0x402206a0                ram_set_noise_floor
+                0x402206f4                ram_start_noisefloor
+                0x4022073c                read_hw_noisefloor
+                0x40220768                noise_check_loop
+                0x402208d4                noise_init
+                0x40220ad4                target_power_backoff
+                0x40220b28                sdt_on_noise_start
+                0x40220bac                chip_v6_set_chan_rx_cmp
+                0x40220d34                chip_v6_set_chan_misc
+                0x40220da4                phy_dig_spur_set
+                0x40221104                phy_dig_spur_prot
+                0x4022133c                chip_v6_rxmax_ext_dig
+                0x40221388                chip_v6_rxmax_ext
+                0x40221434                phy_bb_rx_cfg
+                0x4022183c                uart_wait_idle
+                0x40221870                phy_pbus_soc_cfg
+                0x40221930                phy_gpio_cfg
+                0x40221c68                tx_cont_en
+                0x40221d0c                tx_cont_dis
+                0x40221d60                tx_cont_cfg
+                0x40221d84                chip_v6_initialize_bb
+                0x40221ef4                periodic_cal
+                0x40222008                bbpll_cal
+                0x40222094                periodic_cal_top
+                0x402220f8                register_chipv6_phy_init_param
+                0x40222398                change_bbpll160_sleep
+                0x40222488                change_bbpll160
+                0x402224b8                set_crystal_uart
+                0x40222528                ant_switch_init
+                0x402225d4                reduce_current_init
+                0x4022263c                rtc_mem_check
+                0x40222674                phy_afterwake_set_rfoption
+                0x402226a0                deep_sleep_set_option
+                0x40222718                register_chipv6_phy
+                0x402229d4                set_dpd_bypass
+                0x40222a2c                set_rf_gain_stage10
+                0x40222a5c                get_vdd33_offset
+                0x40222ad0                get_phy_target_power
+                0x40222b80                set_most_pwr_reg
+                0x40222c54                phy_set_most_tpw
+                0x40222c78                phy_vdd33_set_tpw
+                0x40222c90                get_adc_rand
+                0x40222cc4                phy_get_rand
+ .irom0.text    0x40222cd8     0x1820 ../lib\libmphy.a(phy_chip_v6_ana.o)
                                0x1b0c (size before relaxing)
-                0x40222cd4                ram_pbus_set_rxgain
-                0x40222d9c                ram_pbus_debugmode
-                0x40222e50                ram_pbus_xpd_tx_on
-                0x40222ebc                set_rf_freq_offset
-                0x40222f2c                chip_v6_rxmax_ext_ana
-                0x4022307c                ram_chip_v6_rx_init
-                0x402230a4                tsen_meas
-                0x4022314c                readvdd33
-                0x402232d4                txpwr_offset
-                0x40223394                set_txcap_reg
-                0x40223414                ram_ana_inf_gating_en
-                0x40223574                ram_restart_cal
-                0x402235e0                wait_rfpll_cal_end
-                0x40223650                ram_rfpll_set_freq
-                0x40223724                ram_set_channel_freq
-                0x40223a54                chip_60_set_channel
-                0x40223c1c                chip_v6_set_chan_offset
-                0x40223c5c                chip_v6_set_chan
-                0x40223cd0                chip_v6_set_chan_wakeup
-                0x40223d40                chip_v6_rf_init
-                0x40223f4c                low_power_set
-                0x40223fa8                test_tout
-                0x402241e8                check_data_flag
-                0x4022420c                phy_get_check_flag
-                0x4022437c                phy_get_vdd33
- .irom0.text    0x402244f4     0x2134 ../lib\libmphy.a(phy_chip_v6_cal.o)
+                0x40222cd8                ram_pbus_set_rxgain
+                0x40222da0                ram_pbus_debugmode
+                0x40222e54                ram_pbus_xpd_tx_on
+                0x40222ec0                set_rf_freq_offset
+                0x40222f30                chip_v6_rxmax_ext_ana
+                0x40223080                ram_chip_v6_rx_init
+                0x402230a8                tsen_meas
+                0x40223150                readvdd33
+                0x402232d8                txpwr_offset
+                0x40223398                set_txcap_reg
+                0x40223418                ram_ana_inf_gating_en
+                0x40223578                ram_restart_cal
+                0x402235e4                wait_rfpll_cal_end
+                0x40223654                ram_rfpll_set_freq
+                0x40223728                ram_set_channel_freq
+                0x40223a58                chip_60_set_channel
+                0x40223c20                chip_v6_set_chan_offset
+                0x40223c60                chip_v6_set_chan
+                0x40223cd4                chip_v6_set_chan_wakeup
+                0x40223d44                chip_v6_rf_init
+                0x40223f50                low_power_set
+                0x40223fac                test_tout
+                0x402241ec                check_data_flag
+                0x40224210                phy_get_check_flag
+                0x40224380                phy_get_vdd33
+ .irom0.text    0x402244f8     0x2134 ../lib\libmphy.a(phy_chip_v6_cal.o)
                                0x2388 (size before relaxing)
-                0x402244f4                txbbgain2dcoindex
-                0x40224514                dcoindex2txbbgain
-                0x40224534                init_cal_dcoffset
-                0x402245f8                set_rfanagain_dc_reg
-                0x40224694                set_txdc_pbus
-                0x40224700                get_rf_gain_qdb
-                0x40224728                correct_rf_ana_gain
-                0x40224830                get_sar_dout
-                0x402248c8                cal_rf_ana_gain
-                0x402249a0                meas_tone_pwr_db
-                0x40224a10                tx_pwr_backoff
-                0x40224b5c                get_fcc_1m2m_pwr_offset
-                0x40224b98                ram_set_txbb_atten
-                0x40224c28                txiq_get_mis_pwr
-                0x40224ccc                txiq_cover
-                0x40224ee4                ram_rfcal_txiq
-                0x40225150                rc_cal
-                0x40225310                get_target_power_offset
-                0x40225418                get_pwctrl_correct
-                0x40225470                tx_pwctrl_cal
-                0x402257b0                tx_pwctrl_bg_init
-                0x4022582c                tx_pwctrl_background
-                0x402258e4                read_sar_dout
-                0x40225948                ram_get_fm_sar_dout
-                0x402259ec                ram_cal_tos_v60
-                0x40225bcc                ram_get_bb_atten
-                0x40225bfc                ram_rfcal_txcap
-                0x40225dc0                ram_rfcal_pwrctrl
-                0x40225fe8                ram_rxiq_get_mis
-                0x402261b4                ram_rxiq_cover_mg_mp
-                0x40226358                ram_rfcal_rxiq
-                0x40226564                dpd_scale_set
-                0x402265ac                dpd_mem_write
- .irom0.text    0x40226628      0xce2 ../lib\libmphy.a(phy_sleep.o)
+                0x402244f8                txbbgain2dcoindex
+                0x40224518                dcoindex2txbbgain
+                0x40224538                init_cal_dcoffset
+                0x402245fc                set_rfanagain_dc_reg
+                0x40224698                set_txdc_pbus
+                0x40224704                get_rf_gain_qdb
+                0x4022472c                correct_rf_ana_gain
+                0x40224834                get_sar_dout
+                0x402248cc                cal_rf_ana_gain
+                0x402249a4                meas_tone_pwr_db
+                0x40224a14                tx_pwr_backoff
+                0x40224b60                get_fcc_1m2m_pwr_offset
+                0x40224b9c                ram_set_txbb_atten
+                0x40224c2c                txiq_get_mis_pwr
+                0x40224cd0                txiq_cover
+                0x40224ee8                ram_rfcal_txiq
+                0x40225154                rc_cal
+                0x40225314                get_target_power_offset
+                0x4022541c                get_pwctrl_correct
+                0x40225474                tx_pwctrl_cal
+                0x402257b4                tx_pwctrl_bg_init
+                0x40225830                tx_pwctrl_background
+                0x402258e8                read_sar_dout
+                0x4022594c                ram_get_fm_sar_dout
+                0x402259f0                ram_cal_tos_v60
+                0x40225bd0                ram_get_bb_atten
+                0x40225c00                ram_rfcal_txcap
+                0x40225dc4                ram_rfcal_pwrctrl
+                0x40225fec                ram_rxiq_get_mis
+                0x402261b8                ram_rxiq_cover_mg_mp
+                0x4022635c                ram_rfcal_rxiq
+                0x40226568                dpd_scale_set
+                0x402265b0                dpd_mem_write
+ .irom0.text    0x4022662c      0xce2 ../lib\libmphy.a(phy_sleep.o)
                                 0xf2e (size before relaxing)
-                0x40226628                pm_usec2rtc
-                0x4022665c                pm_rtc2usec
-                0x40226668                pm_set_sleep_cycles
-                0x40226690                pm_sleep_opt
-                0x40226794                pm_wakeup_opt
-                0x402267cc                get_chip_version
-                0x4022680c                pm_sleep_opt_bb_off
-                0x4022684c                pm_sleep_opt_bb_on
-                0x40226898                pm_set_pll_xtal_wait_time
-                0x402268e0                pm_prepare_to_sleep
-                0x40226904                pm_sdio_nidle
-                0x40226978                chg_lslp_mem_opt_8266
-                0x402269a4                pm_goto_sleep
-                0x40226af0                pm_wait4wakeup
-                0x40226b28                pm_open_rf
-                0x40226b6c                pm_sleep_set_mac
-                0x40226bf0                pm_set_wakeup_mac
-                0x40226c8c                pm_check_mac_idle
-                0x40226ce4                pm_set_sleep_btco
-                0x40226d7c                pm_set_wakeup_btco
-                0x40226e80                pm_set_sleep_mode
-                0x40226f50                pm_unmask_bt
-                0x40226fb4                pm_wakeup_init
-                0x402271b0                sleep_opt_8266
-                0x402271d0                sleep_opt_bb_on_8266
-                0x40227208                sleep_reset_analog_rtcreg_8266
- *fill*         0x4022730a        0x2 
- .irom0.text    0x4022730c     0x1136 ../lib\libmphy.a(phy_chip_v5_cal_romfunc.o)
+                0x4022662c                pm_usec2rtc
+                0x40226660                pm_rtc2usec
+                0x4022666c                pm_set_sleep_cycles
+                0x40226694                pm_sleep_opt
+                0x40226798                pm_wakeup_opt
+                0x402267d0                get_chip_version
+                0x40226810                pm_sleep_opt_bb_off
+                0x40226850                pm_sleep_opt_bb_on
+                0x4022689c                pm_set_pll_xtal_wait_time
+                0x402268e4                pm_prepare_to_sleep
+                0x40226908                pm_sdio_nidle
+                0x4022697c                chg_lslp_mem_opt_8266
+                0x402269a8                pm_goto_sleep
+                0x40226af4                pm_wait4wakeup
+                0x40226b2c                pm_open_rf
+                0x40226b70                pm_sleep_set_mac
+                0x40226bf4                pm_set_wakeup_mac
+                0x40226c90                pm_check_mac_idle
+                0x40226ce8                pm_set_sleep_btco
+                0x40226d80                pm_set_wakeup_btco
+                0x40226e84                pm_set_sleep_mode
+                0x40226f54                pm_unmask_bt
+                0x40226fb8                pm_wakeup_init
+                0x402271b4                sleep_opt_8266
+                0x402271d4                sleep_opt_bb_on_8266
+                0x4022720c                sleep_reset_analog_rtcreg_8266
+ *fill*         0x4022730e        0x2 
+ .irom0.text    0x40227310     0x1136 ../lib\libmphy.a(phy_chip_v5_cal_romfunc.o)
                                0x124a (size before relaxing)
-                0x4022730c                rom_cal_tos_v50
-                0x402274b8                rom_pbus_dco_( [2]) static
-                0x40227770                rom_rfcal_pwrctrl
-                0x402278f8                rom_rfcal_rxiq
-                0x40227b04                rom_rfcal_rxiq_set_reg
-                0x40227c08                rom_rfcal_txcap
-                0x40227e68                rom_rfcal_txiq
-                0x402280b4                rom_rfcal_txiq_cover
-                0x402280b8                rom_rfcal_txiq_set_reg
-                0x40228194                rom_rxiq_cover_mg_mp
-                0x402282e0                rom_set_txbb_atten
-                0x402283b0                rom_set_txiq_cal
- *fill*         0x40228442        0x2 
- .irom0.text    0x40228444       0xde ../lib\libpp.a(lmac.o)
+                0x40227310                rom_cal_tos_v50
+                0x402274bc                rom_pbus_dco_( [2]) static
+                0x40227774                rom_rfcal_pwrctrl
+                0x402278fc                rom_rfcal_rxiq
+                0x40227b08                rom_rfcal_rxiq_set_reg
+                0x40227c0c                rom_rfcal_txcap
+                0x40227e6c                rom_rfcal_txiq
+                0x402280b8                rom_rfcal_txiq_cover
+                0x402280bc                rom_rfcal_txiq_set_reg
+                0x40228198                rom_rxiq_cover_mg_mp
+                0x402282e4                rom_set_txbb_atten
+                0x402283b4                rom_set_txiq_cal
+ *fill*         0x40228446        0x2 
+ .irom0.text    0x40228448       0xde ../lib\libpp.a(lmac.o)
                                  0xf2 (size before relaxing)
-                0x40228448                lmacInitAc
-                0x4022847c                lmacInit
- *fill*         0x40228522        0x2 
- .irom0.text    0x40228524     0x1d5d ../lib\libpp.a(pm.o)
+                0x4022844c                lmacInitAc
+                0x40228480                lmacInit
+ *fill*         0x40228526        0x2 
+ .irom0.text    0x40228528     0x1d5d ../lib\libpp.a(pm.o)
                                0x23e5 (size before relaxing)
-                0x402285a8                pm_rtc_clock_cali_proc
-                0x402285e0                pm_set_sleep_time
-                0x40228ae8                pm_rf_is_closed
-                0x40228b28                pm_set_sleep_type_from_upper
-                0x40228be4                pm_get_sleep_type
-                0x40228da4                uart_tx_flush
-                0x40228da8                pm_suspend
-                0x40228fa8                pm_shutdown
-                0x402290a0                pm_reset_idle_sleep
-                0x402290d8                pm_idle_sleep
-                0x402290e4                pm_open
-                0x402291d8                pm_onBcnRx
-                0x40229750                vApplicationIdleHook
-                0x40229780                freertos_set_idle_cb
-                0x40229bac                pm_enable_gpio_wakeup
-                0x40229bf0                pm_attach
-                0x40229d04                pm_send_nullfunc
-                0x40229eb0                pm_is_waked
-                0x40229ec8                pm_is_open
-                0x40229ee0                pm_scan_lock
-                0x40229f10                pm_try_scan_unlock
-                0x40229f28                pm_force_scan_unlock
-                0x40229fe4                pm_scan_unlocked
-                0x40229ff8                pm_allow_tx
-                0x4022a018                pm_assoc_parse
-                0x4022a030                pm_set_addr
-                0x4022a050                pm_sleep_for
-                0x4022a08c                pm_post
-                0x4022a240                pm_get_idle_wait_time
- *fill*         0x4022a281        0x3 
- .irom0.text    0x4022a284     0x12c1 ../lib\libpp.a(pp.o)
+                0x402285ac                pm_rtc_clock_cali_proc
+                0x402285e4                pm_set_sleep_time
+                0x40228aec                pm_rf_is_closed
+                0x40228b2c                pm_set_sleep_type_from_upper
+                0x40228be8                pm_get_sleep_type
+                0x40228da8                uart_tx_flush
+                0x40228dac                pm_suspend
+                0x40228fac                pm_shutdown
+                0x402290a4                pm_reset_idle_sleep
+                0x402290dc                pm_idle_sleep
+                0x402290e8                pm_open
+                0x402291dc                pm_onBcnRx
+                0x40229754                vApplicationIdleHook
+                0x40229784                freertos_set_idle_cb
+                0x40229bb0                pm_enable_gpio_wakeup
+                0x40229bf4                pm_attach
+                0x40229d08                pm_send_nullfunc
+                0x40229eb4                pm_is_waked
+                0x40229ecc                pm_is_open
+                0x40229ee4                pm_scan_lock
+                0x40229f14                pm_try_scan_unlock
+                0x40229f2c                pm_force_scan_unlock
+                0x40229fe8                pm_scan_unlocked
+                0x40229ffc                pm_allow_tx
+                0x4022a01c                pm_assoc_parse
+                0x4022a034                pm_set_addr
+                0x4022a054                pm_sleep_for
+                0x4022a090                pm_post
+                0x4022a244                pm_get_idle_wait_time
+ *fill*         0x4022a285        0x3 
+ .irom0.text    0x4022a288     0x12c1 ../lib\libpp.a(pp.o)
                                0x15e9 (size before relaxing)
-                0x4022a284                PPWdtReset
-                0x4022a2ac                pp_soft_wdt_init
-                0x4022a2d4                pp_soft_wdt_stop
-                0x4022a300                pp_soft_wdt_restart
-                0x4022a330                RxNodeNum
-                0x4022a340                TxNodeNum
-                0x4022a388                pp_disable_noise_timer
-                0x4022a3a0                pp_enable_noise_timer
-                0x4022a468                pp_noise_test
-                0x4022a478                reset_noise_timer
-                0x4022a4ac                pp_disable_idle_timer
-                0x4022a4d0                pp_enable_idle_timer
-                0x4022a4f8                pp_try_enable_idle_timer
-                0x4022a530                ppPeocessRxPktHdr
-                0x4022a594                ppTask
-                0x4022a93c                ppTxPkt
-                0x4022ab18                ppProcessWaitQ
-                0x4022ab2c                ppRegisterTxCallback
-                0x4022ab68                ppRecycleRxPkt
-                0x4022abc8                ppCheckTxIdle
-                0x4022aeb8                pp_tx_idle_timeout
-                0x4022b12c                ppGetTxQFirstAvail_Locked
-                0x4022b2e4                pp_attach
- *fill*         0x4022b545        0x3 
- .irom0.text    0x4022b548      0x296 ../lib\libpp.a(rate_control.o)
+                0x4022a288                PPWdtReset
+                0x4022a2b0                pp_soft_wdt_init
+                0x4022a2d8                pp_soft_wdt_stop
+                0x4022a304                pp_soft_wdt_restart
+                0x4022a334                RxNodeNum
+                0x4022a344                TxNodeNum
+                0x4022a38c                pp_disable_noise_timer
+                0x4022a3a4                pp_enable_noise_timer
+                0x4022a46c                pp_noise_test
+                0x4022a47c                reset_noise_timer
+                0x4022a4b0                pp_disable_idle_timer
+                0x4022a4d4                pp_enable_idle_timer
+                0x4022a4fc                pp_try_enable_idle_timer
+                0x4022a534                ppPeocessRxPktHdr
+                0x4022a598                ppTask
+                0x4022a940                ppTxPkt
+                0x4022ab1c                ppProcessWaitQ
+                0x4022ab30                ppRegisterTxCallback
+                0x4022ab6c                ppRecycleRxPkt
+                0x4022abcc                ppCheckTxIdle
+                0x4022aebc                pp_tx_idle_timeout
+                0x4022b130                ppGetTxQFirstAvail_Locked
+                0x4022b2e8                pp_attach
+ *fill*         0x4022b549        0x3 
+ .irom0.text    0x4022b54c      0x296 ../lib\libpp.a(rate_control.o)
                                 0x2a2 (size before relaxing)
-                0x4022b794                RC_SetBasicRate
- *fill*         0x4022b7de        0x2 
- .irom0.text    0x4022b7e0      0x411 ../lib\libpp.a(trc.o)
+                0x4022b798                RC_SetBasicRate
+ *fill*         0x4022b7e2        0x2 
+ .irom0.text    0x4022b7e4      0x411 ../lib\libpp.a(trc.o)
                                 0x46d (size before relaxing)
-                0x4022b80c                rcUpdatePhyMode
-                0x4022b8e8                rcAttach
-                0x4022b934                rcGetTrc
-                0x4022b93c                trc_onDisconnect
-                0x4022b940                trc_onScanStart
-                0x4022b960                trc_onScanDone
-                0x4022b980                rc_enable_trc
-                0x4022ba48                rc_get_mask
-                0x4022ba5c                rc_disable_trc
-                0x4022bad4                rc_disable_trc_by_interface
-                0x4022baf4                rc_get_sta_trc
-                0x4022bb34                rc_get_trc
-                0x4022bba4                rc_get_trc_by_index
-                0x4022bbc4                rc_only_sta_trc
- *fill*         0x4022bbf1        0x3 
- .irom0.text    0x4022bbf4      0xa43 ../lib\libpp.a(wdev.o)
+                0x4022b810                rcUpdatePhyMode
+                0x4022b8ec                rcAttach
+                0x4022b938                rcGetTrc
+                0x4022b940                trc_onDisconnect
+                0x4022b944                trc_onScanStart
+                0x4022b964                trc_onScanDone
+                0x4022b984                rc_enable_trc
+                0x4022ba4c                rc_get_mask
+                0x4022ba60                rc_disable_trc
+                0x4022bad8                rc_disable_trc_by_interface
+                0x4022baf8                rc_get_sta_trc
+                0x4022bb38                rc_get_trc
+                0x4022bba8                rc_get_trc_by_index
+                0x4022bbc8                rc_only_sta_trc
+ *fill*         0x4022bbf5        0x3 
+ .irom0.text    0x4022bbf8      0xa43 ../lib\libpp.a(wdev.o)
                                 0xb7f (size before relaxing)
-                0x4022bbfc                wDev_Option_Init
-                0x4022bccc                wDev_Enable_Beacon_Tsf
-                0x4022bce8                wDev_Disable_Beacon_Tsf
-                0x4022bd04                wDev_Set_Beacon_Int
-                0x4022bd0c                wDev_Reset_TBTT
-                0x4022bd3c                wDev_Get_Next_TBTT
-                0x4022bfd8                wDev_Initialize
-                0x4022c040                wDevForceAck6M
-                0x4022c05c                wDev_SetMacAddress
-                0x4022c0fc                wDev_SetRxPolicy
-                0x4022c150                wDev_SetBssid
-                0x4022c228                wDev_ClearBssid
-                0x4022c260                wDev_Insert_KeyEntry
-                0x4022c334                wDev_remove_KeyEntry
-                0x4022c374                wDev_Crypto_Conf
-                0x4022c410                wDev_Crypto_Disable
-                0x4022c448                wDevDisableRx
-                0x4022c460                wDevEnableRx
-                0x4022c484                wdev_go_sniffer
-                0x4022c568                wdev_exit_sniffer
- *fill*         0x4022c637        0x1 
- .irom0.text    0x4022c638      0x59f ../lib\libpp.a(esf_buf.o)
+                0x4022bc00                wDev_Option_Init
+                0x4022bcd0                wDev_Enable_Beacon_Tsf
+                0x4022bcec                wDev_Disable_Beacon_Tsf
+                0x4022bd08                wDev_Set_Beacon_Int
+                0x4022bd10                wDev_Reset_TBTT
+                0x4022bd40                wDev_Get_Next_TBTT
+                0x4022bfdc                wDev_Initialize
+                0x4022c044                wDevForceAck6M
+                0x4022c060                wDev_SetMacAddress
+                0x4022c100                wDev_SetRxPolicy
+                0x4022c154                wDev_SetBssid
+                0x4022c22c                wDev_ClearBssid
+                0x4022c264                wDev_Insert_KeyEntry
+                0x4022c338                wDev_remove_KeyEntry
+                0x4022c378                wDev_Crypto_Conf
+                0x4022c414                wDev_Crypto_Disable
+                0x4022c44c                wDevDisableRx
+                0x4022c464                wDevEnableRx
+                0x4022c488                wdev_go_sniffer
+                0x4022c56c                wdev_exit_sniffer
+ *fill*         0x4022c63b        0x1 
+ .irom0.text    0x4022c63c      0x59f ../lib\libpp.a(esf_buf.o)
                                 0x6bf (size before relaxing)
-                0x4022c63c                esf_buf_alloc
-                0x4022c870                esf_buf_recycle
-                0x4022cacc                esf_buf_setup
- *fill*         0x4022cbd7        0x1 
- .irom0.text    0x4022cbd8      0x3a6 ../lib\libpp.a(if_hwctrl.o)
+                0x4022c640                esf_buf_alloc
+                0x4022c874                esf_buf_recycle
+                0x4022cad0                esf_buf_setup
+ *fill*         0x4022cbdb        0x1 
+ .irom0.text    0x4022cbdc      0x3a6 ../lib\libpp.a(if_hwctrl.o)
                                 0x466 (size before relaxing)
-                0x4022cbdc                ic_get_addr
-                0x4022cbe8                ic_set_opmode
-                0x4022cbfc                ic_enable_interface
-                0x4022cc4c                ic_interface_enabled
-                0x4022cc60                ic_disable_interface
-                0x4022cca8                ic_is_pure_sta
-                0x4022ccc4                ic_get_ptk_alg
-                0x4022ccd4                ic_get_gtk_alg
-                0x4022cce4                ic_set_ptk_alg
-                0x4022ccf4                ic_set_gtk_alg
-                0x4022cd04                ic_interface_is_p2p
-                0x4022cd84                ic_set_vif
-                0x4022cdf4                ic_set_sta
-                0x4022ceb4                ic_bss_info_update
-                0x4022cf10                ic_set_key
-                0x4022cf6c                ic_remove_key
- *fill*         0x4022cf7e        0x2 
- .irom0.text    0x4022cf80      0x2fb ../lib\libnet80211.a(ieee80211.o)
+                0x4022cbe0                ic_get_addr
+                0x4022cbec                ic_set_opmode
+                0x4022cc00                ic_enable_interface
+                0x4022cc50                ic_interface_enabled
+                0x4022cc64                ic_disable_interface
+                0x4022ccac                ic_is_pure_sta
+                0x4022ccc8                ic_get_ptk_alg
+                0x4022ccd8                ic_get_gtk_alg
+                0x4022cce8                ic_set_ptk_alg
+                0x4022ccf8                ic_set_gtk_alg
+                0x4022cd08                ic_interface_is_p2p
+                0x4022cd88                ic_set_vif
+                0x4022cdf8                ic_set_sta
+                0x4022ceb8                ic_bss_info_update
+                0x4022cf14                ic_set_key
+                0x4022cf70                ic_remove_key
+ *fill*         0x4022cf82        0x2 
+ .irom0.text    0x4022cf84      0x2fb ../lib\libnet80211.a(ieee80211.o)
                                 0x3af (size before relaxing)
-                0x4022d010                ieee80211_ifattach
-                0x4022d054                ieee80211_mhz2ieee
-                0x4022d0ac                ieee80211_chan2ieee
-                0x4022d0cc                ieee80211_ieee2mhz
-                0x4022d104                ieee80211_find_channel
-                0x4022d12c                ieee80211_find_channel_byieee
-                0x4022d174                wifi_mode_set
- *fill*         0x4022d27b        0x1 
- .irom0.text    0x4022d27c       0xc2 ../lib\libnet80211.a(ieee80211_crypto.o)
+                0x4022d014                ieee80211_ifattach
+                0x4022d058                ieee80211_mhz2ieee
+                0x4022d0b0                ieee80211_chan2ieee
+                0x4022d0d0                ieee80211_ieee2mhz
+                0x4022d108                ieee80211_find_channel
+                0x4022d130                ieee80211_find_channel_byieee
+                0x4022d178                wifi_mode_set
+ *fill*         0x4022d27f        0x1 
+ .irom0.text    0x4022d280       0xc2 ../lib\libnet80211.a(ieee80211_crypto.o)
                                  0xca (size before relaxing)
-                0x4022d27c                ieee80211_crypto_attach
-                0x4022d280                ieee80211_crypto_available
-                0x4022d284                ieee80211_crypto_setkey
-                0x4022d288                ieee80211_crypto_encap
-                0x4022d2d8                ieee80211_crypto_decap
- *fill*         0x4022d33e        0x2 
- .irom0.text    0x4022d340       0x45 ../lib\libnet80211.a(ieee80211_ets.o)
+                0x4022d280                ieee80211_crypto_attach
+                0x4022d284                ieee80211_crypto_available
+                0x4022d288                ieee80211_crypto_setkey
+                0x4022d28c                ieee80211_crypto_encap
+                0x4022d2dc                ieee80211_crypto_decap
+ *fill*         0x4022d342        0x2 
+ .irom0.text    0x4022d344       0x45 ../lib\libnet80211.a(ieee80211_ets.o)
                                  0x49 (size before relaxing)
-                0x4022d340                ieee80211_getmgtframe
- *fill*         0x4022d385        0x3 
- .irom0.text    0x4022d388      0xf5d ../lib\libnet80211.a(ieee80211_hostap.o)
+                0x4022d344                ieee80211_getmgtframe
+ *fill*         0x4022d389        0x3 
+ .irom0.text    0x4022d38c      0xf5d ../lib\libnet80211.a(ieee80211_hostap.o)
                                0x1259 (size before relaxing)
-                0x4022d6bc                ieee80211_hostap_attach
-                0x4022d76c                hostap_handle_timer
-                0x4022d7f0                hostap_input
-                0x4022e0dc                wifi_softap_start
-                0x4022e228                wifi_softap_stop
- *fill*         0x4022e2e5        0x3 
- .irom0.text    0x4022e2e8      0xa90 ../lib\libnet80211.a(ieee80211_ht.o)
+                0x4022d6c0                ieee80211_hostap_attach
+                0x4022d770                hostap_handle_timer
+                0x4022d7f4                hostap_input
+                0x4022e0e0                wifi_softap_start
+                0x4022e22c                wifi_softap_stop
+ *fill*         0x4022e2e9        0x3 
+ .irom0.text    0x4022e2ec      0xa90 ../lib\libnet80211.a(ieee80211_ht.o)
                                 0xb54 (size before relaxing)
-                0x4022e2f8                ieee80211_ht_attach
-                0x4022e348                ieee80211_ht_node_init
-                0x4022e38c                ieee80211_ht_node_cleanup
-                0x4022e3c4                ieee80211_parse_htcap
-                0x4022e49c                ieee80211_ht_updateparams
-                0x4022e5b4                ieee80211_setup_htrates
-                0x4022e688                ieee80211_setup_basic_htrates
-                0x4022e9f0                ieee80211_add_htcap
-                0x4022ea0c                ieee80211_add_htcap_vendor
-                0x4022eb30                ieee80211_add_htinfo
-                0x4022eb4c                ieee80211_add_htinfo_vendor
- .irom0.text    0x4022ed78      0x8d8 ../lib\libnet80211.a(ieee80211_input.o)
+                0x4022e2fc                ieee80211_ht_attach
+                0x4022e34c                ieee80211_ht_node_init
+                0x4022e390                ieee80211_ht_node_cleanup
+                0x4022e3c8                ieee80211_parse_htcap
+                0x4022e4a0                ieee80211_ht_updateparams
+                0x4022e5b8                ieee80211_setup_htrates
+                0x4022e68c                ieee80211_setup_basic_htrates
+                0x4022e9f4                ieee80211_add_htcap
+                0x4022ea10                ieee80211_add_htcap_vendor
+                0x4022eb34                ieee80211_add_htinfo
+                0x4022eb50                ieee80211_add_htinfo_vendor
+ .irom0.text    0x4022ed7c      0x8d8 ../lib\libnet80211.a(ieee80211_input.o)
                                 0x950 (size before relaxing)
-                0x4022ed78                ieee80211_deliver_data
-                0x4022edcc                ieee80211_decap
-                0x4022eed4                ieee80211_setup_rates
-                0x4022ef40                ieee80211_alloc_challenge
-                0x4022ef74                ieee80211_parse_beacon
-                0x4022f3e0                ieee80211_parse_wpa
-                0x4022f4f8                ieee80211_parse_rsn
-                0x4022f5f4                ieee80211_parse_action
-                0x4022f64c                ieee80211_setup_rateset
- .irom0.text    0x4022f650     0x17c3 ../lib\libnet80211.a(ieee80211_output.o)
+                0x4022ed7c                ieee80211_deliver_data
+                0x4022edd0                ieee80211_decap
+                0x4022eed8                ieee80211_setup_rates
+                0x4022ef44                ieee80211_alloc_challenge
+                0x4022ef78                ieee80211_parse_beacon
+                0x4022f3e4                ieee80211_parse_wpa
+                0x4022f4fc                ieee80211_parse_rsn
+                0x4022f5f8                ieee80211_parse_action
+                0x4022f650                ieee80211_setup_rateset
+ .irom0.text    0x4022f654     0x17c3 ../lib\libnet80211.a(ieee80211_output.o)
                                0x1a2f (size before relaxing)
-                0x4022f654                ieee80211_output_pbuf
-                0x4022f8d4                ieee80211_send_setup
-                0x4022fa00                ieee80211_mgmt_output
-                0x4022faf4                ieee80211_tx_mgt_cb
-                0x4022faf8                ieee80211_send_nulldata
-                0x4022ff50                ieee80211_add_rates
-                0x4022ff88                ieee80211_add_xrates
-                0x40230024                ieee80211_send_probereq
-                0x402301d0                ieee80211_getcapinfo
-                0x4023022c                ieee80211_send_mgmt
-                0x4023078c                ieee80211_alloc_proberesp
-                0x40230988                ieee80211_send_proberesp
-                0x40230cc8                ieee80211_beacon_alloc
- *fill*         0x40230e13        0x1 
- .irom0.text    0x40230e14      0x147 ../lib\libnet80211.a(ieee80211_phy.o)
+                0x4022f658                ieee80211_output_pbuf
+                0x4022f8d8                ieee80211_send_setup
+                0x4022fa04                ieee80211_mgmt_output
+                0x4022faf8                ieee80211_tx_mgt_cb
+                0x4022fafc                ieee80211_send_nulldata
+                0x4022ff54                ieee80211_add_rates
+                0x4022ff8c                ieee80211_add_xrates
+                0x40230028                ieee80211_send_probereq
+                0x402301d4                ieee80211_getcapinfo
+                0x40230230                ieee80211_send_mgmt
+                0x40230790                ieee80211_alloc_proberesp
+                0x4023098c                ieee80211_send_proberesp
+                0x40230ccc                ieee80211_beacon_alloc
+ *fill*         0x40230e17        0x1 
+ .irom0.text    0x40230e18      0x147 ../lib\libnet80211.a(ieee80211_phy.o)
                                 0x16f (size before relaxing)
-                0x40230e18                ieee80211_get_11g_ratetable
-                0x40230e24                ieee80211_get_ratetable
-                0x40230e3c                ieee80211_phy_init
-                0x40230e70                ieee80211_phy_type_get
-                0x40230e80                ieee80211_setup_ratetable
-                0x40230eb4                ieee80211_compute_duration
-                0x40230f34                ieee80211_dot11Rate_rix
- *fill*         0x40230f5b        0x1 
- .irom0.text    0x40230f5c      0x160 ../lib\libnet80211.a(ieee80211_power.o)
+                0x40230e1c                ieee80211_get_11g_ratetable
+                0x40230e28                ieee80211_get_ratetable
+                0x40230e40                ieee80211_phy_init
+                0x40230e74                ieee80211_phy_type_get
+                0x40230e84                ieee80211_setup_ratetable
+                0x40230eb8                ieee80211_compute_duration
+                0x40230f38                ieee80211_dot11Rate_rix
+ *fill*         0x40230f5f        0x1 
+ .irom0.text    0x40230f60      0x160 ../lib\libnet80211.a(ieee80211_power.o)
                                 0x17c (size before relaxing)
-                0x40230f5c                ieee80211_psq_init
-                0x40230f74                ieee80211_psq_cleanup
-                0x40230f7c                ieee80211_set_tim
-                0x40230fbc                ieee80211_pwrsave
-                0x40231088                ieee80211_node_pwrsave
- .irom0.text    0x402310bc      0x15b ../lib\libnet80211.a(ieee80211_proto.o)
+                0x40230f60                ieee80211_psq_init
+                0x40230f78                ieee80211_psq_cleanup
+                0x40230f80                ieee80211_set_tim
+                0x40230fc0                ieee80211_pwrsave
+                0x4023108c                ieee80211_node_pwrsave
+ .irom0.text    0x402310c0      0x15b ../lib\libnet80211.a(ieee80211_proto.o)
                                 0x177 (size before relaxing)
-                0x402310c0                ieee80211_proto_attach
-                0x402310e8                ieee80211_set_shortslottime
-                0x40231104                ieee80211_iserp_rateset
-                0x40231198                ieee80211_setbasicrates
-                0x402311ac                ieee80211_addbasicrates
-                0x402311c0                ieee80211_wme_initparams
-                0x402311c4                ieee80211_wme_updateparams
-                0x402311c8                ieee80211_mlme_connect_bss
- *fill*         0x40231217        0x1 
- .irom0.text    0x40231218      0xd0d ../lib\libnet80211.a(ieee80211_scan.o)
+                0x402310c4                ieee80211_proto_attach
+                0x402310ec                ieee80211_set_shortslottime
+                0x40231108                ieee80211_iserp_rateset
+                0x4023119c                ieee80211_setbasicrates
+                0x402311b0                ieee80211_addbasicrates
+                0x402311c4                ieee80211_wme_initparams
+                0x402311c8                ieee80211_wme_updateparams
+                0x402311cc                ieee80211_mlme_connect_bss
+ *fill*         0x4023121b        0x1 
+ .irom0.text    0x4023121c      0xd0d ../lib\libnet80211.a(ieee80211_scan.o)
                                0x1021 (size before relaxing)
-                0x40231228                ieee80211_scan_attach
-                0x402312a4                scan_start
-                0x40231384                scan_pm_channel_op_cb
-                0x4023151c                scan_cancel
-                0x40231628                scan_add_bssid
-                0x4023164c                scan_remove_bssid
-                0x40231658                scan_hidden_ssid
-                0x40231660                scan_add_probe_ssid
-                0x402316a0                scan_remove_probe_ssid
-                0x402317d4                scan_clear_channles
-                0x40231844                scan_set_desChan
-                0x40231850                scan_get_type
-                0x40231858                cannel_scan_connect_state
-                0x40231870                scan_connect_state
-                0x402318b8                scan_check_hidden
-                0x402318e4                scan_profile_check
-                0x40231c54                scan_parse_beacon
- *fill*         0x40231f25        0x3 
- .irom0.text    0x40231f28      0xb3d ../lib\libnet80211.a(ieee80211_sta.o)
+                0x4023122c                ieee80211_scan_attach
+                0x402312a8                scan_start
+                0x40231388                scan_pm_channel_op_cb
+                0x40231520                scan_cancel
+                0x4023162c                scan_add_bssid
+                0x40231650                scan_remove_bssid
+                0x4023165c                scan_hidden_ssid
+                0x40231664                scan_add_probe_ssid
+                0x402316a4                scan_remove_probe_ssid
+                0x402317d8                scan_clear_channles
+                0x40231848                scan_set_desChan
+                0x40231854                scan_get_type
+                0x4023185c                cannel_scan_connect_state
+                0x40231874                scan_connect_state
+                0x402318bc                scan_check_hidden
+                0x402318e8                scan_profile_check
+                0x40231c58                scan_parse_beacon
+ *fill*         0x40231f29        0x3 
+ .irom0.text    0x40231f2c      0xb3d ../lib\libnet80211.a(ieee80211_sta.o)
                                 0xd0d (size before relaxing)
-                0x40231f50                sta_status_set
-                0x40231f88                ieee80211_sta_new_state
-                0x40232154                sta_input
-                0x402324c8                ieee80211_parse_wmeparams
-                0x4023299c                wifi_station_start
-                0x40232a20                wifi_station_stop
- *fill*         0x40232a65        0x3 
- .irom0.text    0x40232a68      0x32e ../lib\libnet80211.a(wl_chm.o)
+                0x40231f54                sta_status_set
+                0x40231f8c                ieee80211_sta_new_state
+                0x40232158                sta_input
+                0x402324cc                ieee80211_parse_wmeparams
+                0x402329a0                wifi_station_start
+                0x40232a24                wifi_station_stop
+ *fill*         0x40232a69        0x3 
+ .irom0.text    0x40232a6c      0x32e ../lib\libnet80211.a(wl_chm.o)
                                 0x3da (size before relaxing)
-                0x40232a74                chm_init
-                0x40232b20                chm_acquire_lock
-                0x40232b64                chm_release_lock
-                0x40232b78                chm_start_op
-                0x40232c18                chm_end_op
-                0x40232c60                chm_cancel_op
-                0x40232c94                chm_return_home_channel
-                0x40232cc8                chm_set_current_channel
-                0x40232d40                chm_freq2index
-                0x40232d68                chm_check_same_channel
- *fill*         0x40232d96        0x2 
- .irom0.text    0x40232d98     0x1315 ../lib\libnet80211.a(wl_cnx.o)
+                0x40232a78                chm_init
+                0x40232b24                chm_acquire_lock
+                0x40232b68                chm_release_lock
+                0x40232b7c                chm_start_op
+                0x40232c1c                chm_end_op
+                0x40232c64                chm_cancel_op
+                0x40232c98                chm_return_home_channel
+                0x40232ccc                chm_set_current_channel
+                0x40232d44                chm_freq2index
+                0x40232d6c                chm_check_same_channel
+ *fill*         0x40232d9a        0x2 
+ .irom0.text    0x40232d9c     0x1315 ../lib\libnet80211.a(wl_cnx.o)
                                0x172d (size before relaxing)
-                0x40232da4                cnx_attach
-                0x40232de4                cnx_sta_connect_led_timer_cb
-                0x40232e38                cnx_sta_connect_cmd
-                0x40232edc                cnx_sta_scan_cmd
-                0x40233130                cnx_connect_timeout
-                0x40233198                cnx_start_handoff_cb
-                0x402335a8                cnx_bss_alloc
-                0x40233658                cnx_rc_search
-                0x40233720                cnx_add_rc
-                0x4023380c                cnx_remove_rc
-                0x402338e0                cnx_rc_update_rssi
-                0x40233964                cnx_rc_update_state_metric
-                0x402339d0                cnx_rc_update_age
-                0x402339f4                cnx_update_bss
-                0x40233a2c                cnx_update_bss_more
-                0x40233bb8                cnx_sta_leave
-                0x40233cd8                cnx_sta_associated
-                0x40233d34                cnx_node_alloc
-                0x40233d94                cnx_node_remove
-                0x40233e08                cnx_node_search
-                0x40233e68                cnx_node_leave
-                0x40233f24                cnx_node_join
- *fill*         0x402340ad        0x3 
- .irom0.text    0x402340b0      0x161 ../lib\libnet80211.a(ieee80211_action.o)
+                0x40232da8                cnx_attach
+                0x40232de8                cnx_sta_connect_led_timer_cb
+                0x40232e3c                cnx_sta_connect_cmd
+                0x40232ee0                cnx_sta_scan_cmd
+                0x40233134                cnx_connect_timeout
+                0x4023319c                cnx_start_handoff_cb
+                0x402335ac                cnx_bss_alloc
+                0x4023365c                cnx_rc_search
+                0x40233724                cnx_add_rc
+                0x40233810                cnx_remove_rc
+                0x402338e4                cnx_rc_update_rssi
+                0x40233968                cnx_rc_update_state_metric
+                0x402339d4                cnx_rc_update_age
+                0x402339f8                cnx_update_bss
+                0x40233a30                cnx_update_bss_more
+                0x40233bbc                cnx_sta_leave
+                0x40233cdc                cnx_sta_associated
+                0x40233d38                cnx_node_alloc
+                0x40233d98                cnx_node_remove
+                0x40233e0c                cnx_node_search
+                0x40233e6c                cnx_node_leave
+                0x40233f28                cnx_node_join
+ *fill*         0x402340b1        0x3 
+ .irom0.text    0x402340b4      0x161 ../lib\libnet80211.a(ieee80211_action.o)
                                 0x181 (size before relaxing)
-                0x402340c0                ieee80211_send_action_register
-                0x402340f4                ieee80211_send_action_unregister
-                0x40234108                ieee80211_send_action
-                0x4023416c                ieee80211_recv_action_register
-                0x402341a0                ieee80211_recv_action_unregister
-                0x402341b4                ieee80211_recv_action
- *fill*         0x40234211        0x3 
- .irom0.text    0x40234214      0x282 ../lib\libwpa.a(ap_config.o)
+                0x402340c4                ieee80211_send_action_register
+                0x402340f8                ieee80211_send_action_unregister
+                0x4023410c                ieee80211_send_action
+                0x40234170                ieee80211_recv_action_register
+                0x402341a4                ieee80211_recv_action_unregister
+                0x402341b8                ieee80211_recv_action
+ *fill*         0x40234215        0x3 
+ .irom0.text    0x40234218      0x282 ../lib\libwpa.a(ap_config.o)
                                 0x2ba (size before relaxing)
-                0x40234218                hostapd_config_defaults_bss
-                0x40234260                hostapd_config_defaults
-                0x402342cc                hostapd_mac_comp
-                0x402342e4                hostapd_mac_comp_empty
-                0x4023433c                hostapd_setup_wpa_psk
-                0x4023436c                hostapd_wep_key_cmp
-                0x402343bc                hostapd_maclist_found
-                0x40234428                hostapd_rate_found
-                0x40234444                hostapd_get_psk
- *fill*         0x40234496        0x2 
- .irom0.text    0x40234498      0x250 ../lib\libwpa.a(common.o)
+                0x4023421c                hostapd_config_defaults_bss
+                0x40234264                hostapd_config_defaults
+                0x402342d0                hostapd_mac_comp
+                0x402342e8                hostapd_mac_comp_empty
+                0x40234340                hostapd_setup_wpa_psk
+                0x40234370                hostapd_wep_key_cmp
+                0x402343c0                hostapd_maclist_found
+                0x4023442c                hostapd_rate_found
+                0x40234448                hostapd_get_psk
+ *fill*         0x4023449a        0x2 
+ .irom0.text    0x4023449c      0x250 ../lib\libwpa.a(common.o)
                                 0x28c (size before relaxing)
-                0x40234498                inc_byte_array
-                0x402344ec                hex2byte
-                0x40234520                hexstr2bin
-                0x4023456c                wpa_get_ntp_timestamp
-                0x40234600                wpa_config_parse_string
- .irom0.text    0x402346e8       0x5b ../lib\libwpa.a(os_xtensa.o)
+                0x4023449c                inc_byte_array
+                0x402344f0                hex2byte
+                0x40234524                hexstr2bin
+                0x40234570                wpa_get_ntp_timestamp
+                0x40234604                wpa_config_parse_string
+ .irom0.text    0x402346ec       0x5b ../lib\libwpa.a(os_xtensa.o)
                                  0x63 (size before relaxing)
-                0x402346e8                os_get_time
-                0x402346f0                os_random
-                0x40234704                os_get_random
- *fill*         0x40234743        0x1 
- .irom0.text    0x40234744      0x14d ../lib\libwpa.a(sha1-pbkdf2.o)
+                0x402346ec                os_get_time
+                0x402346f4                os_random
+                0x40234708                os_get_random
+ *fill*         0x40234747        0x1 
+ .irom0.text    0x40234748      0x14d ../lib\libwpa.a(sha1-pbkdf2.o)
                                 0x165 (size before relaxing)
-                0x4023482c                pbkdf2_sha1
- *fill*         0x40234891        0x3 
- .irom0.text    0x40234894     0x1ca7 ../lib\libwpa.a(wpa_auth.o)
+                0x40234830                pbkdf2_sha1
+ *fill*         0x40234895        0x3 
+ .irom0.text    0x40234898     0x1ca7 ../lib\libwpa.a(wpa_auth.o)
                                0x1f47 (size before relaxing)
-                0x402349d4                wpa_auth_for_each_sta
-                0x40234b38                wpa_init
-                0x40234bac                wpa_auth_sta_init
-                0x40234bec                wpa_auth_sta_associated
-                0x40234c68                wpa_auth_sta_no_wpa
-                0x40234cb4                wpa_auth_sta_deinit
-                0x40234d90                wpa_receive
-                0x402351fc                __wpa_send_eapol
-                0x402356e0                wpa_remove_ptk
-                0x4023572c                wpa_auth_sm_event
- *fill*         0x4023653b        0x1 
- .irom0.text    0x4023653c      0x569 ../lib\libwpa.a(wpa_auth_ie.o)
+                0x402349d8                wpa_auth_for_each_sta
+                0x40234b3c                wpa_init
+                0x40234bb0                wpa_auth_sta_init
+                0x40234bf0                wpa_auth_sta_associated
+                0x40234c6c                wpa_auth_sta_no_wpa
+                0x40234cb8                wpa_auth_sta_deinit
+                0x40234d94                wpa_receive
+                0x40235200                __wpa_send_eapol
+                0x402356e4                wpa_remove_ptk
+                0x40235730                wpa_auth_sm_event
+ *fill*         0x4023653f        0x1 
+ .irom0.text    0x40236540      0x569 ../lib\libwpa.a(wpa_auth_ie.o)
                                 0x5d5 (size before relaxing)
-                0x40236600                wpa_write_rsn_ie
-                0x40236708                wpa_auth_gen_wpa_ie
-                0x4023678c                wpa_add_kde
-                0x402367f8                wpa_validate_wpa_ie
-                0x402369f8                wpa_parse_kde_ies
-                0x40236a94                wpa_auth_uses_mfp
- *fill*         0x40236aa5        0x3 
- .irom0.text    0x40236aa8     0x1464 ../lib\libwpa.a(wpa.o)
+                0x40236604                wpa_write_rsn_ie
+                0x4023670c                wpa_auth_gen_wpa_ie
+                0x40236790                wpa_add_kde
+                0x402367fc                wpa_validate_wpa_ie
+                0x402369fc                wpa_parse_kde_ies
+                0x40236a98                wpa_auth_uses_mfp
+ *fill*         0x40236aa9        0x3 
+ .irom0.text    0x40236aac     0x1464 ../lib\libwpa.a(wpa.o)
                                0x16b8 (size before relaxing)
-                0x40237a14                wpa_sm_rx_eapol
-                0x40237b78                wpa_register
-                0x40237ba4                wpa_set_profile
-                0x40237bb4                wpa_set_pmk
-                0x40237be0                wpa_set_bss
-                0x40237dc8                pp_michael_mic_failure
-                0x40237e5c                eapol_txcb
-                0x40237ee4                wpa_sm_set_state
- .irom0.text    0x40237f0c      0x732 ../lib\libwpa.a(wpa_common.o)
+                0x40237a18                wpa_sm_rx_eapol
+                0x40237b7c                wpa_register
+                0x40237ba8                wpa_set_profile
+                0x40237bb8                wpa_set_pmk
+                0x40237be4                wpa_set_bss
+                0x40237dcc                pp_michael_mic_failure
+                0x40237e60                eapol_txcb
+                0x40237ee8                wpa_sm_set_state
+ .irom0.text    0x40237f10      0x732 ../lib\libwpa.a(wpa_common.o)
                                 0x7ca (size before relaxing)
-                0x40238054                wpa_parse_wpa_ie_rsn
-                0x402381e8                wpa_parse_wpa_ie_wpa
-                0x4023836c                wpa_eapol_key_mic
-                0x402383ac                wpa_compare_rsn_ie
-                0x402383d4                wpa_pmk_to_ptk
-                0x402384c0                rsn_pmkid
-                0x402384f4                wpa_cipher_key_len
-                0x40238518                wpa_cipher_to_alg
-                0x40238540                wpa_cipher_to_suite
-                0x40238594                rsn_cipher_put_suites
-                0x402385f4                wpa_cipher_put_suites
- *fill*         0x4023863e        0x2 
- .irom0.text    0x40238640      0x325 ../lib\libwpa.a(wpa_ie.o)
+                0x40238058                wpa_parse_wpa_ie_rsn
+                0x402381ec                wpa_parse_wpa_ie_wpa
+                0x40238370                wpa_eapol_key_mic
+                0x402383b0                wpa_compare_rsn_ie
+                0x402383d8                wpa_pmk_to_ptk
+                0x402384c4                rsn_pmkid
+                0x402384f8                wpa_cipher_key_len
+                0x4023851c                wpa_cipher_to_alg
+                0x40238544                wpa_cipher_to_suite
+                0x40238598                rsn_cipher_put_suites
+                0x402385f8                wpa_cipher_put_suites
+ *fill*         0x40238642        0x2 
+ .irom0.text    0x40238644      0x325 ../lib\libwpa.a(wpa_ie.o)
                                 0x341 (size before relaxing)
-                0x40238640                wpa_parse_wpa_ie
-                0x40238734                wpa_supplicant_parse_ies
-                0x40238934                wpa_gen_wpa_ie
- *fill*         0x40238965        0x3 
- .irom0.text    0x40238968      0x2d3 ../lib\libwpa.a(wpa_main.o)
+                0x40238644                wpa_parse_wpa_ie
+                0x40238738                wpa_supplicant_parse_ies
+                0x40238938                wpa_gen_wpa_ie
+ *fill*         0x40238969        0x3 
+ .irom0.text    0x4023896c      0x2d3 ../lib\libwpa.a(wpa_main.o)
                                 0x387 (size before relaxing)
-                0x40238968                ppInstallKey
-                0x40238a70                wpa_config_profile
-                0x40238aa8                wpa_config_bss
-                0x40238ae8                wpa_config_assoc_ie
-                0x40238afc                dhcp_bind_check
-                0x40238b28                eagle_auth_done
-                0x40238bdc                wpa_neg_complete
-                0x40238c04                wpa_attach
- *fill*         0x40238c3b        0x1 
- .irom0.text    0x40238c3c       0xd6 ../lib\libwpa.a(wpas_glue.o)
+                0x4023896c                ppInstallKey
+                0x40238a74                wpa_config_profile
+                0x40238aac                wpa_config_bss
+                0x40238aec                wpa_config_assoc_ie
+                0x40238b00                dhcp_bind_check
+                0x40238b2c                eagle_auth_done
+                0x40238be0                wpa_neg_complete
+                0x40238c08                wpa_attach
+ *fill*         0x40238c3f        0x1 
+ .irom0.text    0x40238c40       0xd6 ../lib\libwpa.a(wpas_glue.o)
                                  0xe2 (size before relaxing)
-                0x40238cb0                wpa_sm_alloc_eapol
-                0x40238cec                wpa_sm_deauthenticate
-                0x40238d08                wpa_sm_mlme_setprotection
-                0x40238d0c                wpa_sm_get_beacon_ie
-                0x40238d10                wpa_sm_disassociate
- *fill*         0x40238d12        0x2 
- .irom0.text    0x40238d14       0xf0 ../lib\libwpa.a(aes-unwrap.o)
+                0x40238cb4                wpa_sm_alloc_eapol
+                0x40238cf0                wpa_sm_deauthenticate
+                0x40238d0c                wpa_sm_mlme_setprotection
+                0x40238d10                wpa_sm_get_beacon_ie
+                0x40238d14                wpa_sm_disassociate
+ *fill*         0x40238d16        0x2 
+ .irom0.text    0x40238d18       0xf0 ../lib\libwpa.a(aes-unwrap.o)
                                 0x114 (size before relaxing)
-                0x40238d14                aes_unwrap
- .irom0.text    0x40238e04       0xdf ../lib\libwpa.a(aes-wrap.o)
+                0x40238d18                aes_unwrap
+ .irom0.text    0x40238e08       0xdf ../lib\libwpa.a(aes-wrap.o)
                                 0x103 (size before relaxing)
-                0x40238e04                aes_wrap
- *fill*         0x40238ee3        0x1 
- .irom0.text    0x40238ee4      0x14f ../lib\libwpa.a(md5.o)
+                0x40238e08                aes_wrap
+ *fill*         0x40238ee7        0x1 
+ .irom0.text    0x40238ee8      0x14f ../lib\libwpa.a(md5.o)
                                 0x16b (size before relaxing)
-                0x40238ee4                hmac_md5_vector
-                0x40239014                hmac_md5
- *fill*         0x40239033        0x1 
- .irom0.text    0x40239034      0x9b4 ../lib\libwpa.a(md5-internal.o)
+                0x40238ee8                hmac_md5_vector
+                0x40239018                hmac_md5
+ *fill*         0x40239037        0x1 
+ .irom0.text    0x40239038      0x9b4 ../lib\libwpa.a(md5-internal.o)
                                 0x9dc (size before relaxing)
-                0x40239034                md5_vector
-                0x40239098                MD5Init
-                0x402390b4                MD5Update
-                0x40239174                MD5Final
- .irom0.text    0x402399e8      0x216 ../lib\libwpa.a(sha1.o)
+                0x40239038                md5_vector
+                0x4023909c                MD5Init
+                0x402390b8                MD5Update
+                0x40239178                MD5Final
+ .irom0.text    0x402399ec      0x216 ../lib\libwpa.a(sha1.o)
                                 0x23a (size before relaxing)
-                0x402399e8                hmac_sha1_vector
-                0x40239b1c                hmac_sha1
-                0x40239b3c                sha1_prf
- *fill*         0x40239bfe        0x2 
- .irom0.text    0x40239c00     0x14fb ../lib\libwpa.a(sha1-internal.o)
+                0x402399ec                hmac_sha1_vector
+                0x40239b20                hmac_sha1
+                0x40239b40                sha1_prf
+ *fill*         0x40239c02        0x2 
+ .irom0.text    0x40239c04     0x14fb ../lib\libwpa.a(sha1-internal.o)
                                0x157b (size before relaxing)
-                0x40239c00                sha1_vector
-                0x40239c70                SHA1Transform
-                0x4023af5c                SHA1Init
-                0x4023af80                SHA1Update
-                0x4023b01c                SHA1Final
- *fill*         0x4023b0fb        0x1 
- .irom0.text    0x4023b0fc      0x557 ../lib\libwpa.a(aes-internal-dec.o)
+                0x40239c04                sha1_vector
+                0x40239c74                SHA1Transform
+                0x4023af60                SHA1Init
+                0x4023af84                SHA1Update
+                0x4023b020                SHA1Final
+ *fill*         0x4023b0ff        0x1 
+ .irom0.text    0x4023b100      0x557 ../lib\libwpa.a(aes-internal-dec.o)
                                 0x573 (size before relaxing)
-                0x4023b104                rijndaelKeySetupDec
-                0x4023b1d8                aes_decrypt_init
-                0x4023b62c                aes_decrypt
-                0x4023b63c                aes_decrypt_deinit
- *fill*         0x4023b653        0x1 
- .irom0.text    0x4023b654      0x47d ../lib\libwpa.a(aes-internal-enc.o)
+                0x4023b108                rijndaelKeySetupDec
+                0x4023b1dc                aes_decrypt_init
+                0x4023b630                aes_decrypt
+                0x4023b640                aes_decrypt_deinit
+ *fill*         0x4023b657        0x1 
+ .irom0.text    0x4023b658      0x47d ../lib\libwpa.a(aes-internal-enc.o)
                                 0x49d (size before relaxing)
-                0x4023b654                rijndaelEncrypt
-                0x4023ba6c                aes_encrypt_init
-                0x4023ba9c                aes_encrypt
-                0x4023baac                aes_encrypt_deinit
- *fill*         0x4023bad1        0x3 
- .irom0.text    0x4023bad4      0x10a ../lib\libwpa.a(aes-internal.o)
+                0x4023b658                rijndaelEncrypt
+                0x4023ba70                aes_encrypt_init
+                0x4023baa0                aes_encrypt
+                0x4023bab0                aes_encrypt_deinit
+ *fill*         0x4023bad5        0x3 
+ .irom0.text    0x4023bad8      0x10a ../lib\libwpa.a(aes-internal.o)
                                 0x11a (size before relaxing)
-                0x4023bad8                rijndaelKeySetupEnc
- *fill*         0x4023bbde        0x2 
- .irom0.text    0x4023bbe0      0x2f7 ../lib\libmain.a(libc.o)
+                0x4023badc                rijndaelKeySetupEnc
+ *fill*         0x4023bbe2        0x2 
+ .irom0.text    0x4023bbe4      0x2f7 ../lib\lib48main.a(libc.o)
                                 0x31b (size before relaxing)
-                0x4023bbe4                strtol
-                0x4023bcf4                strcat
-                0x4023bd14                strncat
-                0x4023bd44                strspn
-                0x4023bd7c                strcspn
-                0x4023bdb4                strtok_r
-                0x4023be0c                strtok
-                0x4023be20                strrchr
-                0x4023be4c                strdup
-                0x4023be8c                strchr
-                0x4023bea8                srand
-                0x4023beb0                atoi
-                0x4023bec4                atol
- *fill*         0x4023bed7        0x1 
- .irom0.text    0x4023bed8       0xeb ../lib\liblwip.a(ethernetif.o)
+                0x4023bbe8                strtol
+                0x4023bcf8                strcat
+                0x4023bd18                strncat
+                0x4023bd48                strspn
+                0x4023bd80                strcspn
+                0x4023bdb8                strtok_r
+                0x4023be10                strtok
+                0x4023be24                strrchr
+                0x4023be50                strdup
+                0x4023be90                strchr
+                0x4023beac                srand
+                0x4023beb4                atoi
+                0x4023bec8                atol
+ *fill*         0x4023bedb        0x1 
+ .irom0.text    0x4023bedc       0xeb ../lib\liblwip.a(ethernetif.o)
                                  0xfb (size before relaxing)
-                0x4023bf34                ethernetif_input
-                0x4023bf9c                ethernetif_init
- *fill*         0x4023bfc3        0x1 
- .irom0.text    0x4023bfc4      0x229 ../lib\liblwip.a(netdb.o)
+                0x4023bf38                ethernetif_input
+                0x4023bfa0                ethernetif_init
+ *fill*         0x4023bfc7        0x1 
+ .irom0.text    0x4023bfc8      0x229 ../lib\liblwip.a(netdb.o)
                                 0x260 (size before relaxing)
-                0x4023bfcc                lwip_gethostbyname
-                0x4023c01c                lwip_gethostbyname_r
-                0x4023c0cc                lwip_freeaddrinfo
-                0x4023c0f0                lwip_getaddrinfo
- *fill*         0x4023c1ed        0x3 
- .irom0.text    0x4023c1f0      0x131 ../lib\libnet80211.a(ieee80211_crypto_ccmp.o)
+                0x4023bfd0                lwip_gethostbyname
+                0x4023c020                lwip_gethostbyname_r
+                0x4023c0d0                lwip_freeaddrinfo
+                0x4023c0f4                lwip_getaddrinfo
+ *fill*         0x4023c1f1        0x3 
+ .irom0.text    0x4023c1f4      0x131 ../lib\libnet80211.a(ieee80211_crypto_ccmp.o)
                                 0x135 (size before relaxing)
- *fill*         0x4023c321        0x3 
- .irom0.text    0x4023c324      0x15b ../lib\libnet80211.a(ieee80211_crypto_tkip.o)
+ *fill*         0x4023c325        0x3 
+ .irom0.text    0x4023c328      0x15b ../lib\libnet80211.a(ieee80211_crypto_tkip.o)
                                 0x167 (size before relaxing)
- *fill*         0x4023c47f        0x1 
- .irom0.text    0x4023c480       0x7c ../lib\libnet80211.a(ieee80211_crypto_wep.o)
+ *fill*         0x4023c483        0x1 
+ .irom0.text    0x4023c484       0x7c ../lib\libnet80211.a(ieee80211_crypto_wep.o)
                                  0x80 (size before relaxing)
  .irom0.literal
-                0x4023c4fc        0x0 ../lib\libmain.a(app_main.o)
- *fill*         0x4023c4fc        0x4 
- .irom.text     0x4023c500       0x80 ../lib\libmain.a(app_main.o)
+                0x4023c500        0x0 ../lib\lib48main.a(app_main.o)
+ *fill*         0x4023c500        0x0 
+ .irom.text     0x4023c500       0x80 ../lib\lib48main.a(app_main.o)
  .irom0.literal
-                0x4023c580        0x0 ../lib\libmain.a(ets_timer.o)
+                0x4023c580        0x0 ../lib\lib48main.a(ets_timer.o)
  *fill*         0x4023c580        0x0 
  .irom0.literal
-                0x4023c580        0x0 ../lib\libmain.a(misc.o)
+                0x4023c580        0x0 ../lib\lib48main.a(misc.o)
  .irom0.literal
-                0x4023c580        0x0 ../lib\libmain.a(uart.o)
+                0x4023c580        0x0 ../lib\lib48main.a(uart.o)
  *fill*         0x4023c580        0x0 
  .irom0.literal
-                0x4023c580        0x0 ../lib\libmain.a(user_interface.o)
+                0x4023c580        0x0 ../lib\lib48main.a(user_interface.o)
  *fill*         0x4023c580        0x0 
  .irom0.literal
-                0x4023c580        0x0 ../lib\libmain.a(timers.o)
+                0x4023c580        0x0 ../lib\lib48main.a(timers.o)
  *fill*         0x4023c580        0x0 
  .irom0.literal
                 0x4023c580        0x0 ../lib\libfreertos.a(port.o)
@@ -3089,7 +3090,7 @@ END GROUP
                 0x40248120                Td0
                 0x40248520                Td4s_rom
  .irom0.literal
-                0x40248620        0x0 ../lib\libmain.a(libc.o)
+                0x40248620        0x0 ../lib\lib48main.a(libc.o)
  *fill*         0x40248620        0x0 
  .irom0.literal
                 0x40248620        0x0 ../lib\liblwip.a(ethernetif.o)
@@ -3498,17 +3499,17 @@ END GROUP
 OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
 
 .xtensa.info    0x00000000       0x38
- .xtensa.info   0x00000000       0x38 ../lib\libmain.a(xtensa_vectors.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(app_main.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(ets_timer.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(misc.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(printf-stdarg.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(spi_flash.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(uart.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(user_interface.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(os_cpu_a.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(xtensa_context.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(timers.o)
+ .xtensa.info   0x00000000       0x38 ../lib\lib48main.a(xtensa_vectors.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(app_main.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(ets_timer.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(misc.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(printf-stdarg.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(spi_flash.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(uart.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(user_interface.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(os_cpu_a.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(xtensa_context.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(timers.o)
  .xtensa.info   0x00000000        0x0 ../lib\libfreertos.a(heap_4.o)
  .xtensa.info   0x00000000        0x0 ../lib\libfreertos.a(port.o)
  .xtensa.info   0x00000000        0x0 ../lib\libfreertos.a(queue.o)
@@ -3614,7 +3615,7 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
  .xtensa.info   0x00000000        0x0 ../lib\libwpa.a(aes-internal-dec.o)
  .xtensa.info   0x00000000        0x0 ../lib\libwpa.a(aes-internal-enc.o)
  .xtensa.info   0x00000000        0x0 ../lib\libwpa.a(aes-internal.o)
- .xtensa.info   0x00000000        0x0 ../lib\libmain.a(libc.o)
+ .xtensa.info   0x00000000        0x0 ../lib\lib48main.a(libc.o)
  .xtensa.info   0x00000000        0x0 ../lib\liblwip.a(ethernetif.o)
  .xtensa.info   0x00000000        0x0 ../lib\liblwip.a(netdb.o)
  .xtensa.info   0x00000000        0x0 main/.output/eagle/lib/libaddmmain.a(phy_chip_v6_unused.o)
@@ -3630,24 +3631,24 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
  .xtensa.info   0x00000000        0x0 ../lib\libnet80211.a(ieee80211_crypto_wep.o)
 
 .xt.lit         0x00000000     0x1308
- .xt.lit        0x00000000       0x10 ../lib\libmain.a(xtensa_vectors.o)
+ .xt.lit        0x00000000       0x10 ../lib\lib48main.a(xtensa_vectors.o)
                                  0x40 (size before relaxing)
- .xt.lit        0x00000010       0x80 ../lib\libmain.a(app_main.o)
+ .xt.lit        0x00000010       0x80 ../lib\lib48main.a(app_main.o)
                                  0x88 (size before relaxing)
- .xt.lit        0x00000090       0x38 ../lib\libmain.a(ets_timer.o)
+ .xt.lit        0x00000090       0x38 ../lib\lib48main.a(ets_timer.o)
                                  0x60 (size before relaxing)
- .xt.lit        0x000000c8       0x28 ../lib\libmain.a(misc.o)
+ .xt.lit        0x000000c8       0x28 ../lib\lib48main.a(misc.o)
                                  0x38 (size before relaxing)
- .xt.lit        0x000000f0       0x28 ../lib\libmain.a(printf-stdarg.o)
+ .xt.lit        0x000000f0       0x28 ../lib\lib48main.a(printf-stdarg.o)
                                  0x38 (size before relaxing)
- .xt.lit        0x00000118       0x40 ../lib\libmain.a(spi_flash.o)
+ .xt.lit        0x00000118       0x40 ../lib\lib48main.a(spi_flash.o)
                                  0x50 (size before relaxing)
- .xt.lit        0x00000158        0x8 ../lib\libmain.a(uart.o)
- .xt.lit        0x00000160      0x158 ../lib\libmain.a(user_interface.o)
+ .xt.lit        0x00000158        0x8 ../lib\lib48main.a(uart.o)
+ .xt.lit        0x00000160      0x158 ../lib\lib48main.a(user_interface.o)
                                 0x298 (size before relaxing)
- .xt.lit        0x000002b8        0x8 ../lib\libmain.a(os_cpu_a.o)
+ .xt.lit        0x000002b8        0x8 ../lib\lib48main.a(os_cpu_a.o)
                                  0x10 (size before relaxing)
- .xt.lit        0x000002c0       0x18 ../lib\libmain.a(timers.o)
+ .xt.lit        0x000002c0       0x18 ../lib\lib48main.a(timers.o)
  .xt.lit        0x000002d8       0x10 ../lib\libfreertos.a(heap_4.o)
                                  0x38 (size before relaxing)
  .xt.lit        0x000002e8       0x28 ../lib\libfreertos.a(port.o)
@@ -3824,7 +3825,7 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
  .xt.lit        0x000012a0        0x0 ../lib\libwpa.a(aes-internal-enc.o)
                                  0x18 (size before relaxing)
  .xt.lit        0x000012a0        0x8 ../lib\libwpa.a(aes-internal.o)
- .xt.lit        0x000012a8       0x28 ../lib\libmain.a(libc.o)
+ .xt.lit        0x000012a8       0x28 ../lib\lib48main.a(libc.o)
                                  0x30 (size before relaxing)
  .xt.lit        0x000012d0       0x10 ../lib\liblwip.a(ethernetif.o)
                                  0x18 (size before relaxing)
@@ -3844,25 +3845,25 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
                                   0x8 (size before relaxing)
 
 .xt.prop        0x00000000    0x26124
- .xt.prop       0x00000000      0x144 ../lib\libmain.a(xtensa_vectors.o)
+ .xt.prop       0x00000000      0x144 ../lib\lib48main.a(xtensa_vectors.o)
                                 0x18c (size before relaxing)
- .xt.prop       0x00000144      0x5ac ../lib\libmain.a(app_main.o)
+ .xt.prop       0x00000144      0x5ac ../lib\lib48main.a(app_main.o)
                                 0x5f4 (size before relaxing)
- .xt.prop       0x000006f0      0x3d8 ../lib\libmain.a(ets_timer.o)
+ .xt.prop       0x000006f0      0x3d8 ../lib\lib48main.a(ets_timer.o)
                                 0x438 (size before relaxing)
- .xt.prop       0x00000ac8      0x120 ../lib\libmain.a(misc.o)
+ .xt.prop       0x00000ac8      0x120 ../lib\lib48main.a(misc.o)
                                 0x138 (size before relaxing)
- .xt.prop       0x00000be8      0x504 ../lib\libmain.a(printf-stdarg.o)
- .xt.prop       0x000010ec      0x2a0 ../lib\libmain.a(spi_flash.o)
+ .xt.prop       0x00000be8      0x504 ../lib\lib48main.a(printf-stdarg.o)
+ .xt.prop       0x000010ec      0x2a0 ../lib\lib48main.a(spi_flash.o)
                                 0x2b8 (size before relaxing)
- .xt.prop       0x0000138c       0x60 ../lib\libmain.a(uart.o)
+ .xt.prop       0x0000138c       0x60 ../lib\lib48main.a(uart.o)
                                  0x6c (size before relaxing)
- .xt.prop       0x000013ec     0x1c74 ../lib\libmain.a(user_interface.o)
+ .xt.prop       0x000013ec     0x1c74 ../lib\lib48main.a(user_interface.o)
                                0x1d4c (size before relaxing)
- .xt.prop       0x00003060      0x138 ../lib\libmain.a(os_cpu_a.o)
+ .xt.prop       0x00003060      0x138 ../lib\lib48main.a(os_cpu_a.o)
                                 0x144 (size before relaxing)
- .xt.prop       0x00003198       0x30 ../lib\libmain.a(xtensa_context.o)
- .xt.prop       0x000031c8       0xe4 ../lib\libmain.a(timers.o)
+ .xt.prop       0x00003198       0x30 ../lib\lib48main.a(xtensa_context.o)
+ .xt.prop       0x000031c8       0xe4 ../lib\lib48main.a(timers.o)
                                  0xfc (size before relaxing)
  .xt.prop       0x000032ac      0x258 ../lib\libfreertos.a(heap_4.o)
                                 0x2ac (size before relaxing)
@@ -4035,7 +4036,7 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
  .xt.prop       0x000252cc       0xcc ../lib\libwpa.a(aes-internal-enc.o)
  .xt.prop       0x00025398       0x3c ../lib\libwpa.a(aes-internal.o)
                                  0x54 (size before relaxing)
- .xt.prop       0x000253d4      0x474 ../lib\libmain.a(libc.o)
+ .xt.prop       0x000253d4      0x474 ../lib\lib48main.a(libc.o)
                                 0x498 (size before relaxing)
  .xt.prop       0x00025848       0xb4 ../lib\liblwip.a(ethernetif.o)
                                  0xc0 (size before relaxing)
@@ -4059,14 +4060,14 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
                                  0x78 (size before relaxing)
 
 .comment        0x00000000     0x1b2f
- .comment       0x00000000       0x46 ../lib\libmain.a(app_main.o)
- .comment       0x00000046       0x47 ../lib\libmain.a(ets_timer.o)
- .comment       0x0000008d       0x42 ../lib\libmain.a(misc.o)
- .comment       0x000000cf       0x4b ../lib\libmain.a(printf-stdarg.o)
- .comment       0x0000011a       0x47 ../lib\libmain.a(spi_flash.o)
- .comment       0x00000161       0x42 ../lib\libmain.a(uart.o)
- .comment       0x000001a3       0x4c ../lib\libmain.a(user_interface.o)
- .comment       0x000001ef       0x44 ../lib\libmain.a(timers.o)
+ .comment       0x00000000       0x46 ../lib\lib48main.a(app_main.o)
+ .comment       0x00000046       0x47 ../lib\lib48main.a(ets_timer.o)
+ .comment       0x0000008d       0x42 ../lib\lib48main.a(misc.o)
+ .comment       0x000000cf       0x4b ../lib\lib48main.a(printf-stdarg.o)
+ .comment       0x0000011a       0x47 ../lib\lib48main.a(spi_flash.o)
+ .comment       0x00000161       0x42 ../lib\lib48main.a(uart.o)
+ .comment       0x000001a3       0x4c ../lib\lib48main.a(user_interface.o)
+ .comment       0x000001ef       0x44 ../lib\lib48main.a(timers.o)
  .comment       0x00000233       0x44 ../lib\libfreertos.a(heap_4.o)
  .comment       0x00000277       0x42 ../lib\libfreertos.a(port.o)
  .comment       0x000002b9       0x43 ../lib\libfreertos.a(queue.o)
@@ -4169,7 +4170,7 @@ OUTPUT(.output/eagle/image/eagle.app.v6.out elf32-xtensa-le)
  .comment       0x00001884       0x4e ../lib\libwpa.a(aes-internal-dec.o)
  .comment       0x000018d2       0x4e ../lib\libwpa.a(aes-internal-enc.o)
  .comment       0x00001920       0x4a ../lib\libwpa.a(aes-internal.o)
- .comment       0x0000196a       0x42 ../lib\libmain.a(libc.o)
+ .comment       0x0000196a       0x42 ../lib\lib48main.a(libc.o)
  .comment       0x000019ac       0x48 ../lib\liblwip.a(ethernetif.o)
  .comment       0x000019f4       0x43 ../lib\liblwip.a(netdb.o)
  .comment       0x00000000       0x12 main/.output/eagle/lib/libaddmmain.a(phy_chip_v6_unused.o)

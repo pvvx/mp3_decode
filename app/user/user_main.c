@@ -7,6 +7,7 @@
  *
  * Modification history:
  *     2015/06/01, v1.0 File created.
+ *  2015/06/19, pvvx
 *******************************************************************************/
 #include "esp_common.h"
 
@@ -24,6 +25,7 @@
 #include "../mad/frame.h"
 #include "../mad/synth.h"
 #include "i2s_freertos.h"
+#include "iram_buf.h"
 #include "spiram_fifo.h"
 #include "playerconfig.h"
 
@@ -36,7 +38,6 @@ const int streamPort=PLAY_PORT;
 #define PRIO_READER 11
 #define PRIO_MAD 1
 
-
 //The mp3 read buffer size. 2106 bytes should be enough for up to 48KHz mp3s according to the sox sources. Used by libmad.
 #define READBUFSZ (2106)
 static char readBuf[READBUFSZ]; 
@@ -44,40 +45,31 @@ static char readBuf[READBUFSZ];
 static long bufUnderrunCt;
 
 
-//Reformat the 16-bit mono sample to a format we can send to I2S.
-static int sampToI2s(short s) {
-	//We can send a 32-bit sample to the I2S subsystem and the DAC will neatly split it up in 2
-	//16-bit analog values, one for left and one for right.
-
-	//Duplicate 16-bit sample to both the L and R channel
-	int samp=s;
-	samp=(samp)&0xffff;
-	samp=(samp<<16)|samp;
-	return samp;
-}
-
+#if defined(PWM_HACK)
 //Array with 32-bit values which have one bit more set to '1' in every consecutive array index value
-const unsigned int ICACHE_RODATA_ATTR fakePwm[]={ 0x00000010, 0x00000410, 0x00400410, 0x00400C10, 0x00500C10, 0x00D00C10, 0x20D00C10, 0x21D00C10, 0x21D80C10, 
-	0xA1D80C10, 0xA1D80D10, 0xA1D80D30, 0xA1DC0D30, 0xA1DC8D30, 0xB1DC8D30, 0xB9DC8D30, 0xB9FC8D30, 0xBDFC8D30, 0xBDFE8D30, 
-	0xBDFE8D32, 0xBDFE8D33, 0xBDFECD33, 0xFDFECD33, 0xFDFECD73, 0xFDFEDD73, 0xFFFEDD73, 0xFFFEDD7B, 0xFFFEFD7B, 0xFFFFFD7B, 
-	0xFFFFFDFB, 0xFFFFFFFB, 0xFFFFFFFF};
+const unsigned int ICACHE_RODATA_ATTR fakePwm[]={
+	0x00000010, 0x00000410, 0x00400410, 0x00400C10, 0x00500C10, 0x00D00C10, 0x20D00C10, 0x21D00C10,
+	0x21D80C10,	0xA1D80C10, 0xA1D80D10, 0xA1D80D30, 0xA1DC0D30, 0xA1DC8D30, 0xB1DC8D30, 0xB9DC8D30,
+	0xB9FC8D30, 0xBDFC8D30, 0xBDFE8D30, 0xBDFE8D32, 0xBDFE8D33, 0xBDFECD33, 0xFDFECD33, 0xFDFECD73,
+	0xFDFEDD73, 0xFFFEDD73, 0xFFFEDD7B, 0xFFFEFD7B, 0xFFFFFD7B,	0xFFFFFDFB, 0xFFFFFFFB, 0xFFFFFFFF};
 
 static int sampToI2sPwm(short s) {
 	//Okay, when this is enabled it means a speaker is connected *directly* to the data output. Instead of
 	//having a nice PCM signal, we fake a PWM signal here.
 	static int err=0;
-	int samp=s;
+	int samp = s;
 	samp=(samp+32768);	//to unsigned
 	samp-=err;			//Add the error we made when rounding the previous sample (error diffusion)
 	//clip value
 	if (samp>65535) samp=65535;
 	if (samp<0) samp=0;
 	//send pwm value for sample value
-	samp=fakePwm[samp>>11];
+	samp = fakePwm[samp>>11];
 	err=(samp&0x7ff);	//Save rounding error.
 	return samp;
 }
 
+#elif defined(DELTA_SIGMA_HACK)
 //2nd order delta-sigma DAC
 //See http://www.beis.de/Elektronik/DeltaSigma/DeltaSigma.html for a nice explanation
 static int sampToI2sDeltaSigma(short s) {
@@ -99,7 +91,21 @@ static int sampToI2sDeltaSigma(short s) {
 	return val;
 }
 
+#else
 
+//Reformat the 16-bit mono sample to a format we can send to I2S.
+static int sampToI2s(short s) {
+	//We can send a 32-bit sample to the I2S subsystem and the DAC will neatly split it up in 2
+	//16-bit analog values, one for left and one for right.
+
+	//Duplicate 16-bit sample to both the L and R channel
+	int samp=s;
+	samp=(samp)&0xffff;
+	samp=(samp<<16)|samp;
+	return samp;
+}
+
+#endif
 
 //Calculate the number of samples that we add or delete. Added samples means a slightly lower
 //playback rate, deleted samples means we increase playout speed a bit. This returns an
@@ -155,7 +161,6 @@ void render_sample_block(short *short_sample_buff, int no_samples) {
 #ifdef ADD_DEL_SAMPLES
 	sampAddDel=recalcAddDelSamp(sampAddDel);
 #endif
-
 
 	sampErr+=sampAddDel;
 	for (i=0; i<no_samples; i++) {
@@ -328,19 +333,19 @@ int ICACHE_FLASH_ATTR openConn(const char *streamHost, const char *streamPath) {
 //Reader task. This will try to read data from a TCP socket into the SPI fifo buffer.
 void ICACHE_FLASH_ATTR tskreader(void *pvParameters) {
 	int madRunning=0;
-	char wbuf[64];
+	char wbuf[256];
 	int n, l, inBuf;
 	int t;
 	int fd;
-	int c=0;
+	int c = 0;
 	while(1) {
 		fd=openConn(streamHost, streamPath);
 		printf("Reading into SPI RAM FIFO...\n");
 		do {
-			n=read(fd, wbuf, sizeof(wbuf));
-			if (n>0) spiRamFifoWrite(wbuf, n);
-			c+=n;
-			if ((!madRunning) && (spiRamFifoFree()<spiRamFifoLen()/2)) {
+			n = read(fd, wbuf, sizeof(wbuf));
+			if (n > 0) spiRamFifoWrite(wbuf, n);
+			c += n;
+			if ((!madRunning) && (spiRamFifoFree() < spiRamFifoLen()/2)) {
 				//Buffer is filled. Start up the MAD task. Yes, the 2100 bytes of stack is a fairly large amount but MAD seems to need it.
 				if (xTaskCreate(tskmad, "tskmad", 2100, NULL, PRIO_MAD, NULL)!=pdPASS) printf("ERROR creating MAD task! Out of memory?\n");
 				madRunning=1;

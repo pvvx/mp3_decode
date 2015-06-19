@@ -7,7 +7,7 @@
 #define __EXRTA_RAM_H_
 
 #define IRAM1_BASE	0x40100000
-#define IRAM1_SIZE	0x00008000
+#define IRAM1_SIZE	0x0000C000
 #define MIN_GET_IRAM 4096
 
 typedef struct t_eraminfo

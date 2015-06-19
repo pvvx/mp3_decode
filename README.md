@@ -7,7 +7,7 @@ Free Heap: 20 Kbytes.
 
 GPIO2 - Output PWM Sound
 
-MP3-decodec-out uses IRAM Buffer > 5 Kbytes
+MP3-decodec-out uses IRAM Buffer > 20 Kbytes
 
 Set connect AP in playerconfig.h: 
 
