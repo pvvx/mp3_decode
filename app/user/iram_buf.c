@@ -97,7 +97,7 @@ void ICACHE_FLASH_ATTR eram_init(void) {
 }
 
 
-bool ICACHE_FLASH_ATTR eRamRead(uint32 addr, uint8 *pd, uint32 len)
+bool ICACHE_FLASH_ATTR __attribute__((optimize("Os"))) eRamRead(uint32 addr, uint8 *pd, uint32 len)
 {
 	union {
 		uint8 uc[4];
@@ -109,9 +109,9 @@ bool ICACHE_FLASH_ATTR eRamRead(uint32 addr, uint8 *pd, uint32 len)
 	if(xlen) {
 		tmp.ud = *p++;
 		while (len)  {
-			*pd++ = tmp.uc[xlen++];
 			len--;
-			if(xlen >= 4) break;
+			*pd++ = tmp.uc[xlen++];
+			if(xlen & 4) break;
 		}
 	}
 	xlen = len >> 2;
@@ -123,16 +123,20 @@ bool ICACHE_FLASH_ATTR eRamRead(uint32 addr, uint8 *pd, uint32 len)
 		*pd++ = tmp.uc[3];
 		xlen--;
 	}
-	len &= 3;
-	if(len) {
+	if(len & 3) {
 		tmp.ud = *p;
-		uint8 * ptmp = tmp.uc;
-		while (len--)  *pd++ = *ptmp++;
+		pd[0] = tmp.uc[0];
+		if(len & 2) {
+			pd[1] = tmp.uc[1];
+			if(len & 1) {
+				pd[2] = tmp.uc[2];
+			}
+		}
 	}
 	return true;
 }
 
-bool ICACHE_FLASH_ATTR eRamWrite(uint32 addr, uint8 *pd, uint32 len)
+bool ICACHE_FLASH_ATTR __attribute__((optimize("Os"))) eRamWrite(uint32 addr, uint8 *pd, uint32 len)
 {
 	union {
 		uint8 uc[4];
@@ -144,9 +148,9 @@ bool ICACHE_FLASH_ATTR eRamWrite(uint32 addr, uint8 *pd, uint32 len)
 	if(xlen) {
 		tmp.ud = *p;
 		while (len)  {
-			tmp.uc[xlen++] = *pd++;
 			len--;
-			if(xlen >= 4) break;
+			tmp.uc[xlen++] = *pd++;
+			if(xlen & 4) break;
 		}
 		*p++ = tmp.ud;
 	}
@@ -159,11 +163,15 @@ bool ICACHE_FLASH_ATTR eRamWrite(uint32 addr, uint8 *pd, uint32 len)
 		*p++ = tmp.ud;
 		xlen--;
 	}
-	len &= 3;
-	if(len) {
+	if(len & 3) {
 		tmp.ud = *p;
-		uint8 * ptmp = tmp.uc;
-		while (len--)  *ptmp++ = *pd++;
+		tmp.uc[0] = pd[0];
+		if(len & 2) {
+			tmp.uc[1] = pd[1];
+			if(len & 1) {
+				tmp.uc[2] = pd[2];
+			}
+		}
 		*p = tmp.ud;
 	}
 	return true;
