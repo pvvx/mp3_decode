@@ -372,10 +372,13 @@ void ICACHE_FLASH_ATTR tskconnect(void *pvParameters) {
 
 	//Connect to the defined access point.
 	struct station_config *config=malloc(sizeof(struct station_config));
-	memset(config, 0x00, sizeof(struct station_config));
-	sprintf(config->ssid, AP_NAME);
-	sprintf(config->password, AP_PASS);
-	wifi_station_set_config(config);
+	wifi_station_get_config(config);
+	if(config->ssid[0] == 0 || config->password[0] == 0) {
+		memset(config, 0x00, sizeof(struct station_config));
+		sprintf(config->ssid, AP_NAME);
+		sprintf(config->password, AP_PASS);
+		wifi_station_set_config(config);
+	}
 	wifi_station_connect();
 	free(config);
 

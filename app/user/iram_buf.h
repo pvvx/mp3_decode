@@ -16,8 +16,6 @@ typedef struct t_eraminfo
 	uint32 size;
 }ERAMInfo;
 
-//#define eram_base (*(volatile uint32*)(IRAM1_BASE + IRAM1_SIZE - 8))
-//#define eram_size (*(volatile uint32*)(IRAM1_BASE + IRAM1_SIZE - 4))
 
 void eram_init(void) ICACHE_FLASH_ATTR;
 extern ERAMInfo eraminfo;

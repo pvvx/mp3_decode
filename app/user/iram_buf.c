@@ -6,6 +6,7 @@
 #include "user_config.h"
 #include "esp_common.h"
 #include "bios/spiflash.h"
+#include "hw/esp8266.h"
 #include "iram_buf.h"
 
 #ifndef DEBUGSOO
@@ -31,9 +32,9 @@ bool ICACHE_FLASH_ATTR get_eram_size(ERAMInfo *einfo) {
 	struct SPIFlashHeader x;
 	int i = 1;
 	uint32 faddr = 0x000;
-//	einfo->use = false;
 	einfo->base = NULL;
 	einfo->size = 0;
+	uint32 iramsize = 32768 + (((DPORT_BASE[9]>>7)==3)? 0 : 16384);
 	if (flash_read(faddr, (uint32 *)&x, 8) != 0)
 		return false;
 	faddr += 8;
@@ -65,11 +66,11 @@ bool ICACHE_FLASH_ATTR get_eram_size(ERAMInfo *einfo) {
 				return false;
 			};
 			if ((x.seg.memory_offset >= IRAM1_BASE)
-					&& (x.seg.memory_offset < (IRAM1_BASE + IRAM1_SIZE))) {
+					&& (x.seg.memory_offset < (IRAM1_BASE + iramsize))) {
 				if (((x.seg.memory_offset + x.seg.segment_size) > (uint32)einfo->base)
 						&& ((x.seg.memory_offset + x.seg.segment_size)
-								< (IRAM1_BASE + IRAM1_SIZE))) {
-					einfo->size = IRAM1_SIZE - x.seg.segment_size;
+								< (IRAM1_BASE + iramsize))) {
+					einfo->size = iramsize - x.seg.segment_size;
 					einfo->base = (uint32 *)(x.seg.memory_offset + x.seg.segment_size);
 				};
 			};

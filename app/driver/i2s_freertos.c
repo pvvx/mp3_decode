@@ -79,7 +79,7 @@ LOCAL void slc_isr(void) {
 	//Grab int status
 	slc_intr_status = READ_PERI_REG(SLC_INT_STATUS);
 	//clear all intr flags
-	WRITE_PERI_REG(SLC_INT_CLR, 0xffffffff);//slc_intr_status);
+	WRITE_PERI_REG(SLC_INT_CLR, slc_intr_status); // 0xffffffff);
 	if (slc_intr_status & SLC_RX_EOF_INT_ST) {
 		//The DMA subsystem is done with this block: Push it on the queue so it can be re-used.
 		finishedDesc=(struct sdio_queue*)READ_PERI_REG(SLC_RX_EOF_DES_ADDR);
