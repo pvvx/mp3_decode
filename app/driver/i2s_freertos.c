@@ -33,6 +33,7 @@ speed.
 #include "freertos/semphr.h"
 #include "freertos/queue.h"
 
+#include "gpio.h"
 #include "i2s_reg.h"
 #include "slc_register.h"
 #include "sdio_slv.h"
@@ -175,8 +176,12 @@ void ICACHE_FLASH_ATTR i2sInit() {
 	//Init pins to i2s functions
 	PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0RXD_U, FUNC_I2SO_DATA);
 	PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_I2SO_WS);
+#ifndef USE_ESP01_MODULE
 	PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDO_U, FUNC_I2SO_BCK);
-
+#else
+	GPIO_AS_INPUT(1<<15);
+	PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDO_U, FUNC_GPIO15);
+#endif
 	//Enable clock to i2s subsystem
 	i2c_writeReg_Mask_def(i2c_bbpll, i2c_bbpll_en_audio_clock_out, 1);
 

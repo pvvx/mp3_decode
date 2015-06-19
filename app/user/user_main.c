@@ -64,7 +64,7 @@ static int sampToI2sPwm(short s) {
 	if (samp>65535) samp=65535;
 	if (samp<0) samp=0;
 	//send pwm value for sample value
-	samp = fakePwm[samp>>11];
+	samp=fakePwm[samp>>11];
 	err=(samp&0x7ff);	//Save rounding error.
 	return samp;
 }
@@ -72,13 +72,13 @@ static int sampToI2sPwm(short s) {
 #elif defined(DELTA_SIGMA_HACK)
 //2nd order delta-sigma DAC
 //See http://www.beis.de/Elektronik/DeltaSigma/DeltaSigma.html for a nice explanation
-static int sampToI2sDeltaSigma(short s) {
+ int sampToI2sDeltaSigma(short s) {
 	int x;
 	int val=0;
 	int w;
 	static int i1v=0, i2v=0;
 	static int outReg=0;
-	for (x=0; x<32; x++) {
+	for (x=0; x < 32; x++) {
 		w=s;
 		if (outReg>0) w-=32767; else w+=32767; //Difference 1
 		w+=i1v; i1v=w; //Integrator 1
@@ -299,6 +299,7 @@ int ICACHE_FLASH_ATTR openConn(const char *streamHost, const char *streamPath) {
 	int n, i;
 	while(1) {
 		struct sockaddr_in remote_ip;
+		printf("URL: %s%s\n", streamHost, streamPath);
 		bzero(&remote_ip, sizeof(struct sockaddr_in));
 		if (!getIpForHost(streamHost, &remote_ip)) {
 			vTaskDelay(1000/portTICK_RATE_MS);
@@ -339,7 +340,7 @@ void ICACHE_FLASH_ATTR tskreader(void *pvParameters) {
 	int fd;
 	int c = 0;
 	while(1) {
-		fd=openConn(streamHost, streamPath);
+		fd = openConn(streamHost, streamPath);
 		printf("Reading into SPI RAM FIFO...\n");
 		do {
 			n = read(fd, wbuf, sizeof(wbuf));

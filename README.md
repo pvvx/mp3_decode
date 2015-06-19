@@ -5,7 +5,7 @@ Support all ESP2866 modules (512 Kbytes flash)
 Free Flash (512 Kbytes): 200 Kbytes.
 Free Heap: 20 Kbytes.
 
-GPIO2 - Output PWM Sound
+GPIO3 (RXD) - Output PWM Sound
 
 MP3-decodec-out uses IRAM Buffer > 20 Kbytes
 
