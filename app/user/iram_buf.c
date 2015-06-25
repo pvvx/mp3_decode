@@ -34,7 +34,7 @@ bool ICACHE_FLASH_ATTR get_eram_size(ERAMInfo *einfo) {
 	uint32 faddr = 0x000;
 	einfo->base = NULL;
 	einfo->size = 0;
-	uint32 iramsize = 32768 + (((DPORT_BASE[9]>>7)==3)? 0 : 16384);
+	uint32 iramsize = 32768 + ((((DPORT_BASE[9]>>3)&3)==3)? 0 : 16384);
 	if (flash_read(faddr, (uint32 *)&x, 8) != 0)
 		return false;
 	faddr += 8;
