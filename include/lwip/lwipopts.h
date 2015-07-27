@@ -32,6 +32,7 @@
 #ifndef __LWIPOPTS_H__
 #define __LWIPOPTS_H__
 
+#define LWIP_ESP8266
 /*
    -----------------------------------------------
    ---------- Platform specific locking ----------
@@ -48,13 +49,13 @@
  * MEMCPY: override this if you have a faster implementation at hand than the
  * one included in your C library
  */
-#define MEMCPY(dst,src,len)             memcpy(dst,src,len)
+#define MEMCPY(dst,src,len)             ets_memcpy(dst,src,len)
 
 /**
  * SMEMCPY: override this with care! Some compilers (e.g. gcc) can inline a
  * call to memcpy() if the length is known at compile time and is small.
  */
-#define SMEMCPY(dst,src,len)            memcpy(dst,src,len)
+#define SMEMCPY(dst,src,len)            ets_memcpy(dst,src,len)
 
 /*
    ------------------------------------
@@ -87,6 +88,21 @@
    ---------- Internal Memory Pool Sizes ----------
    ------------------------------------------------
 */
+/**
+ * MEMP_NUM_TCP_PCB: the number of simulatenously active TCP connections.
+ * (requires the LWIP_TCP option)
+ */
+#ifndef MEMP_NUM_TCP_PCB
+#define MEMP_NUM_TCP_PCB                11
+#endif
+
+/**
+ * MEMP_NUM_NETCONN: the number of struct netconns.
+ * (only needed if you use the sequential API, like api_lib.c)
+ */
+#ifndef MEMP_NUM_NETCONN
+#define MEMP_NUM_NETCONN                10
+#endif
 
 /*
    --------------------------------
@@ -119,7 +135,7 @@
  * that this option does not affect incoming packet sizes, which can be
  * controlled via IP_REASSEMBLY.
  */
-#define IP_FRAG                         1
+#define IP_FRAG                         0
 
 /**
  * IP_REASS_MAXAGE: Maximum time (in multiples of IP_TMR_INTERVAL - so seconds, normally)
@@ -263,6 +279,13 @@
    ------------------------------------
 */
 /**
+ * TCPIP_THREAD_NAME: The name assigned to the main tcpip thread.
+ */
+#ifndef TCPIP_THREAD_NAME
+#define TCPIP_THREAD_NAME              "tiT"
+#endif
+
+/**
  * TCPIP_THREAD_STACKSIZE: The stack size used by the main tcpip thread.
  * The stack size value itself is platform-dependent, but is passed to
  * sys_thread_new() when the thread is created.
@@ -309,6 +332,11 @@
    ---------- Sequential layer options ----------
    ----------------------------------------------
 */
+/**
+ * LWIP_TCPIP_CORE_LOCKING: (EXPERIMENTAL!)
+ * Don't use it if you're not an active lwIP project member
+ */
+#define LWIP_TCPIP_CORE_LOCKING         1
 
 /*
    ------------------------------------
@@ -349,6 +377,12 @@
    ---------- Statistics options ----------
    ----------------------------------------
 */
+/**
+ * LWIP_STATS==1: Enable statistics collection in lwip_stats.
+ */
+#ifndef LWIP_STATS
+#define LWIP_STATS                      0
+#endif
 
 /*
    ---------------------------------

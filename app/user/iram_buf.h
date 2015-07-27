@@ -10,16 +10,15 @@
 #define IRAM1_SIZE	0x0000C000
 #define MIN_GET_IRAM 4096
 
-typedef struct t_eraminfo
+typedef struct t_eraminfo // info buffer iram
 {
 	uint32 *base;
-	uint32 size;
+	int32 size;
 }ERAMInfo;
 
-
-void eram_init(void) ICACHE_FLASH_ATTR;
 extern ERAMInfo eraminfo;
 
+int eRam_init(void) ICACHE_FLASH_ATTR;
 bool eRamRead(uint32 addr, uint8 *pd, uint32 len) ICACHE_FLASH_ATTR;
 bool eRamWrite(uint32 addr, uint8 *pd, uint32 len) ICACHE_FLASH_ATTR;
 

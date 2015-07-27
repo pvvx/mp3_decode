@@ -41,11 +41,11 @@ speed.
 
 //We need some defines that aren't in some RTOS SDK versions. Define them here if we can't find them.
 #ifndef i2c_bbpll
-#define i2c_bbpll                                 0x67
+#define i2c_bbpll                               0x67
 #define i2c_bbpll_en_audio_clock_out            4
 #define i2c_bbpll_en_audio_clock_out_msb        7
 #define i2c_bbpll_en_audio_clock_out_lsb        7
-#define i2c_bbpll_hostid                           4
+#define i2c_bbpll_hostid                        4
 
 #define i2c_writeReg_Mask(block, host_id, reg_add, Msb, Lsb, indata)  rom_i2c_writeReg_Mask(block, host_id, reg_add, Msb, Lsb, indata)
 #define i2c_readReg_Mask(block, host_id, reg_add, Msb, Lsb)  rom_i2c_readReg_Mask(block, host_id, reg_add, Msb, Lsb)
@@ -152,7 +152,7 @@ void ICACHE_FLASH_ATTR i2sInit() {
 	SET_PERI_REG_MASK(SLC_RX_LINK, ((uint32)&i2sBufDesc[0]) & SLC_RXLINK_DESCADDR_MASK);
 
 	//Attach the DMA interrupt
-	_xt_isr_attach(ETS_SLC_INUM, slc_isr);
+	_xt_isr_attach(ETS_SLC_INUM, (_xt_isr) slc_isr, NULL);
 	//Enable DMA operation intr
 	WRITE_PERI_REG(SLC_INT_ENA,  SLC_RX_EOF_INT_ENA);
 	//clear any interrupt flags that are set

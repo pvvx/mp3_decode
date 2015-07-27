@@ -5,7 +5,7 @@ MEMORY
   dport0_0_seg :                org = 0x3FF00000, len = 0x00010
   dram0_0_seg :                 org = 0x3FFE8000, len = 0x14000
   iram1_0_seg :                 org = 0x40100000, len = 0x0C000
-  irom0_0_seg :					org = 0x40209000, len = 0x73000
+  irom0_0_seg :					org = 0x40208000, len = 0x73000
 }
 
 PHDRS
@@ -192,6 +192,10 @@ SECTIONS
     *(.fini.literal)
     *(.fini)
     *(.gnu.version)
+    . = ALIGN (4);
+    eraminfo = ABSOLUTE(.);
+    LONG(eraminfo + 8)
+    LONG(0x4010C000 - 8 - eraminfo)
     _text_end = ABSOLUTE(.);
     _etext = .;
   } >iram1_0_seg :iram1_0_phdr
@@ -199,6 +203,7 @@ SECTIONS
   .lit4 : ALIGN(4)
   {
     _lit4_start = ABSOLUTE(.);
+    *(.iram.data)
     *(*.lit4)
     *(.lit4.*)
     *(.gnu.linkonce.lit4.*)

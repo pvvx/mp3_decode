@@ -9,7 +9,7 @@ ESPOPTION ?= -p COM6 -b 230400
 GENIMAGEOPTION = -ff 80m -fm qio -fs 4m
 
 ADDR_FW1 = 0x00000
-ADDR_FW2 = 0x09000
+ADDR_FW2 = 0x08000
 
 # Base directory for the compiler
 XTENSA_TOOLS_ROOT ?= c:/Espressif/xtensa-lx106-elf/bin
@@ -23,7 +23,7 @@ NM := $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-nm
 CPP = $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-cpp
 OBJCOPY = $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-objcopy
 OBJDUMP := $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-objdump
-CCFLAGS += -Wno-pointer-sign -mno-target-align -mno-serialize-volatile -foptimize-register-move
+CCFLAGS += -std=gnu90 -Wno-pointer-sign -mno-target-align -mno-serialize-volatile -foptimize-register-move
 #
 # -Os -O2 -Wall -Wno-pointer-sign -mno-target-align -mno-serialize-volatile -foptimize-register-move
 # -fomit-frame-pointer -fmerge-all-constants
@@ -42,7 +42,7 @@ CLREEPADDR := 0x79000
 
 SDK_TOOLS	?= c:/Espressif/utils
 #ESPTOOL		?= $(SDK_TOOLS)/esptool
-ESPTOOL		?= C:/Python27/python.exe $(SDK_TOOLS)/esptool.py
+ESPTOOL		?= C:/Python27/python.exe $(CWD)esptool.py
 
 CSRCS ?= $(wildcard *.c)
 ASRCs ?= $(wildcard *.s)
@@ -119,10 +119,10 @@ endef
 
 $(BINODIR)/%.bin: $(IMAGEODIR)/%.out
 	@mkdir -p ../$(FIRMWAREDIR)
-	@echo "FW ../$(FIRMWAREDIR)/$(ADDR_FW1).bin + ../$(FIRMWAREDIR)/$(ADDR_FW2).bin"
-	$(ESPTOOL) elf2image -o ../$(FIRMWAREDIR)/ $(GENIMAGEOPTION) $<
-	$(Q) $(SDK_TOOLS)/memanalyzer.exe $(OBJDUMP).exe $<
-
+	@echo "------------------------------------------------------------------------------"
+	@$(ESPTOOL) elf2image -es user_start_trampoline -o ../$(FIRMWAREDIR)/ $(flashimageoptions) $<
+	@echo "------------------------------------------------------------------------------"
+	
 
 all: .subdirs $(OBJS) $(OLIBS) $(OIMAGES) $(OBINS) $(SPECIAL_MKTARGETS)
 

@@ -41,7 +41,7 @@ static long fifoOvfCnt, fifoUdrCnt;
 #undef SPIRAMSIZE
 //allocate enough for about one mp3 frame
 #define SPIRAMSIZE eraminfo.size
-#define spiRamInit() eram_init()
+#define spiRamInit() eRam_init()
 #define spiRamTest() (eraminfo.size < MIN_GET_IRAM ? 0 : 1)
 #define spiRamWrite(pos, buf, n) eRamWrite(pos, buf, n)
 #define spiRamRead(pos, buf, n) eRamRead(pos, buf, n)

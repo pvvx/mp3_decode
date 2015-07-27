@@ -1,5 +1,7 @@
 PROVIDE ( Cache_Read_Disable = 0x400047f0 );
 PROVIDE ( Cache_Read_Enable = 0x40004678 );
+PROVIDE ( Enable_QMode = 0x400044c0 );
+PROVIDE ( Disable_QMode = 0x40004508 );
 PROVIDE ( FilePacketSendReqMsgProc = 0x400035a0 );
 PROVIDE ( FlashDwnLdParamCfgMsgProc = 0x4000368c );
 PROVIDE ( FlashDwnLdStartMsgProc = 0x40003538 );
@@ -16,6 +18,9 @@ PROVIDE ( SHA1Final = 0x4000b648 );
 PROVIDE ( SHA1Init = 0x4000b584 );
 PROVIDE ( SHA1Transform = 0x4000a364 );
 PROVIDE ( SHA1Update = 0x4000b5a8 );
+PROVIDE ( SPI_sector_erase = 0x400040c0 );
+PROVIDE ( SPI_page_program = 0x40004174 );
+PROVIDE ( SPI_read_data = 0x400042ac );
 PROVIDE ( SPI_read_status = 0x400043c8 );
 PROVIDE ( SPI_write_status = 0x40004400 );
 PROVIDE ( SPI_write_enable = 0x4000443c );
@@ -361,13 +366,9 @@ PROVIDE ( printf_pbuf = 0x3FFFDD5C );
 PROVIDE ( user_start_proc = 0x3FFFDCD0 );
 PROVIDE ( dtm_params = 0x3FFFDD64 );
 
-/*
-PROVIDE ( timer_list = 0x3FFFDDB0 );
-PROVIDE ( debug_timer = 0x3FFFDDB4 );
-PROVIDE ( debug_timerfn = 0x3FFFDDB8 ); */
+/*PROVIDE ( timer_list = 0x3FFFDDB0 );*/
 
 /* 0x3FFFE360..0x3FFFEA80 ram buf max 1824 bytes */
-PROVIDE ( spi_flash_info = 0x3FFFDDB8 ); 
 
 PROVIDE ( dport_	= 0x3ff00000);
 PROVIDE ( io2_regs_	= 0x3ff20000);
@@ -385,12 +386,3 @@ PROVIDE ( rtc_ram_	= 0x60001000);
 PROVIDE ( rtc_mem_	= 0x60001100);
 PROVIDE ( io4_regs_	= 0x60009800);
 
-PROVIDE ( SPI_sector_erase = 0x400040c0 );
-PROVIDE ( SPI_page_program = 0x40004174 );
-PROVIDE ( SPI_read_data = 0x400042ac );
-PROVIDE ( SPI_read_status = 0x400043c8 );
-PROVIDE ( SPI_write_status = 0x40004400 );
-PROVIDE ( SPI_write_enable = 0x4000443c );
-PROVIDE ( Wait_SPI_Idle = 0x4000448c );
-PROVIDE ( Enable_QMode = 0x400044c0 );
-PROVIDE ( Disable_QMode = 0x40004508 );

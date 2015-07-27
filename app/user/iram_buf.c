@@ -5,8 +5,6 @@
  */
 #include "user_config.h"
 #include "esp_common.h"
-#include "bios/spiflash.h"
-#include "hw/esp8266.h"
 #include "iram_buf.h"
 
 #ifndef DEBUGSOO
@@ -16,96 +14,40 @@
 #ifndef ICACHE_RODATA_ATTR
 #define ICACHE_RODATA_ATTR __attribute__((section(".irom.text")))
 #endif
-
-#if DEBUGSOO > 0
-const char *txtSPIFlashInterface[] = {"QIO","QOUT","DIO","DOUT"};
-const char *txtFSize[] = {"512K", "256K", "1M", "2M", "4M"};
-const char *txtSFreq[] = {"40MHz","26MHz","20MHz","80MHz"};
+#ifndef ICACHE_RAM_ATTR
+#define ICACHE_RAM_ATTR
 #endif
-
 
 #define flash_read spi_flash_read
 
-ERAMInfo eraminfo;
+extern uint32 _text_start[]; // start addr IRAM
+extern uint32 _lit4_start[]; // addr data buf IRAM
 
-bool ICACHE_FLASH_ATTR get_eram_size(ERAMInfo *einfo) {
-	struct SPIFlashHeader x;
-	int i = 1;
-	uint32 faddr = 0x000;
-	einfo->base = NULL;
-	einfo->size = 0;
-	uint32 iramsize = 32768 + ((((DPORT_BASE[9]>>3)&3)==3)? 0 : 16384);
-	if (flash_read(faddr, (uint32 *)&x, 8) != 0)
-		return false;
-	faddr += 8;
-#if DEBUGSOO > 0
-	printf("Flash Header:\n");
-#endif
-	if (x.head.id != 0xE9) {
-#if DEBUGSOO > 0
-		printf(" Bad Header!\n");
-#endif
-		return false;
-	} else {
-#if DEBUGSOO > 0
-/*		uint32 speed = x.head.hsz.spi_freg;
-		if(speed > 2) {
-			if(speed == 15) speed = 3;
-			else speed = 0;
-		} */
-		printf(
-				" Number of segments: %u\n SPI Flash Interface: %s\n SPI CLK: %s\n Flash size: %s\n Entry point: %p\n",
-				x.head.number_segs, txtSPIFlashInterface[x.head.spi_interface & 3], txtSFreq[x.head.hsz.spi_freg & 3],
-				txtFSize[x.head.hsz.flash_size&3], x.entry_point);
-#endif
-		while (x.head.number_segs) {
-			if (flash_read(faddr, (uint32 *)&x.seg, 8) != 0) {
-#if DEBUGSOO > 0
-				printf("flash read error!");
-#endif
-				return false;
-			};
-			if ((x.seg.memory_offset >= IRAM1_BASE)
-					&& (x.seg.memory_offset < (IRAM1_BASE + iramsize))) {
-				if (((x.seg.memory_offset + x.seg.segment_size) > (uint32)einfo->base)
-						&& ((x.seg.memory_offset + x.seg.segment_size)
-								< (IRAM1_BASE + iramsize))) {
-					einfo->size = iramsize - x.seg.segment_size;
-					einfo->base = (uint32 *)(x.seg.memory_offset + x.seg.segment_size);
-				};
-			};
-#if DEBUGSOO > 0
-			printf(" Segment %u: offset: %p, size: %u\n", i, x.seg.memory_offset,
-					x.seg.segment_size);
-#endif
-			x.head.number_segs--;
-			i++;
-			faddr += x.seg.segment_size + 8;
-		};
-	};
-	if((eraminfo.base)&&(eraminfo.size > MIN_GET_IRAM)) return true;
-	return false;
+/* dport (io1) section */
+extern volatile uint32 dport_[64];		// 0x3ff00000
+#define DPORT_BASE	dport_		// 0x3ff00000
+
+int ICACHE_FLASH_ATTR eRam_init(void)
+{
+	 uint32 * end = &_text_start[((((DPORT_BASE[9]>>3)&3)==3)? (0x08000 >> 2) : (0x0C000 >> 2))];
+	 eraminfo.size = (int32)((uint32)(end) - (uint32)eraminfo.base);
+	 if(eraminfo.size > 0) {
+		 uint32 * ptr = _lit4_start;
+		 while(ptr < end) *ptr++ = 0;
+	 }
+	 else printf("No free IRAM!");
+	 return eraminfo.size;
 }
 
-void ICACHE_FLASH_ATTR eram_init(void) {
-	if(get_eram_size(&eraminfo)) {
-#if DEBUGSOO > 0
-		printf("Found free IRAM: base:%p, size:%u bytes\n", eraminfo.base,  eraminfo.size);
-#endif
-		memset(eraminfo.base, 0, eraminfo.size);
-	}
-}
-
-
-bool ICACHE_FLASH_ATTR __attribute__((optimize("Os"))) eRamRead(uint32 addr, uint8 *pd, uint32 len)
+void ICACHE_RAM_ATTR copy_s4d1(unsigned char * pd, void * ps, unsigned int len)
 {
 	union {
-		uint8 uc[4];
-		uint32 ud;
+		unsigned char uc[4];
+		unsigned int ud;
 	}tmp;
-	if (addr + len > eraminfo.size) return false;
-	uint32 *p = (uint32 *)(((uint32)eraminfo.base + addr) & (~3));
-	uint32 xlen = addr & 3;
+	unsigned int *p = (unsigned int *)((unsigned int)ps & (~3));
+
+	unsigned int xlen = (unsigned int)ps & 3;
 	if(xlen) {
 		tmp.ud = *p++;
 		while (len)  {
@@ -133,47 +75,63 @@ bool ICACHE_FLASH_ATTR __attribute__((optimize("Os"))) eRamRead(uint32 addr, uin
 			}
 		}
 	}
-	return true;
 }
 
-bool ICACHE_FLASH_ATTR __attribute__((optimize("Os"))) eRamWrite(uint32 addr, uint8 *pd, uint32 len)
+
+void ICACHE_RAM_ATTR copy_s1d4(void * pd, unsigned char * ps, unsigned int len)
 {
 	union {
-		uint8 uc[4];
-		uint32 ud;
+		unsigned char uc[4];
+		unsigned int ud;
 	}tmp;
-	if (addr + len > eraminfo.size) return false;
-	uint32 *p = (uint32 *)(((uint32)eraminfo.base + addr) & (~3));
-	uint32 xlen = addr & 3;
+	unsigned int *p = (unsigned int *)(((unsigned int)pd) & (~3));
+	unsigned int xlen = (unsigned int)pd & 3;
 	if(xlen) {
 		tmp.ud = *p;
 		while (len)  {
 			len--;
-			tmp.uc[xlen++] = *pd++;
+			tmp.uc[xlen++] = *ps++;
 			if(xlen & 4) break;
 		}
 		*p++ = tmp.ud;
 	}
 	xlen = len >> 2;
 	while(xlen) {
-		tmp.uc[0] = *pd++;
-		tmp.uc[1] = *pd++;
-		tmp.uc[2] = *pd++;
-		tmp.uc[3] = *pd++;
+		tmp.uc[0] = *ps++;
+		tmp.uc[1] = *ps++;
+		tmp.uc[2] = *ps++;
+		tmp.uc[3] = *ps++;
 		*p++ = tmp.ud;
 		xlen--;
 	}
 	if(len & 3) {
 		tmp.ud = *p;
-		tmp.uc[0] = pd[0];
+		tmp.uc[0] = ps[0];
 		if(len & 2) {
-			tmp.uc[1] = pd[1];
+			tmp.uc[1] = ps[1];
 			if(len & 1) {
-				tmp.uc[2] = pd[2];
+				tmp.uc[2] = ps[2];
 			}
 		}
 		*p = tmp.ud;
 	}
+}
+
+//extern void copy_s4d1(uint8 * pd, void * ps, uint32 len);
+
+bool ICACHE_RAM_ATTR eRamRead(uint32 addr, uint8 *pd, uint32 len)
+{
+	if (addr + len > eraminfo.size) return false;
+	copy_s4d1(pd, (void *)((uint32)eraminfo.base + addr), len);
+	return true;
+}
+
+//extern void copy_s1d4(void * pd, uint8 * ps, uint32 len);
+
+bool ICACHE_RAM_ATTR eRamWrite(uint32 addr, uint8 *ps, uint32 len)
+{
+	if (addr + len > eraminfo.size) return false;
+	copy_s1d4((void *)((uint32)eraminfo.base + addr), ps, len);
 	return true;
 }
 

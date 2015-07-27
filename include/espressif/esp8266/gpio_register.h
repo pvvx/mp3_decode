@@ -310,7 +310,7 @@
 #define RTC_CALIB_RDY_S                         31
 #define RTC_CALIB_RDY_REAL                      BIT30
 #define RTC_CALIB_RDY_REAL_S                    30
-#define RTC_CALIB__VALUE                         0x000fffff
+#define RTC_CALIB_VALUE                         0x000fffff
 #define RTC_CALIB_VALUE_S                       0
 
 #define GPIO_REG_READ(reg)                  READ_PERI_REG(PERIPHS_GPIO_BASEADDR + reg)
