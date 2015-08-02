@@ -361,12 +361,21 @@ PROVIDE ( esp_exception9 = 0x400017E0 );
 PROVIDE ( SPIFlashCnfig = 0x40004568 );
 PROVIDE ( _putc1 = 0x40001dcc );
 PROVIDE ( _putc2_def = 0x400024A8 );
+PROVIDE ( base64_table = 0x3FFFD600 );
 PROVIDE ( printf_buf_len = 0x3FFFDD58 );
 PROVIDE ( printf_pbuf = 0x3FFFDD5C );
 PROVIDE ( user_start_proc = 0x3FFFDCD0 );
 PROVIDE ( dtm_params = 0x3FFFDD64 );
 
-/*PROVIDE ( timer_list = 0x3FFFDDB0 );*/
+PROVIDE ( ets_bit_task_priority = 0x3FFFC6FC );
+PROVIDE ( ets_idle_cb = 0x3FFFDAB0 );
+PROVIDE ( ets_idle_arg = 0x3FFFDAB4 ); 
+PROVIDE ( ets_bit_count_task = 0x3FFFDAB8 );
+PROVIDE ( ets_tab_task = 0x3FFFDAC0 );
+
+PROVIDE ( timer_list = 0x3FFFDDB0 );
+/*PROVIDE ( debug_timer = 0x3FFFDDB4 );
+PROVIDE ( debug_timerfn = 0x3FFFDDB8 ); */
 
 /* 0x3FFFE360..0x3FFFEA80 ram buf max 1824 bytes */
 
@@ -380,7 +389,10 @@ PROVIDE ( timer_	= 0x60000600);
 PROVIDE ( rtc_		= 0x60000700);
 PROVIDE ( iomux_	= 0x60000800);
 PROVIDE ( wdt_		= 0x60000900);
+PROVIDE ( wdt_		= 0x60000900);
+PROVIDE ( scl_		= 0x60000B00);
 PROVIDE ( sar_		= 0x60000D00);
+PROVIDE ( i2s_		= 0x60000E00);
 PROVIDE ( uart1_	= 0x60000F00);
 PROVIDE ( rtc_ram_	= 0x60001000);
 PROVIDE ( rtc_mem_	= 0x60001100);

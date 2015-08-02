@@ -67,14 +67,15 @@ LINKFLAGS_eagle.app.v6 = \
 	-nostdlib	\
     -T$(LD_FILE)   \
 	-Wl,--no-check-sections	\
-	-Wl,--Map=mapfile \
+	-Wl,-Map -Wl,$(@:.out=.map) \
     -u call_user_start	\
     -Wl,--wrap=Cache_Read_Enable \
     -Wl,-static						\
 	-Wl,--start-group					\
 	-fdata-sections -ffast-math -fmerge-all-constants -fomit-frame-pointer -funroll-loops \
-	-lmgcc					\
-	-lhal					\
+	-lminic	\
+	-lmgcc	\
+	-lhal	\
 	-lmphy	\
 	-lpp	\
 	-lnet80211	\
@@ -82,7 +83,6 @@ LINKFLAGS_eagle.app.v6 = \
 	-lmain	\
 	-lfreertos	\
 	-llwip	\
-	-ludhcp	\
 	$(DEP_LIBS_eagle.app.v6)					\
 	-Wl,--end-group
 

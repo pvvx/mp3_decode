@@ -152,7 +152,7 @@ void ICACHE_FLASH_ATTR i2sInit() {
 	SET_PERI_REG_MASK(SLC_RX_LINK, ((uint32)&i2sBufDesc[0]) & SLC_RXLINK_DESCADDR_MASK);
 
 	//Attach the DMA interrupt
-	_xt_isr_attach(ETS_SLC_INUM, slc_isr);
+	_xt_isr_attach(ETS_SLC_INUM, (_xt_isr)slc_isr, NULL);
 	//Enable DMA operation intr
 	WRITE_PERI_REG(SLC_INT_ENA,  SLC_RX_EOF_INT_ENA);
 	//clear any interrupt flags that are set
