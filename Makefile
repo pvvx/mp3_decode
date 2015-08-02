@@ -4,12 +4,12 @@
 #
 #############################################################
 
-ESPOPTION ?= -p COM6 -b 230400
+ESPOPTION ?= -p COM2 -b 230400
 
 GENIMAGEOPTION = -ff 80m -fm qio -fs 4m
 
 ADDR_FW1 = 0x00000
-ADDR_FW2 = 0x08000
+ADDR_FW2 = 0x09000
 
 # Base directory for the compiler
 XTENSA_TOOLS_ROOT ?= c:/Espressif/xtensa-lx106-elf/bin
@@ -37,8 +37,6 @@ DEFAULTBIN := ./$(FIRMWAREDIR)/esp_init_data_default.bin
 DEFAULTADDR := 0x7C000
 BLANKBIN := ./$(FIRMWAREDIR)/blank.bin
 BLANKADDR := 0x7E000
-CLREEPBIN := ./$(FIRMWAREDIR)/clear_eep.bin
-CLREEPADDR := 0x79000
 
 SDK_TOOLS	?= c:/Espressif/utils
 #ESPTOOL		?= $(SDK_TOOLS)/esptool
@@ -122,7 +120,7 @@ $(BINODIR)/%.bin: $(IMAGEODIR)/%.out
 	@echo "------------------------------------------------------------------------------"
 	@$(ESPTOOL) elf2image -es user_start_trampoline -o ../$(FIRMWAREDIR)/ $(flashimageoptions) $<
 	@echo "------------------------------------------------------------------------------"
-	
+
 
 all: .subdirs $(OBJS) $(OLIBS) $(OIMAGES) $(OBINS) $(SPECIAL_MKTARGETS)
 
@@ -134,14 +132,11 @@ clobber: $(SPECIAL_CLOBBER)
 	$(foreach d, $(SUBDIRS), $(MAKE) -C $(d) clobber;)
 	$(RM) -r $(ODIR)
 
-FlashUserFiles: $(USERFBIN)
-	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(USERFADDR) $(USERFBIN)
-
-FlashAll: $(OUTBIN1)  $(USERFBIN) $(OUTBIN2) $(DEFAULTBIN) $(BLANKBIN) $(CLREEPBIN)
-	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(ADDR_FW1) $(OUTBIN1) $(USERFADDR) $(USERFBIN) $(ADDR_FW2) $(OUTBIN2) $(CLREEPADDR) $(CLREEPBIN) $(DEFAULTADDR) $(DEFAULTBIN) $(BLANKADDR) $(BLANKBIN)
+FlashAll: $(OUTBIN1)  $(USERFBIN) $(OUTBIN2) $(DEFAULTBIN) $(BLANKBIN) 
+	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(ADDR_FW1) $(OUTBIN1) $(ADDR_FW2) $(OUTBIN2) $(DEFAULTADDR) $(DEFAULTBIN) $(BLANKADDR) $(BLANKBIN)
 
 FlashClearSetings: $(CLREEPBIN) $(DEFAULTBIN) $(BLANKBIN)
-	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(CLREEPADDR) $(CLREEPBIN) $(DEFAULTADDR) $(DEFAULTBIN) $(BLANKADDR) $(BLANKBIN)
+	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(DEFAULTADDR) $(DEFAULTBIN) $(BLANKADDR) $(BLANKBIN)
 
 FlashCode: $(OUTBIN1) $(OUTBIN2)
 	$(ESPTOOL) $(ESPOPTION) write_flash $(GENIMAGEOPTION) $(ADDR_FW1) $(OUTBIN1) $(ADDR_FW2) $(OUTBIN2)

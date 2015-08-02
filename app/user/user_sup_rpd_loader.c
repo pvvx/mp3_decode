@@ -6,6 +6,10 @@
 
 #include "user_config.h"
 
+extern void call_user_start(void);
+extern void Cache_Read_Disable(void);
+extern void __real_Cache_Read_Enable(int a, int b, int c);
+
 void user_start_trampoline (void)
 {
   Cache_Read_Disable();

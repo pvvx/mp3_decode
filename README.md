@@ -17,7 +17,6 @@ define AP_PASS "01234567890"
 
 The base code is at the official Espressif Github: 
 https://github.com/espressif/esp8266_mp3_decoder
-RTOS_SDK ver 1.1.0 
 
 MAD: MPEG Audio Decoder
 http://www.underbit.com/products/mad/

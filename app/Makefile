@@ -67,13 +67,12 @@ LINKFLAGS_eagle.app.v6 = \
 	-nostdlib	\
     -T$(LD_FILE)   \
 	-Wl,--no-check-sections	\
-	-Wl,-Map -Wl,$(@:.out=.map) \
+	-Wl,--Map=mapfile \
     -u call_user_start	\
-	-Wl,--wrap=Cache_Read_Enable \
-	-Wl,-static						\
+    -Wl,--wrap=Cache_Read_Enable \
+    -Wl,-static						\
 	-Wl,--start-group					\
 	-fdata-sections -ffast-math -fmerge-all-constants -fomit-frame-pointer -funroll-loops \
-	-lminic \
 	-lmgcc					\
 	-lhal					\
 	-lmphy	\
@@ -87,7 +86,6 @@ LINKFLAGS_eagle.app.v6 = \
 	$(DEP_LIBS_eagle.app.v6)					\
 	-Wl,--end-group
 
-	
 DEPENDS_eagle.app.v6 = \
                 $(LD_FILE) \
                 $(LDDIR)/eagle.rom.addr.v6.ld

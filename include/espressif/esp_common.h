@@ -6,6 +6,7 @@
 #ifndef __ESP_COMMON_H__
 #define __ESP_COMMON_H__
 
+#include "user_config.h"
 #include "c_types.h"
 #include "esp_libc.h"
 #include "esp_misc.h"

@@ -111,7 +111,7 @@ extern void PendSV(char req);
 #define portYIELD()	PendSV(1)
 
 
-//#define portEND_SWITCHING_ISR( xSwitchRequired ) \
+//#define portEND_SWITCHING_ISR( xSwitchRequired )
 //	if(xSwitchRequired) PendSV(1)
 
 #define HDL_MAC_SIG_IN_LV1_ISR() PendSV(2)
@@ -178,15 +178,13 @@ void        _xt_isr_mask       (uint32 mask);
 uint32		_xt_read_ints (void);
 void		_xt_clear_ints(uint32 mask);
 
+
 /* interrupt related */
-typedef void (* _xt_isr)(void *arg);
+typedef void (* _xt_isr)(void);
 
-void        _xt_isr_attach          (uint8 i, _xt_isr func, void *arg);
+void        _xt_isr_attach          (uint8 i, _xt_isr func);
 
-typedef struct _xt_isr_entry_ {
-	_xt_isr	handler;
-    void *	arg;
-} _xt_isr_entry;
+
 
 #ifdef __cplusplus
 }
