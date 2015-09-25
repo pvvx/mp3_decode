@@ -9,7 +9,7 @@ MP3-decodec uses IRAM Buffer > 20 Kbytes<br>
 
 Support all ESP2866 modules (0.5..16 Mbytes flash)<br>
 
-Set connect AP in playerconfig.h: 
+Set connect AP in playerconfig.h:<br> 
 define AP_NAME "HOMEAP"<br>
 define AP_PASS "01234567890"<br>
 
