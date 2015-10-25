@@ -3,12 +3,12 @@
       data|        Initialized Data (RAM)|    3FFE8000|    3FFE8474|    1140
     rodata|           ReadOnly Data (RAM)|    3FFE8480|    3FFE8DB0|    2352
        bss|      Uninitialized Data (RAM)|    3FFE8DB0|    3FFF20C8|   37656
-      lit4|     Uninitialized Data (IRAM)|    40106644|    40106644|       0
-      text|          Uncached Code (IRAM)|    40100000|    40106644|   26180
+      lit4|     Uninitialized Data (IRAM)|    40106634|    40106634|       0
+      text|          Uncached Code (IRAM)|    40100000|    40106634|   26164
 irom0_text|             Cached Code (SPI)|    40209000|    4024AC90|  269456
 ------------------------------------------------------------------------------
 Entry Point : 40101C50 user_start_trampoline()
-Total Used RAM : 67328
-Free IRam : 6588 or 22972 (option 48k IRAM)
+Total Used RAM : 67312
+Free IRam : 6604 or 22988 (option 48k IRAM)
 Free Heap : 40772
-Total Free RAM : 63744   
+Total Free RAM : 63760

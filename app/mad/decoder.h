@@ -37,7 +37,6 @@ enum mad_flow {
   MAD_FLOW_BREAK    = 0x0011,	/* stop decoding and signal an error */
   MAD_FLOW_IGNORE   = 0x0020	/* ignore the current frame */
 };
-
  
 struct sync_t {
     struct mad_stream stream;	// definito main_data_t un array di circa 4K

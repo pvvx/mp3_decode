@@ -24,6 +24,7 @@
 
 #include "esp_common.h"
 #include "config.h"
+#include "user_main.h"
 /* conditional debugging */
 
 # if defined(DEBUG) && defined(NDEBUG)

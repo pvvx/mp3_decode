@@ -36,24 +36,8 @@ LD_FILE = $(LDDIR)/eagle.app.v6.ld
 
 
 CCFLAGS += -Os
-
 #
 #	-fdata-sections -ffast-math -fmerge-all-constants -fomit-frame-pointer -funroll-loops \
-
-
-TARGET_LDFLAGS =		\
-	-nostdlib		\
-	-Wl,-EL \
-	-Wl--relax \
-	--longcalls \
-
-ifeq ($(FLAVOR),debug)
-    TARGET_LDFLAGS += -g -Os
-endif
-
-ifeq ($(FLAVOR),release)
-    TARGET_LDFLAGS += -g -Os
-endif
 
 COMPONENTS_eagle.app.v6 = \
     main/libaddmmain.a \

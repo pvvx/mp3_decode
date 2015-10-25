@@ -63,6 +63,7 @@ uart0_write_char(char c)
     }
 }
 
+#if 0
 LOCAL void
 uart_rx_intr_handler_ssc(void)
 {
@@ -89,6 +90,7 @@ uart_rx_intr_handler_ssc(void)
     xQueueSendFromISR(xQueueUart, (void *)&e, &xHigherPriorityTaskWoken);
     portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
 }
+#endif
 
 #if 0
 LOCAL void ICACHE_FLASH_ATTR
@@ -130,6 +132,7 @@ uart_config(uint8 uart_no, UartDevice *uart)
 }
 #endif
 
+#if 0
 LOCAL void ICACHE_FLASH_ATTR
 uart_task(void *pvParameters)
 {
@@ -150,6 +153,7 @@ uart_task(void *pvParameters)
 
     vTaskDelete(NULL);
 }
+#endif
 
 #if 0
 void ICACHE_FLASH_ATTR
@@ -213,6 +217,7 @@ UART_SetParity(UART_Port uart_no, UART_ParityMode Parity_mode)
     }
 }
 
+extern void uart_div_modify(uint32 uart_num, uint32 div_baud);
 void ICACHE_FLASH_ATTR
 UART_SetBaudrate(UART_Port uart_no, uint32 baud_rate)
 {
@@ -332,11 +337,11 @@ uart0_rx_intr_handler(void *para)
     /* uart0 and uart1 intr combine togther, when interrupt occur, see reg 0x3ff20020, bit2, bit0 represents
     * uart1 and uart0 respectively
     */
-    uint8 RcvChar;
+//    uint8 RcvChar;
     uint8 uart_no = UART0;//UartDev.buff_uart_no;
     uint8 fifo_len = 0;
     uint8 buf_idx = 0;
-    uint8 fifo_tmp[128] = {0};
+//    uint8 fifo_tmp[128] = {0};
 
     uint32 uart_intr_status = READ_PERI_REG(UART_INT_ST(uart_no)) ;
 

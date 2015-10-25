@@ -111,7 +111,7 @@ extern void PendSV(char req);
 #define portYIELD()	PendSV(1)
 
 
-//#define portEND_SWITCHING_ISR( xSwitchRequired ) \
+// #define portEND_SWITCHING_ISR( xSwitchRequired )
 //	if(xSwitchRequired) PendSV(1)
 
 #define HDL_MAC_SIG_IN_LV1_ISR() PendSV(2)

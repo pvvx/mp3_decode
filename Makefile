@@ -25,9 +25,6 @@ OBJCOPY = $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-objcopy
 OBJDUMP := $(XTENSA_TOOLS_ROOT)/xtensa-lx106-elf-objdump
 CCFLAGS += -std=gnu90 -Wno-pointer-sign -mno-target-align -mno-serialize-volatile -foptimize-register-move
 #
-# -Os -O2 -Wall -Wno-pointer-sign -mno-target-align -mno-serialize-volatile -foptimize-register-move
-# -fomit-frame-pointer -fmerge-all-constants
-#
 # https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 # https://gcc.gnu.org/onlinedocs/gcc-4.8.2/gcc/Xtensa-Options.html#Xtensa-Options
 #

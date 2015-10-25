@@ -47,6 +47,8 @@ speed.
 #define i2c_bbpll_en_audio_clock_out_lsb        7
 #define i2c_bbpll_hostid                        4
 
+extern void rom_i2c_writeReg_Mask(uint32 block, uint32 host_id, uint32 reg_add, uint32 Msb, uint32 Lsb, uint32 indata);
+
 #define i2c_writeReg_Mask(block, host_id, reg_add, Msb, Lsb, indata)  rom_i2c_writeReg_Mask(block, host_id, reg_add, Msb, Lsb, indata)
 #define i2c_readReg_Mask(block, host_id, reg_add, Msb, Lsb)  rom_i2c_readReg_Mask(block, host_id, reg_add, Msb, Lsb)
 #define i2c_writeReg_Mask_def(block, reg_add, indata) \

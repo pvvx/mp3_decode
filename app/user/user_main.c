@@ -27,6 +27,7 @@
 #include "i2s_freertos.h"
 #include "iram_buf.h"
 #include "spiram_fifo.h"
+#include "uart.h"
 #include "playerconfig.h"
 
 
@@ -189,7 +190,7 @@ void render_sample_block(short *short_sample_buff, int no_samples) {
 }
 
 //Called by the NXP modificationss of libmad. Sets the needed output sample rate.
-static oldRate=0;
+static int oldRate = 0;
 void ICACHE_FLASH_ATTR set_dac_sample_rate(int rate) {
 	if (rate==oldRate) return;
 	oldRate=rate;
@@ -199,7 +200,7 @@ void ICACHE_FLASH_ATTR set_dac_sample_rate(int rate) {
 
 static enum  mad_flow ICACHE_FLASH_ATTR input(struct mad_stream *stream) {
 	int n, i;
-	int rem, fifoLen;
+	int rem; //, fifoLen;
 	//Shift remaining contents of buf to the front
 	rem=stream->bufend-stream->next_frame;
 	memmove(readBuf, stream->next_frame, rem);
@@ -296,7 +297,6 @@ int ICACHE_FLASH_ATTR getIpForHost(const char *host, struct sockaddr_in *ip) {
 //Open a connection to a webserver and request an URL. Yes, this possibly is one of the worst ways to do this,
 //but RAM is at a premium here, and this works for most of the cases.
 int ICACHE_FLASH_ATTR openConn(const char *streamHost, const char *streamPath) {
-	int n, i;
 	while(1) {
 		struct sockaddr_in remote_ip;
 		printf("URL: %s%s\n", streamHost, streamPath);
@@ -335,8 +335,8 @@ int ICACHE_FLASH_ATTR openConn(const char *streamHost, const char *streamPath) {
 void ICACHE_FLASH_ATTR tskreader(void *pvParameters) {
 	int madRunning=0;
 	char wbuf[256];
-	int n, l, inBuf;
-	int t;
+	int n;
+	int t = 0;
 	int fd;
 	int c = 0;
 	while(1) {
@@ -353,7 +353,7 @@ void ICACHE_FLASH_ATTR tskreader(void *pvParameters) {
 			}
 			
 			t=(t+1)&255;
-			if (t==0) printf("Buffer fill %d, DMA underrun ct %d, buff underrun ct %d\n", spiRamFifoFill(), (int)i2sGetUnderrunCnt(), bufUnderrunCt);
+			if (t==0) printf("Buffer fill %d, DMA underrun ct %d, buff underrun ct %d\n", spiRamFifoFill(), (int)i2sGetUnderrunCnt(), (int)bufUnderrunCt);
 		} while (n>0);
 		close(fd);
 		printf("Connection closed.\n");
@@ -403,7 +403,7 @@ void ICACHE_FLASH_ATTR user_init(void) {
 	SET_PERI_REG_MASK(0x3ff00014, BIT(0));
 	os_update_cpu_frequency(160);
 #endif
-	
+
 	//Set the UART to 230400 baud
 	UART_SetBaudrate(0, 230400);
 

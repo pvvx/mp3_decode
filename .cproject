@@ -25,11 +25,11 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.168388262" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.2143701472" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
-								<option id="gnu.cpp.compiler.option.include.paths.482671622" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths"/>
+								<option id="gnu.cpp.compiler.option.include.paths.482671622" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1385178936" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.825475157" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
-								<option id="gnu.c.compiler.option.include.paths.732346299" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.732346299" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/app/include}&quot;"/>
 								</option>
@@ -48,24 +48,101 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525" moduleId="org.eclipse.cdt.core.settings" name="AutoMake">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" description="" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525" name="AutoMake" parent="org.eclipse.cdt.build.core.emptycfg" postannouncebuildStep="" postbuildStep="${workspace_loc}/${ProjName}/AutoMake.bat ${ProjName}.elf" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525." name="/" resourcePath="">
+						<toolChain errorParsers="" id="cdt.managedbuild.toolchain.gnu.cross.base.330876415" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.base" unusedChildren="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.1795657510" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="xtensa-lx106-elf-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.146324824" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="C:\Espressif\xtensa-lx106-elf\bin " valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.746715937" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/mp3_decode}/AutoMake" cleanBuildTarget="clean" errorParsers="" id="org.eclipse.cdt.build.core.internal.builder.452146413" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool command="as" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.tool.gnu.cross.assembler.1021088660" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2006698907" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool command="gcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} -c ${INPUTS}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.tool.gnu.cross.c.compiler.21362844" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option id="gnu.c.compiler.option.include.paths.1804529661" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/espressif}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/freertos}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/lwip}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/lwip/ipv4}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/lwip/ipv6}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/include/driver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/app/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/app/mad}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/app/mad/mpg12}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/mp3_decode/app/user}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.1888939976" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.dialect.flags.1628397824" name="Other dialect flags" superClass="gnu.c.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=gnu90" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1618938657" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ICACHE_FLASH"/>
+								</option>
+								<option id="gnu.c.compiler.option.optimization.level.1389392063" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1506626695" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.warnings.extrawarn.358980320" name="Extra warnings (-Wextra)" superClass="gnu.c.compiler.option.warnings.extrawarn" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.misc.other.255685420" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-Wno-pointer-sign -mtarget-align -mlongcalls -mno-serialize-volatile -mtext-section-literals -Wl,-EL -nostdlib  -Wl,--wrap=Cache_Read_Enable" valueType="string"/>
+								<option id="gnu.c.compiler.option.warnings.toerrors.404065694" name="Warnings as errors (-Werror)" superClass="gnu.c.compiler.option.warnings.toerrors" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.931530963" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.319582069" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.618743174" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+							<tool command="gcc" commandLinePattern="${COMMAND} ${FLAGS} -Wl,--start-group ${INPUTS} -Wl,--end-group  ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} " errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1614482271" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="gnu.cpp.link.option.nostart.1535415364" name="Do not use standard start files (-nostartfiles)" superClass="gnu.cpp.link.option.nostart" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.nodeflibs.1887254757" name="Do not use default libraries (-nodefaultlibs)" superClass="gnu.cpp.link.option.nodeflibs" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.nostdlibs.1589884098" name="No startup or default libs (-nostdlib)" superClass="gnu.cpp.link.option.nostdlibs" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.libs.992428860" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="minic"/>
+									<listOptionValue builtIn="false" value="mgcc"/>
+									<listOptionValue builtIn="false" value="hal"/>
+									<listOptionValue builtIn="false" value="mphy"/>
+									<listOptionValue builtIn="false" value="pp"/>
+									<listOptionValue builtIn="false" value="net80211"/>
+									<listOptionValue builtIn="false" value="wpa"/>
+									<listOptionValue builtIn="false" value="main"/>
+									<listOptionValue builtIn="false" value="freertos"/>
+									<listOptionValue builtIn="false" value="lwip"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1299387282" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-T../ld/eagle.app.v6.ld -Wl,--no-check-sections -Wl,-static -Wl,-Map -Wl,${ProjName}.map  -Wl,--wrap=Cache_Read_Enable" valueType="string"/>
+								<option id="gnu.cpp.link.option.paths.586989761" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.650122675" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="app/mad/fixed.c|app/mad/version.c|app/mad/decoder.c|app/mad/mpg12" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="esp_rtos_sdk_example.null.3828550" name="esp_rtos_sdk_example"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="AutoMake">
+			<resource resourceType="PROJECT" workspacePath="/mp3_decode"/>
+		</configuration>
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/esp_rtos_sdk_example"/>
 		</configuration>
-	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900;cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1251635855;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.2143701472;cdt.managedbuild.tool.gnu.cpp.compiler.input.1385178936">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900;cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1251635855;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.825475157;cdt.managedbuild.tool.gnu.c.compiler.input.1928339413">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
@@ -111,5 +188,17 @@
 				<runAllBuilders>true</runAllBuilders>
 			</target>
 		</buildTargets>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900;cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1251635855;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.825475157;cdt.managedbuild.tool.gnu.c.compiler.input.1928339413">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900;cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1251635855;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.2143701472;cdt.managedbuild.tool.gnu.cpp.compiler.input.1385178936">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525;cdt.managedbuild.toolchain.gnu.mingw.base.1544080900.1339797525.;cdt.managedbuild.tool.gnu.cross.c.compiler.21362844;cdt.managedbuild.tool.gnu.c.compiler.input.931530963">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

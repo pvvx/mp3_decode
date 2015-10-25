@@ -191,6 +191,7 @@ void mad_bit_write(struct mad_bitptr *bitptr, unsigned int len,
 # endif
 
 
+extern short unalShort(const short *adr);
 /*
  * NAME:	bit->crc()
  * DESCRIPTION:	compute CRC-check word
